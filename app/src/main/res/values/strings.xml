@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">killhope-museum</string>
+    <string name="title_activity_splash_screen">SplashScreenActivity</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_main_menu">MainMenuActivity</string>
+    <string name="title_activity_qrcode">QRCodeActivity</string>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="title_activity_exhibitions">ExhibitionsActivity</string>
+    <string name="title_activity_rock_list">RockListActivity</string>
+    <string name="title_activity_rock_display">RockDisplayActivity</string>
 </resources>
