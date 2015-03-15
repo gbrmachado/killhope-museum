@@ -1,7 +1,19 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:context="uk.ac.dur.group1.killhope_museum.activity.RockDisplayActivity">
-    <item android:id="@+id/action_settings" android:title="@string/action_settings"
-        android:orderInCategory="100" app:showAsAction="never" />
+    xmlns:tools="http://schemas.android.com/tools" >
+
+    <item
+        android:id="@+id/logo"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_menu_logo"
+        android:layout_gravity="left"
+        />
+
+    <item
+        android:id="@+id/logo"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_action_search"
+        android:layout_gravity="right"
+        />
+
 </menu>

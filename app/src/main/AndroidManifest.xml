@@ -10,11 +10,7 @@
         <activity
             android:name=".activity.SplashScreenActivity"
             android:label="@string/title_activity_splash_screen" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".activity.MainMenuActivity"
@@ -38,7 +34,15 @@
         </activity>
         <activity
             android:name=".activity.RockDisplayActivity"
-            android:label="@string/title_activity_rock_display" >
+            android:label="@string/title_activity_rock_display"
+
+            android:theme="@style/Theme.AppCompat.Light"
+            android:icon="@drawable/ic_menu_logo" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".activity.FullScreenImageActivity"
