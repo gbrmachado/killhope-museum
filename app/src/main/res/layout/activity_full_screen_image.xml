@@ -12,10 +12,10 @@
         android:layout_height="fill_parent"
         android:id="@+id/full_screen_content_view">
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/full_screen_image_image"
+        <WebView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/full_screen_image_web_view"
             android:layout_gravity="center" />
     </FrameLayout>
 
@@ -39,6 +39,7 @@
                 android:layout_gravity="right"
                 android:contentDescription="Close the Current View"
                 android:focusableInTouchMode="true" />
+
         </LinearLayout>
 
     </FrameLayout>

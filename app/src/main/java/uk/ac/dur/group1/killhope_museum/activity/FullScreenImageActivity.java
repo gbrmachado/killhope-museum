@@ -7,13 +7,21 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Point;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Base64;
+import android.view.Display;
 import android.view.MotionEvent;
 import android.view.View;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.ImageView;
+
+import java.io.ByteArrayOutputStream;
 
 import uk.ac.dur.group1.killhope_museum.R;
 
@@ -24,23 +32,18 @@ import uk.ac.dur.group1.killhope_museum.R;
  */
 public class FullScreenImageActivity extends Activity {
 
-    //TODO: Test a large image and determine how to handle scrolling etc.
-    //It appears that from: http://stackoverflow.com/a/12013168/1112560, a WebView may be best.
-
     /**
      * Launches the activity to display the specified bitmap.
      * @param context The context to launch the activity from
-     * @param bitmap The image to display.
+     * @param resourceID the id of the resource in the local resources folder.
      */
-    public static void launchActivity(Context context, Bitmap bitmap)
+    public static void launchActivity(Context context, int resourceID)
     {
         if (context == null)
             throw new IllegalArgumentException("context is null");
-        if (bitmap == null)
-            throw new IllegalArgumentException("bitmap is null");
 
         Intent myIntent = new Intent(context, FullScreenImageActivity.class);
-        myIntent.putExtra(IMAGE_KEY, bitmap);
+        myIntent.putExtra(IMAGE_KEY, resourceID);
         context.startActivity(myIntent);
     }
 
@@ -158,14 +161,75 @@ public class FullScreenImageActivity extends Activity {
             }
         });
 
-        Bitmap b = this.getIntent().getParcelableExtra(IMAGE_KEY);
+        int resourceID = this.getIntent().getIntExtra(IMAGE_KEY, -1);
+        if(resourceID == -1)
+            throw new IllegalArgumentException("Invalid/no key set: " + IMAGE_KEY);
+
+        Bitmap b = BitmapFactory.decodeResource(this.getResources(), resourceID);
         this.loadImage(b);
     }
 
     private void loadImage(Bitmap image)
     {
-        ImageView fulScreenImageView = (ImageView) this.findViewById(R.id.full_screen_image_image);
-        fulScreenImageView.setImageBitmap(image);
+        //convert the image to base64 so we don't need to deal with more problems with relative URLs
+        //if we convert this to a server-based interface.
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        image.compress(Bitmap.CompressFormat.JPEG, 100, baos); //bm is the bitmap object
+        byte[] byteArrayImage = baos.toByteArray();
+        String encodedImage = Base64.encodeToString(byteArrayImage, Base64.DEFAULT);
+
+        WebView v = (WebView)this.findViewById(R.id.full_screen_image_web_view);
+        String data = getHTML(encodedImage);
+        v.loadData(data, "text/html", "UTF-8");
+
+        setupScrollableCenteredView(v, image);
+    }
+
+    private void setupScrollableCenteredView(WebView v, Bitmap image) {
+        WebSettings settings = v.getSettings();
+
+        Display display = getWindowManager().getDefaultDisplay();
+        int width;
+        int height;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB_MR2) {
+            Point size = new Point();
+            display.getSize(size);
+            width = size.x;
+            height = size.y;
+        }
+        else {
+            width = display.getWidth();
+            height = display.getHeight();
+        }
+        settings.setBuiltInZoomControls(true);
+        settings.setSupportZoom(true);
+
+        //scroll to the middle.
+        //TODO: Check with someone that this is the correct way to do so.
+        v.scrollTo((image.getWidth() + width) / 2, (image.getHeight() + height) / 2);
+
+    }
+
+    private String getHTML(String encodedImage)
+    {
+        String image = "<body><img id='main_image' src='data:image/png;base64," + encodedImage + "'/></body>";
+
+        String css = "<head>" +
+                "<style type=\"text/css\">\n" +
+                "img\n" +
+                "{\n" +
+                "    min-height:100%;\n" +
+                "    min-width:100%;\n" +
+                "    height:auto;\n" +
+                "    width:auto;\n" +
+                "    position:absolute;\n" +
+                "    left:0;\n" +
+                "    top:0;\n" +
+                "    margin:auto;\n" +
+                "}\n" +
+                "</style>" +
+                "</head>";
+        return "<html>" + css + image + "</html>";
     }
 
     @Override
