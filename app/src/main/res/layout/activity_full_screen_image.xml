@@ -1,0 +1,47 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:background="@android:color/background_dark"
+    tools:context="uk.ac.dur.group1.killhope_museum.activity.FullScreenImageActivity">
+
+    <!-- The primary full-screen view. This can be replaced with whatever view
+         is needed to present your content, e.g. VideoView, SurfaceView,
+         TextureView, etc. -->
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/full_screen_content_view">
+
+        <WebView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/full_screen_image_web_view"
+            android:layout_gravity="center" />
+    </FrameLayout>
+
+    <!-- This FrameLayout insets its children based on system windows using
+         android:fitsSystemWindows. -->
+    <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <LinearLayout android:id="@+id/fullscreen_content_controls" style="?metaButtonBarStyle"
+            android:layout_width="match_parent" android:layout_height="match_parent"
+            android:background="@color/black_overlay" android:orientation="vertical"
+            tools:ignore="UselessParent"
+            android:layout_gravity="top|left|bottom|center|right">
+
+            <ImageView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:id="@+id/full_screen_close"
+                android:src="@android:drawable/ic_notification_clear_all"
+                android:clickable="true"
+                android:layout_gravity="right"
+                android:contentDescription="Close the Current View"
+                android:focusableInTouchMode="true" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+</FrameLayout>

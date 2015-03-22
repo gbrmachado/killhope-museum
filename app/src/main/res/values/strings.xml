@@ -10,4 +10,6 @@
     <string name="title_activity_exhibitions">ExhibitionsActivity</string>
     <string name="title_activity_rock_list">RockListActivity</string>
     <string name="title_activity_rock_display">RockDisplayActivity</string>
+
+    <string name="title_activity_full_screen_image">Image Viewer</string>
 </resources>
