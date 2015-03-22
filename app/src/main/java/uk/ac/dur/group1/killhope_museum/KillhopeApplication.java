@@ -16,6 +16,12 @@ import uk.ac.dur.group1.killhope_museum.dto.json.JsonMap;
 import uk.ac.dur.group1.killhope_museum.dto.RockDTO;
 import uk.ac.dur.group1.killhope_museum.utilities.JSONUtilities;
 
+import java.util.List;
+
+import uk.ac.dur.group1.killhope_museum.activity.RockListActivity;
+import uk.ac.dur.group1.killhope_museum.dto.RockDTO;
+import uk.ac.dur.group1.killhope_museum.dto.RockListFacade;
+
 /**
  * A class designed to hold global variables for the Killhope museum application.
  */

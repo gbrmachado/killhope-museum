@@ -22,6 +22,8 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+
+import java.util.ArrayList;
 import java.util.List;
 
 import uk.ac.dur.group1.killhope_museum.KillhopeApplication;
@@ -46,7 +48,6 @@ public class RockListActivity extends ActionBarActivity {
             throw new IllegalArgumentException("context is null");
 
         Intent i = new Intent(context, RockListActivity.class);
-
         if(rockList != null)
         {
             ArrayList<String> rocks = new ArrayList<>();
@@ -84,15 +85,22 @@ public class RockListActivity extends ActionBarActivity {
 
         List<RockDTO> rocks = getKillhopeApplication().getRockList();
         rocks = filterRocks(rocks);
-        RockListFacade d = new RockListFacade(rocks);
 
         int screenWidth = DisplayUtilities.getScreenWidth(this);
 
-        for(RockDTO rock : d.getRocksForScreenSize(screenWidth))
+
+        RockListFacade d = new RockListFacade(rocks);
+
+        for(RockDTO rock : d.getRocksForScreenSize(getScreenWidth()))
         {
             View forRock = createViewForRock(rock);
             layout.addView(forRock);
         }
+    }
+
+    private int getScreenWidth()
+    {
+        return getResources().getDisplayMetrics().widthPixels;
     }
 
     /**

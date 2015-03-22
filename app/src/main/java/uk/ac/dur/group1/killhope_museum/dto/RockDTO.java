@@ -1,11 +1,8 @@
 package uk.ac.dur.group1.killhope_museum.dto;
 
 import android.graphics.Bitmap;
-
 import java.util.ArrayList;
 import java.util.List;
-
-
 
 /**
  * A Data transfer object designed to encapsulate a rock.
@@ -50,8 +47,7 @@ public class RockDTO
         }
     }
 
-    public RockDTO(String uniqueID)
-    {
+    public RockDTO(String uniqueID) {
         this.uniqueID = uniqueID;
     }
 

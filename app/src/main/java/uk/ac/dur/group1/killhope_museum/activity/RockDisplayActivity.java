@@ -3,9 +3,10 @@ package uk.ac.dur.group1.killhope_museum.activity;
 import android.support.v7.app.ActionBar;
 import android.content.Context;
 import android.os.Bundle;
+import android.content.Context;
+import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.View;
 import android.widget.ImageView;
@@ -17,12 +18,10 @@ import uk.ac.dur.group1.killhope_museum.R;
 import uk.ac.dur.group1.killhope_museum.dto.RockDTO;
 
 import uk.ac.dur.group1.killhope_museum.R;
-
+import uk.ac.dur.group1.killhope_museum.dto.RockDTO;
 
 public class RockDisplayActivity extends ActionBarActivity implements View.OnClickListener{
 //simulating the public class:
-
-
     String title = "Ankerite";
     String formula = "CaCO3";
     String info = "Ankerite is a calcium, iron, magnesium, manganese carbonate mineral of the " +
@@ -82,7 +81,6 @@ public class RockDisplayActivity extends ActionBarActivity implements View.OnCli
         return true;
     }
 }
-
 
 //TODO: FULL SCREEN IMAGE IS NOT WORKING ON IMAGE GALLERY
 //TODO: TEST WITH SOME REAL INFO
