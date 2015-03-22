@@ -1,13 +1,22 @@
 package uk.ac.dur.group1.killhope_museum.activity;
 
+import android.content.Context;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import uk.ac.dur.group1.killhope_museum.R;
+import uk.ac.dur.group1.killhope_museum.dto.RockDTO;
 
 public class RockDisplayActivity extends ActionBarActivity {
+
+    public static void launchActivity(Context context, RockDTO rock)
+    {
+        Toast.makeText(context, "Show: " + rock.getID() + " Not implemented", Toast.LENGTH_SHORT).show();
+        //TODO: Not implemented.
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

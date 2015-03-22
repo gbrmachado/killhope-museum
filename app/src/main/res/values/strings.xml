@@ -8,6 +8,6 @@
     <string name="title_activity_qrcode">QRCodeActivity</string>
     <string name="title_activity_maps">MapsActivity</string>
     <string name="title_activity_exhibitions">ExhibitionsActivity</string>
-    <string name="title_activity_rock_list">RockListActivity</string>
+    <string name="title_activity_rock_list">Rocks</string>
     <string name="title_activity_rock_display">RockDisplayActivity</string>
 </resources>
