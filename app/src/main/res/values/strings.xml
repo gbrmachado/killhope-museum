@@ -4,7 +4,7 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    <string name="title_activity_main_menu">MainMenuActivity</string>
+    <string name="title_activity_main_menu">Killhope Main Menu</string>
     <string name="title_activity_qrcode">QRCodeActivity</string>
     <string name="title_activity_maps">MapsActivity</string>
     <string name="title_activity_exhibitions">ExhibitionsActivity</string>
