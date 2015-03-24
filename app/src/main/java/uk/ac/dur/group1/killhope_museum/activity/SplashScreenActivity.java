@@ -1,19 +1,32 @@
 package uk.ac.dur.group1.killhope_museum.activity;
 
+import android.os.Handler;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import uk.ac.dur.group1.killhope_museum.MainMenuIcon;
 import uk.ac.dur.group1.killhope_museum.R;
 
 
 public class SplashScreenActivity extends ActionBarActivity {
 
+    //Wait 3 seconds before running the next activity.
+    private static final int TIMEOUT_MILLISECONDS = 3000;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
+        
+        final SplashScreenActivity self = this;
+        new Handler().postDelayed(new Runnable() {
+            public void run() {
+                MainMenuActivity.launchActivity(self);
+                finish();
+            }
+        }, TIMEOUT_MILLISECONDS);
     }
 
 
