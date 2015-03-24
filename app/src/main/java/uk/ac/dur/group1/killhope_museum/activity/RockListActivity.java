@@ -27,6 +27,7 @@ import uk.ac.dur.group1.killhope_museum.R;
 import uk.ac.dur.group1.killhope_museum.RockListFactory;
 import uk.ac.dur.group1.killhope_museum.dto.RockDTO;
 import uk.ac.dur.group1.killhope_museum.dto.RockListFacade;
+import uk.ac.dur.group1.killhope_museum.utilities.DisplayUtilities;
 
 /**
  * The Rock List activity is designed to display a selectable and graphic list of
@@ -66,7 +67,9 @@ public class RockListActivity extends ActionBarActivity {
 
         RockListFacade d = new RockListFacade(rocks);
 
-        for(RockDTO rock : d.getRocksForScreenSize(getScreenWidth()))
+        int screenWidth = DisplayUtilities.getScreenWidth(this);
+
+        for(RockDTO rock : d.getRocksForScreenSize(screenWidth))
         {
             View forRock = createViewForRock(rock);
             layout.addView(forRock);
@@ -114,10 +117,6 @@ public class RockListActivity extends ActionBarActivity {
 
     }
 
-    private int getScreenWidth()
-    {
-        return getResources().getDisplayMetrics().widthPixels;
-    }
 
 
     @Override
