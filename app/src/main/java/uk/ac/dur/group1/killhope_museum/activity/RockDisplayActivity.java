@@ -3,6 +3,8 @@ package uk.ac.dur.group1.killhope_museum.activity;
 import android.support.v7.app.ActionBar;
 import android.content.Context;
 import android.os.Bundle;
+import android.os.Bundle;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.View;
@@ -13,6 +15,8 @@ import android.widget.Toast;
 
 import uk.ac.dur.group1.killhope_museum.R;
 import uk.ac.dur.group1.killhope_museum.dto.RockDTO;
+
+import uk.ac.dur.group1.killhope_museum.R;
 
 
 public class RockDisplayActivity extends ActionBarActivity implements View.OnClickListener{
