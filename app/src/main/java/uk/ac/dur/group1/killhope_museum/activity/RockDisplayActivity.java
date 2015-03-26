@@ -1,30 +1,15 @@
 package uk.ac.dur.group1.killhope_museum.activity;
 
-import android.content.Context;
-import android.content.DialogInterface;
-import android.media.Image;
 import android.os.Bundle;
-import android.support.v4.view.PagerAdapter;
-import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.BaseAdapter;
-import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import uk.ac.dur.group1.killhope_museum.R;
-
-import static android.widget.AdapterView.OnItemClickListener;
 
 
 public class RockDisplayActivity extends ActionBarActivity implements View.OnClickListener{
