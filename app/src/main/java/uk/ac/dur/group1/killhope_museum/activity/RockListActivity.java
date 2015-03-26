@@ -1,19 +1,122 @@
 package uk.ac.dur.group1.killhope_museum.activity;
 
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
+import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import uk.ac.dur.group1.killhope_museum.KillhopeApplication;
 import uk.ac.dur.group1.killhope_museum.R;
+import uk.ac.dur.group1.killhope_museum.RockListFactory;
+import uk.ac.dur.group1.killhope_museum.dto.RockDTO;
+import uk.ac.dur.group1.killhope_museum.dto.RockListFacade;
+import uk.ac.dur.group1.killhope_museum.utilities.DisplayUtilities;
 
+/**
+ * The Rock List activity is designed to display a selectable and graphic list of
+ * available rocks in the application, when selected, each rock will open up the RockDisplayActivity
+ *
+ * This activity uses a dynamic view based on the available rocks.
+ */
 public class RockListActivity extends ActionBarActivity {
+
+    public static void launchActivity(Context context)
+    {
+        if(context == null)
+            throw new IllegalArgumentException("context is null");
+
+        Intent i = new Intent(context, RockListActivity.class);
+        context.startActivity(i);
+    }
+
+    public KillhopeApplication getKillhopeApplication()
+    {
+        return (KillhopeApplication) super.getApplication();
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rock_list);
+
+        ScrollView v = (ScrollView)this.findViewById(R.id.scroll_view_content_wrapper);
+
+        LinearLayout layout = new LinearLayout(this);
+        layout.setOrientation(LinearLayout.VERTICAL);
+        v.addView(layout);
+
+        List<RockDTO> rocks = getKillhopeApplication().getRockList();
+
+        RockListFacade d = new RockListFacade(rocks);
+
+        int screenWidth = DisplayUtilities.getScreenWidth(this);
+
+        for(RockDTO rock : d.getRocksForScreenSize(screenWidth))
+        {
+            View forRock = createViewForRock(rock);
+            layout.addView(forRock);
+        }
     }
+
+
+
+    private View createViewForRock(final RockDTO rock)
+    {
+        TextView v = new TextView(this);
+        Drawable background = new BitmapDrawable(getResources(), rock.getRockListImage());
+        setBackground(v, background);
+        v.setSingleLine(true);
+        v.setTextSize(40);
+        v.setGravity(Gravity.CENTER);
+        v.setTextColor(Color.WHITE);
+        //Note: shadow doesn't personally look great, but it's easy and looks better than nothing.
+        v.setShadowLayer(25f, 5.5f, 5.5f, Color.BLACK);
+        v.setText(rock.getName());
+
+        v.setClickable(true);
+        final Activity self = this;
+
+        v.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        RockDisplayActivity.launchActivity(self, rock);
+                    }
+                }
+        );
+        return v;
+    }
+
+
+
+    @SuppressWarnings("deprecation")
+    private void setBackground(TextView view, Drawable background) {
+        //Move into a helper function if needed again,
+        if (android.os.Build.VERSION.SDK_INT >= 16)
+            view.setBackground(background);
+        else
+            view.setBackgroundDrawable(background);
+
+    }
+
 
 
     @Override
