@@ -9,9 +9,10 @@
         <attr name="metaButtonBarButtonStyle" format="reference" />
     </declare-styleable>
 
-    <resources>
-        <declare-styleable name="MyGallery">
-            <attr name="android:galleryItemBackground" />
-        </declare-styleable>
-    </resources>
+
+    <declare-styleable name="MyGallery">
+        <attr name="android:galleryItemBackground" />
+    </declare-styleable>
+
+
 </resources>
