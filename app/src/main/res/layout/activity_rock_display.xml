@@ -5,22 +5,23 @@
 
         <TableLayout
             android:id="@+id/tableLayout1"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
             android:background="@drawable/gradient">
 
 
             <TableRow
                 android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal" >
-
-                <ImageView
-                    android:layout_width="200dp"
-                    android:layout_height="200dp"
-                    android:id="@+id/imageView"
-                     android:layout_centerHorizontal="true"
-                    android:layout_marginTop="15dp" />
+                android:layout_height="wrap_content">
+                <HorizontalScrollView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" >
+                    <LinearLayout
+                        android:id="@+id/mygallery"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    </HorizontalScrollView>
 
             </TableRow>
 
@@ -57,7 +58,7 @@
             </TableRow>
 
             <TableRow
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
                 android:layout_width="fill_parent"
                 android:gravity="center_horizontal">
 
@@ -70,4 +71,5 @@
                     android:scrollbars = "vertical" />
             </TableRow>
         </TableLayout>
+
 </ScrollView>

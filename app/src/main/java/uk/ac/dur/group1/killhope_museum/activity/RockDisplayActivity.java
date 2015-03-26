@@ -1,22 +1,35 @@
 package uk.ac.dur.group1.killhope_museum.activity;
 
-import android.app.ActionBar;
-import android.os.Environment;
-import android.support.v7.app.ActionBarActivity;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.media.Image;
 import android.os.Bundle;
-import android.view.Gravity;
+import android.support.v4.view.PagerAdapter;
+import android.support.v4.view.ViewPager;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.ActionBarActivity;
+import android.view.LayoutInflater;
 import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.BaseAdapter;
+import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
-import android.widget.TableLayout;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import uk.ac.dur.group1.killhope_museum.R;
 
+import static android.widget.AdapterView.OnItemClickListener;
 
-public class RockDisplayActivity extends ActionBarActivity {
+
+public class RockDisplayActivity extends ActionBarActivity implements View.OnClickListener{
 //simulating the public class:
+
 
     String title = "Ankerite";
     String formula = "CaCO3";
@@ -24,25 +37,19 @@ public class RockDisplayActivity extends ActionBarActivity {
             "group of rhombohedral carbonates with formula: Ca(Fe,Mg,Mn)(CO3)2. In composition it is " +
             "closely related to dolomite, but differs from this in having magnesium replaced by " +
             "varying amounts of iron(II) and manganese.";
-    String image = "/assets/Rocks/ankerite.jpg";
 
+    int images[] = {R.drawable.ankerite, R.drawable.ankerite2, R.drawable.ankerite3, R.drawable.ankerite4};
+    //the images to display
+
+    LinearLayout imageGallery;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rock_display);
-        this.populate();
-        android.support.v7.app.ActionBar actionBar = getSupportActionBar();
-        actionBar.setBackgroundDrawable(getResources().getDrawable(R.drawable.ab_gradient));
-    }
 
-
-    public void populate() {
         getSupportActionBar().setTitle(title);    //set the title
-
-     //   getSupportActionBar().setIcon(getResources().getDrawable(R.drawable.ic_menu_logo));
-        ImageView image = (ImageView) findViewById(R.id.imageView);
-        image.setImageResource(R.drawable.ankerite);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setBackgroundDrawable(getResources().getDrawable(R.drawable.ab_gradient)); //set the background to the actionbar
 
         TextView textFormula = (TextView) findViewById(R.id.chemFormulaInfo);
         textFormula.setText(formula);
@@ -50,6 +57,22 @@ public class RockDisplayActivity extends ActionBarActivity {
         TextView textTitle = (TextView) findViewById(R.id.textInfo);
         textTitle.setText(info);
 
+        LinearLayout imageGallery = (LinearLayout) findViewById(R.id.mygallery);
+        for (int i=0; i<images.length; i++) {
+            ImageView iv = new ImageView(this);
+            iv.setId(images[i]);
+            iv.setOnClickListener(this);
+            iv.setBackgroundResource(images[i]);
+            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(400, 400);
+            iv.setLayoutParams(layoutParams);
+            imageGallery.addView(iv);
+        }
+    }
+
+    @Override
+    public void onClick(View v) {
+        //TODO : It is not opening when the user clicks on the images
+        FullScreenImageActivity.launchActivity(this, R.drawable.ankerite);
     }
 
     @Override
@@ -61,26 +84,7 @@ public class RockDisplayActivity extends ActionBarActivity {
 }
 
 
-//TODO: PUT IMAGES ON ACTION MENU
-//TODO: BACKGROUND COLORS(improve it)
-//TODO: IMAGE'S GALLERY
+//TODO: FULL SCREEN IMAGE IS NOT WORKING ON IMAGE GALLERY
 //TODO: TEST WITH SOME REAL INFO
-    /*
+//TODO: FULL SCREEN PROBLEM
 
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-}
-*/
