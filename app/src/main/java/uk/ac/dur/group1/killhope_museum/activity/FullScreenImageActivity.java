@@ -33,6 +33,13 @@ import uk.ac.dur.group1.killhope_museum.R;
 public class FullScreenImageActivity extends Activity {
 
     /**
+     * A cached value to get around problems with serialising large objects in-between activities.
+     * Will only be set between launchActivity() and when the dialog is closed.
+     * This is not unset on onCreate() because a screen rotation would leave the value unset.
+     */
+    private static Bitmap cachedValue = null;
+
+    /**
      * Launches the activity to display the specified bitmap.
      * @param context The context to launch the activity from
      * @param resourceID the id of the resource in the local resources folder.
@@ -44,6 +51,17 @@ public class FullScreenImageActivity extends Activity {
 
         Intent myIntent = new Intent(context, FullScreenImageActivity.class);
         myIntent.putExtra(IMAGE_KEY, resourceID);
+        context.startActivity(myIntent);
+    }
+
+
+    public static void launchActivity(Context context, Bitmap image)
+    {
+        if (context == null)
+            throw new IllegalArgumentException("context is null");
+
+        Intent myIntent = new Intent(context, FullScreenImageActivity.class);
+        FullScreenImageActivity.cachedValue = image;
         context.startActivity(myIntent);
     }
 
@@ -83,6 +101,7 @@ public class FullScreenImageActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        FullScreenImageActivity.cachedValue = null;
 
         setContentView(R.layout.activity_full_screen_image);
 
@@ -161,12 +180,17 @@ public class FullScreenImageActivity extends Activity {
             }
         });
 
-        int resourceID = this.getIntent().getIntExtra(IMAGE_KEY, -1);
-        if(resourceID == -1)
-            throw new IllegalArgumentException("Invalid/no key set: " + IMAGE_KEY);
 
-        Bitmap b = BitmapFactory.decodeResource(this.getResources(), resourceID);
-        this.loadImage(b);
+        if(cachedValue == null)
+        {
+            int resourceID = this.getIntent().getIntExtra(IMAGE_KEY, -1);
+            if (resourceID == -1)
+                throw new IllegalArgumentException("Invalid/no key set: " + IMAGE_KEY);
+
+            cachedValue = BitmapFactory.decodeResource(this.getResources(), resourceID);
+        }
+
+        this.loadImage(cachedValue);
     }
 
     private void loadImage(Bitmap image)
@@ -273,5 +297,11 @@ public class FullScreenImageActivity extends Activity {
     private void delayedHide(int delayMillis) {
         mHideHandler.removeCallbacks(mHideRunnable);
         mHideHandler.postDelayed(mHideRunnable, delayMillis);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        FullScreenImageActivity.cachedValue = null;
     }
 }
