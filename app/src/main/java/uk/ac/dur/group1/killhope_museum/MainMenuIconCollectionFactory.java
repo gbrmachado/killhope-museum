@@ -10,6 +10,7 @@ import java.util.Collection;
 import java.util.List;
 
 import uk.ac.dur.group1.killhope_museum.activity.RockListActivity;
+import uk.ac.dur.group1.killhope_museum.activity.quiz_homeActivity;
 
 /**
  * Created by David on 23/03/2015.
@@ -105,7 +106,11 @@ public class MainMenuIconCollectionFactory
     {
         public LaunchQuizCommand(Context context) { super(context); }
         @Override
-        public void execute() { Toast.makeText(context, "Quiz not implemented", Toast.LENGTH_LONG).show(); }
+        public void execute()
+        {
+            quiz_homeActivity.launchActivity(this.context);
+        }
+
     }
     private static class LaunchMuseumCommand extends LaunchActivityCommand
 {

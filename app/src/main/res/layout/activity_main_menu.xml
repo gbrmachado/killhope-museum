@@ -26,7 +26,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/main_menu_top_right_image"
-                android:layout_column="2" />
+                android:layout_column="2"
+                android:onClick="go_to_quiz_home"/>
         </TableRow>
 
         <TableRow
@@ -75,7 +76,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/main_menu_bottom_right_image"
                 android:layout_column="2"
-                android:layout_gravity="center" />
+                android:layout_gravity="center"/>
         </TableRow>
     </TableLayout>
 
