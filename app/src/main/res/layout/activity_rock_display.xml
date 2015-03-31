@@ -1,75 +1,66 @@
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/ScrollView01"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
+    android:layout_height="fill_parent"
+    android:background="#BDCCE0" >
 
-        <TableLayout
-            android:id="@+id/tableLayout1"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_weight="1"
+    <ScrollView
+        android:id="@+id/ScrollView01"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
             android:background="@drawable/gradient">
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/rockPage_basicInfo"
+                android:id="@+id/basicInfo" />
 
-            <TableRow
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content">
-                <HorizontalScrollView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" >
-                    <LinearLayout
-                        android:id="@+id/mygallery"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
-                    </HorizontalScrollView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000"
+                android:text="@string/rockPage_chemForm"
+                android:id="@+id/chemFormula"/>
 
-            </TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="@dimen/font_size"
+                android:textColor="#000"
+                android:text="Formula"
+                android:id="@+id/chemFormulaInfo"
+                android:layout_column="1" />
 
-            <TableRow
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent">
+            <WebView  xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/webview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:text="@string/rockPage_basicInfo"
-                    android:id="@+id/basicInfo"/>
-            </TableRow>
+        </LinearLayout>
 
-            <TableRow
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:text="@string/rockPage_chemForm"
-                    android:id="@+id/chemFormula"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:text="Formula"
-                    android:id="@+id/chemFormulaInfo"
-                    android:layout_column="1" />
-            </TableRow>
-
-            <TableRow
-                android:layout_height="0dp"
-                android:layout_width="fill_parent"
-                android:gravity="center_horizontal">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:text="Info"
-                    android:id="@+id/textInfo"
-                    android:scrollbars = "vertical" />
-            </TableRow>
-        </TableLayout>
-
-</ScrollView>
+    </ScrollView>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <HorizontalScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+        <LinearLayout
+            android:id="@+id/mygallery"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0"
+            android:layout_gravity="center_horizontal|bottom" />
+    </HorizontalScrollView>
+    </LinearLayout>
+</RelativeLayout>

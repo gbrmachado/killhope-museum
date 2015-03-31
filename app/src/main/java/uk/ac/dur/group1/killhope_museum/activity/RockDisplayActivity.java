@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.view.Menu;
 import android.view.View;
+import android.webkit.WebView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -22,14 +23,19 @@ import uk.ac.dur.group1.killhope_museum.dto.RockDTO;
 
 public class RockDisplayActivity extends ActionBarActivity implements View.OnClickListener{
 //simulating the public class:
+    String uniqueId = "Rock-Ankerite";
+
     String title = "Ankerite";
-    String formula = "CaCO3";
-    String info = "Ankerite is a calcium, iron, magnesium, manganese carbonate mineral of the " +
-            "group of rhombohedral carbonates with formula: Ca(Fe,Mg,Mn)(CO3)2. In composition it is " +
-            "closely related to dolomite, but differs from this in having magnesium replaced by " +
-            "varying amounts of iron(II) and manganese.";
+    String formula = "PCa(Mg, Fe2+, Mn)(CO₃)₂";
+    String content[] = {
+            "<b>Colour</b>: White/Yellowish white.<br/><b>Abundance</b>: Frequently fills joints in coal seams.<br/><b>Hardness</b>: 3.5 - 4 (Soft - Medium).<br/><b>Lustre</b>: Vitreous to pearly.<br/><b>Ore</b>: Gangue mineral accompanying iron ore.<br/><b>Interesting fact</b>: Darkens with heating and may become magnetic.",
+            "<b>Uses</b>: Minor iron ore.<br/><b>Main countries involved in the extraction of mineral</b>: N/A.<br/><b>Crystal Habit</b>: Rhombohedral with curved faces, columnar, granular, massive.<br/><b>Crystal Structure</b>: Trigonal.<br/><b>Depositional Environment</b>: Result of both hydrothermal, low-temperature metasomatism and banded iron formations.<br/><b>Transparency</b>: Translucent - transparent.<br/><b>Origin of Name</b>: Named after M.J.Anker, an Austrian mineralogist.<br/><b>Colours Observed at Killhope</b>: Cream, brown.",
+            "<b>Further uses</b>: None.<br/><b>Streak</b>: White.<br/><b>Cleavage</b>: Perfect.<br/><b>Fracture</b>: Subconchoidal.",
+            "<b>Specific Gravity</b>: 2.93 - 3.10.<br/><b>Further properties</b>: Colour turns yellowish brown/brown when oxidation of iron has occured.<br/><b>Relevance at Killhope</b>: Large concentration of ankerite accompany galena-sphalerite-fluorite-baryte veins such as in the North Pennines orefield where limestone or quartz dolerite has been replaced.<br/><b>Optical Properties</b>: Increasing replacement of Mg by Fe2+ increases the refractive indices, birefringence and specific gravity."
+    };
 
 
+    String finalContent = "";
     public static void launchActivity(Context context, RockDTO rock)
     {
         Toast.makeText(context, "Show: " + rock.getID() + " Not implemented", Toast.LENGTH_SHORT).show();
@@ -53,19 +59,27 @@ public class RockDisplayActivity extends ActionBarActivity implements View.OnCli
         TextView textFormula = (TextView) findViewById(R.id.chemFormulaInfo);
         textFormula.setText(formula);
 
-        TextView textTitle = (TextView) findViewById(R.id.textInfo);
-        textTitle.setText(info);
-
         LinearLayout imageGallery = (LinearLayout) findViewById(R.id.mygallery);
         for (int i=0; i<images.length; i++) {
             ImageView iv = new ImageView(this);
             iv.setId(images[i]);
             iv.setOnClickListener(this);
             iv.setBackgroundResource(images[i]);
-            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(400, 400);
+            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(300, 300);
             iv.setLayoutParams(layoutParams);
             imageGallery.addView(iv);
         }
+
+        WebView mywebView = (WebView) findViewById(R.id.webview);
+        mywebView.getSettings().setJavaScriptEnabled(true);
+        mywebView.setBackgroundColor(0x00000000);   //set the transparent background
+        for (int i=0; i<content.length; i++) {
+            finalContent = finalContent + content[i] + "<br>";
+
+        }
+        mywebView.loadData(finalContent, "text/html", "UTF-8");
+
+
     }
 
     @Override
