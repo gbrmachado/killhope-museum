@@ -37,6 +37,7 @@ public class quiz_processActivity extends Activity{
     private RadioButton radio_three;
     private RadioGroup radio_group;
     private Button button_one;
+    private Button button_two;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,6 +68,8 @@ public class quiz_processActivity extends Activity{
         radio_three = (RadioButton) findViewById(R.id.answer_three);
         radio_three.setText(answer_array[2]);
         button_one = (Button) findViewById(R.id.button_one);
+        button_two = (Button) findViewById(R.id.button_two);
+        button_two.setEnabled(false);
 
     }
 
@@ -87,6 +90,7 @@ public class quiz_processActivity extends Activity{
 
     // click method for button next
     public void onClickNext(View view) {
+        button_two.setEnabled(true);
         // to check whether has been go back to the previous page, if yes, dont change.
         int num = radio_group.getCheckedRadioButtonId();
         if(checkPrevious == 0) {
@@ -140,6 +144,9 @@ public class quiz_processActivity extends Activity{
             display();
             int pos = checked_array.get(currentQuestion-1);
             radio_group.check(pos);
+            if(currentQuestion == 1){
+                button_two.setEnabled(false);
+            }
         }
     }
 

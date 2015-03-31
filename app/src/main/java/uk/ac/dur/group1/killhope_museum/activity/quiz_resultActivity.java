@@ -27,13 +27,13 @@ public class quiz_resultActivity extends Activity{
         // second text
         TextView textView_two = (TextView) findViewById(R.id.text_two);
         if(num >= 2){
-            textView_two.setText("Not Bad, try harder one !!!!");
+            textView_two.setText("Not Bad, try a harder level !!!!");
         }else{
             textView_two.setText("You can do Better, try again !!!!");
         }
         // third text, display correct answers
         ArrayList<String> answer = getIntent().getExtras().getStringArrayList("selectedWrong");
-        String display = "";
+        String display = "Check the following incorrect answer ! \n\n";
         int count = 0;
         for(String item:answer){
             display = display + item + "\n";
