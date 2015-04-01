@@ -48,6 +48,16 @@
             android:noHistory="true"
             android:theme="@style/FullscreenTheme" >
         </activity>
+
+        <activity android:name=".activity.quiz_homeActivity"
+            android:label="quiz home"></activity>
+
+        <activity android:name=".activity.quiz_processActivity"
+            android:label="quiz Processing"></activity>
+
+        <activity android:name=".activity.quiz_resultActivity"
+            android:label="quiz result"></activity>
+
     </application>
 
 </manifest>

@@ -5,6 +5,8 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import uk.ac.dur.group1.killhope_museum.MainMenuIcon;
 import uk.ac.dur.group1.killhope_museum.R;
@@ -14,17 +16,32 @@ public class SplashScreenActivity extends ActionBarActivity {
 
     //Wait 3 seconds before running the next activity.
     private static final int TIMEOUT_MILLISECONDS = 3000;
+    private TextView textView;
+    private ImageView headlogo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
-        
+        textView = (TextView)findViewById(R.id.centra_view);
+
+        headlogo = (ImageView)findViewById(R.id.imageView);
+        headlogo.setImageResource(R.drawable.killhope_logo);
         final SplashScreenActivity self = this;
         new Handler().postDelayed(new Runnable() {
             public void run() {
-                MainMenuActivity.launchActivity(self);
-                finish();
+                textView.setText("There's so much to see and do...");
+                new Handler().postDelayed(new Runnable() {
+                    public void run() {
+                        textView.setText("The best preserved lead mining site in Britain");
+                        new Handler().postDelayed(new Runnable() {
+                            public void run() {
+                            MainMenuActivity.launchActivity(self);
+                            finish();
+                            }
+                        }, TIMEOUT_MILLISECONDS);
+                    }
+                }, TIMEOUT_MILLISECONDS);
             }
         }, TIMEOUT_MILLISECONDS);
     }

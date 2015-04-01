@@ -107,6 +107,13 @@ public class MainMenuActivity extends ActionBarActivity {
     }
 
 
+    public void go_to_quiz_home(){
+        Intent intent = new Intent(MainMenuActivity.this,quiz_homeActivity.class);
+        this.finish();
+        startActivity(intent);
+
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -126,7 +133,6 @@ public class MainMenuActivity extends ActionBarActivity {
         if (id == R.id.action_settings) {
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 }
