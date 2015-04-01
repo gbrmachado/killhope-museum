@@ -9,6 +9,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 
+import uk.ac.dur.group1.killhope_museum.QRCodeActivity;
 import uk.ac.dur.group1.killhope_museum.activity.RockListActivity;
 import uk.ac.dur.group1.killhope_museum.activity.quiz_homeActivity;
 
@@ -122,7 +123,7 @@ public class MainMenuIconCollectionFactory
     {
         public LaunchQRCodeCommand(Context context) { super(context); }
         @Override
-        public void execute() { Toast.makeText(context, "QR code not implemented", Toast.LENGTH_LONG).show();   }
+        public void execute() { QRCodeActivity.launchActivity(this.context);   }
     }
     private static class LaunchMapCommand extends LaunchActivityCommand
     {
