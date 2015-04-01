@@ -17,9 +17,16 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    packagingOptions
+    {
+        exclude 'META-INF/LICENSE' //Stop error in Android studio due to duplication of Jackson licences.
+        exclude 'META-INF/NOTICE'
+    }
 }
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:21.0.3'
+    compile 'com.fasterxml.jackson.core:jackson-databind:2.5.1'
+
 }
