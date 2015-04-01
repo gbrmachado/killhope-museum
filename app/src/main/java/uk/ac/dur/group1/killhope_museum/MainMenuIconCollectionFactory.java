@@ -9,7 +9,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 
-import uk.ac.dur.group1.killhope_museum.QRCodeActivity;
+import uk.ac.dur.group1.killhope_museum.activity.QRCodeActivity;
 import uk.ac.dur.group1.killhope_museum.activity.RockListActivity;
 import uk.ac.dur.group1.killhope_museum.activity.quiz_homeActivity;
 

@@ -58,7 +58,8 @@ public class RockListFactory
         //TODO: Remainder for Ben.
         for(int i = 1; i < 14; i++)
         {
-            RockDTO r = new RockDTO(names.get(i));
+            RockDTO r = new RockDTO("Rocks-" + names.get(i));
+            r.setDisplayName(names.get(i));
             r.setRockListImage(BitmapFactory.decodeResource(applicationResources, ids.get(i)));
             rocks.add(r);
         }

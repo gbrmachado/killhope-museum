@@ -1,18 +1,23 @@
-package uk.ac.dur.group1.killhope_museum;
+package uk.ac.dur.group1.killhope_museum.activity;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
+
+import uk.ac.dur.group1.killhope_museum.KillhopeApplication;
+import uk.ac.dur.group1.killhope_museum.R;
 
 
 public class QRCodeActivity extends ActionBarActivity {
@@ -49,14 +54,35 @@ public class QRCodeActivity extends ActionBarActivity {
 
     public void onActivityResult(int requestCode, int resultCode, Intent intent) {
         IntentResult scanResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, intent);
-        if (scanResult != null) {
-            String re = scanResult.getContents();
-            Log.d("code", re);
+        if (scanResult == null) {
+            finish();
+            return;
         }
-        // else continue with any other code you need in the method
+
+        String potentialRockID = scanResult.getContents();
+        if (potentialRockID == null)
+        {
+            //the user cancelled.
+            finish();
+            return;
+        }
+
+        KillhopeApplication app = (KillhopeApplication) getApplication();
+
+        if(!app.isValidRockID(potentialRockID))
+        {
+            new AlertDialog.Builder(this)
+                    .setTitle("Error")
+                    .setMessage(String.format("The supplied asset ID: %s was not found in the database.", potentialRockID))
+                    .setCancelable(false).setPositiveButton("ok", null)
+                    .create().show();
+            return; //let the user try again, or back out.
+        }
+
+        finish();
+        RockDisplayActivity.launchActivity(this, app.getRock(potentialRockID));
 
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
