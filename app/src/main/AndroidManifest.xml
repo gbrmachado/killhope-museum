@@ -22,7 +22,7 @@
             android:label="@string/title_activity_main_menu" >
         </activity>
         <activity
-            android:name=".QRCodeActivity"
+            android:name=".activity.QRCodeActivity"
             android:label="@string/title_activity_qrcode" >
         </activity>
         <activity

@@ -1,18 +1,19 @@
-package uk.ac.dur.group1.killhope_museum;
+package uk.ac.dur.group1.killhope_museum.activity;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
+
+import uk.ac.dur.group1.killhope_museum.R;
 
 
 public class QRCodeActivity extends ActionBarActivity {
