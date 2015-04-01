@@ -24,6 +24,7 @@ import android.widget.ImageView;
 import java.io.ByteArrayOutputStream;
 
 import uk.ac.dur.group1.killhope_museum.R;
+import uk.ac.dur.group1.killhope_museum.utilities.BitmapUtilities;
 
 /**
  * A full-screen activity that displays a specified image.
@@ -197,10 +198,7 @@ public class FullScreenImageActivity extends Activity {
     {
         //convert the image to base64 so we don't need to deal with more problems with relative URLs
         //if we convert this to a server-based interface.
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        image.compress(Bitmap.CompressFormat.JPEG, 100, baos); //bm is the bitmap object
-        byte[] byteArrayImage = baos.toByteArray();
-        String encodedImage = Base64.encodeToString(byteArrayImage, Base64.DEFAULT);
+        String encodedImage = BitmapUtilities.convertToBase64(image);
 
         WebView v = (WebView)this.findViewById(R.id.full_screen_image_web_view);
         String data = getHTML(encodedImage);
