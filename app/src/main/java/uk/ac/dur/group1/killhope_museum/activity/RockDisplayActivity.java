@@ -75,11 +75,8 @@ public class RockDisplayActivity extends ActionBarActivity implements View.OnCli
         mywebView.setBackgroundColor(0x00000000);   //set the transparent background
         for (int i=0; i<content.length; i++) {
             finalContent = finalContent + content[i] + "<br>";
-
         }
         mywebView.loadData(finalContent, "text/html", "UTF-8");
-
-
     }
 
     @Override
