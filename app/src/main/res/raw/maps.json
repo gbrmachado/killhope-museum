@@ -1,0 +1,140 @@
+{
+    "Title": "Killhope",
+    "Image": "",
+    "Height": 746,
+    "Exhibitions": [],
+    "Rooms": [
+        {
+            "id": "Room 5",
+            "rocks": [],
+            "points": [
+                {
+                    "x": 244,
+                    "y": 16
+                },
+                {
+                    "x": 611,
+                    "y": 16
+                },
+                {
+                    "x": 611,
+                    "y": 185
+                },
+                {
+                    "x": 244,
+                    "y": 185
+                }
+            ]
+        },
+        {
+            "id": "Room 6",
+            "rocks": [],
+            "points": [
+                {
+                    "x": 611,
+                    "y": 16
+                },
+                {
+                    "x": 752,
+                    "y": 16
+                },
+                {
+                    "x": 752,
+                    "y": 384
+                },
+                {
+                    "x": 611,
+                    "y": 384
+                }
+            ]
+        },
+        {
+            "id": "Room 3",
+            "rocks": ["Rocks-Galena","Rocks-Quartz","Rocks-Fluorite"],
+            "points": [
+                {
+                    "x": 244,
+                    "y": 187
+                },
+                {
+                    "x": 611,
+                    "y": 187
+                },
+                {
+                    "x": 611,
+                    "y": 277
+                },
+                {
+                    "x": 244,
+                    "y": 277
+                }
+            ]
+        },
+        {
+            "id": "Room 2",
+            "rocks": ["Rocks-Fluorite","Rocks-Calcite", "Rocks-Sphalerite", "Rocks-Galena", "Rocks-Baryte", "Rocks-Galena", "Rocks-Quartz"],
+            "points": [
+                {
+                    "x": 244,
+                    "y": 277
+                },
+                {
+                    "x": 428,
+                    "y": 277
+                },
+                {
+                    "x": 428,
+                    "y": 384
+                },
+                {
+                    "x": 244,
+                    "y": 384
+                }
+            ]
+        },
+        {
+            "id": "Room 3",
+            "rocks": ["Rocks-Galena", "Rocks-Fluorite", "Rocks-Quartz"],
+            "points": [
+                {
+                    "x": 428,
+                    "y": 277
+                },
+                {
+                    "x": 611,
+                    "y": 277
+                },
+                {
+                    "x": 611,
+                    "y": 384
+                },
+                {
+                    "x": 428,
+                    "y": 384
+                }
+            ]
+        },
+        {
+            "id": "Room 1",
+            "rocks": ["Rocks-Sphalerite", "Rocks-Limonite", "Rocks-Galena", "Rocks-Cerussite", "Rocks-Baryte", "Rocks-Witherite", "Rocks-Baryfocalite", "Rocks-Calcite", "Rocks-Ankerite", "Rocks-Fluorite", "Rocks-Siderite", "Rocks-Quartz"],
+            "points": [
+                {
+                    "x": 411,
+                    "y": 384
+                },
+                {
+                    "x": 611,
+                    "y": 384
+                },
+                {
+                    "x": 611,
+                    "y": 614
+                },
+                {
+                    "x": 411,
+                    "y": 614
+                }
+            ]
+        }
+    ]
+}

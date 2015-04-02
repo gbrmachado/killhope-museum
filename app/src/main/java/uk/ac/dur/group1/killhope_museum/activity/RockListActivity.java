@@ -18,8 +18,10 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import uk.ac.dur.group1.killhope_museum.KillhopeApplication;
@@ -37,13 +39,30 @@ import uk.ac.dur.group1.killhope_museum.utilities.DisplayUtilities;
  */
 public class RockListActivity extends ActionBarActivity {
 
-    public static void launchActivity(Context context)
+    private static final String FILTER_KEY = "Filter";
+    public static void launchActivity(Context context, Iterable<String> rockList)
     {
         if(context == null)
             throw new IllegalArgumentException("context is null");
 
         Intent i = new Intent(context, RockListActivity.class);
+
+        if(rockList != null)
+        {
+            ArrayList<String> rocks = new ArrayList<>();
+            for(String r : rockList)
+                rocks.add(r);
+            String[] arr = new String[rocks.size()];
+            rocks.toArray(arr);
+            i.putExtra(FILTER_KEY, arr);
+        }
+
         context.startActivity(i);
+    }
+
+    public static void launchActivity(Context context)
+    {
+        launchActivity(context, null);
     }
 
     public KillhopeApplication getKillhopeApplication()
@@ -64,7 +83,7 @@ public class RockListActivity extends ActionBarActivity {
         v.addView(layout);
 
         List<RockDTO> rocks = getKillhopeApplication().getRockList();
-
+        rocks = filterRocks(rocks);
         RockListFacade d = new RockListFacade(rocks);
 
         int screenWidth = DisplayUtilities.getScreenWidth(this);
@@ -76,6 +95,29 @@ public class RockListActivity extends ActionBarActivity {
         }
     }
 
+    /**
+     * A parameter may be passed to this to filter the rocks based on the ID.
+     * @param rocks the list to filter
+     * @return the filtered list
+     */
+    private List<RockDTO> filterRocks(List<RockDTO> rocks)
+    {
+        String[] filter = this.getIntent().getStringArrayExtra(FILTER_KEY);
+
+        if(filter == null)
+            return rocks;
+
+        List<String> collectionFilter = Arrays.asList(filter);
+
+        ArrayList<RockDTO> ret = new ArrayList<>();
+
+        for(RockDTO rock : rocks)
+            if(collectionFilter.contains(rock.getID()))
+                ret.add(rock);
+
+
+        return ret;
+    }
 
 
     private View createViewForRock(final RockDTO rock)
