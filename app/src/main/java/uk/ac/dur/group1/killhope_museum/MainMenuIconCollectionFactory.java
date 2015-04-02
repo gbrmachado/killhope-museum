@@ -9,6 +9,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 
+import uk.ac.dur.group1.killhope_museum.activity.MapsActivity;
 import uk.ac.dur.group1.killhope_museum.activity.RockListActivity;
 import uk.ac.dur.group1.killhope_museum.activity.quiz_homeActivity;
 
@@ -128,7 +129,7 @@ public class MainMenuIconCollectionFactory
     {
         public LaunchMapCommand(Context context) { super(context); }
         @Override
-        public void execute()  {   Toast.makeText(context, "Map not implemented", Toast.LENGTH_LONG).show(); }
+        public void execute() { MapsActivity.launchActivity(context); }
     }
 
     private static abstract class LaunchActivityCommand implements ICommand
