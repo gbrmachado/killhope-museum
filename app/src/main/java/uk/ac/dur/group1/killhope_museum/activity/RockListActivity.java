@@ -18,6 +18,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,6 +37,12 @@ import uk.ac.dur.group1.killhope_museum.utilities.DisplayUtilities;
  * This activity uses a dynamic view based on the available rocks.
  */
 public class RockListActivity extends ActionBarActivity {
+
+    public static void launchActivity(Context context, Iterable<String> rockList)
+    {
+        Toast.makeText(context, "listing specific rocks", Toast.LENGTH_SHORT).show();
+        launchActivity(context);
+    }
 
     public static void launchActivity(Context context)
     {
