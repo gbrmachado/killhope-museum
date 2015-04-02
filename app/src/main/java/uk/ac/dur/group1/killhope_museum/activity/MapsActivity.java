@@ -70,6 +70,7 @@ public class MapsActivity extends ActionBarActivity
     private void setupMap()
     {
         WebView mapView = getWebView();
+        mapView.getSettings().setJavaScriptEnabled(true);
         mapView.addJavascriptInterface(new WebAppInterface(this), "Android");
         final Context self = this;
         mapView.setWebChromeClient
