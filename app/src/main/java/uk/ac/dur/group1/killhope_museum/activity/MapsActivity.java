@@ -72,30 +72,17 @@ public class MapsActivity extends ActionBarActivity
         WebView mapView = getWebView();
         mapView.getSettings().setJavaScriptEnabled(true);
         mapView.addJavascriptInterface(new WebAppInterface(this), "Android");
-        final Context self = this;
-        mapView.setWebChromeClient
-        (
-                new WebChromeClient() {
-                    @Override
-                    public boolean onJsAlert(WebView view, String url, String message, JsResult result) {
-                        Toast.makeText(self, "alert", Toast.LENGTH_SHORT).show();
-                        return super.onJsAlert(view, url, message, result);
-                    }
-                }
-        );
 
         String data = String.format("<!DOCTYPE html>\n<html>\n<head>" +
                 "<script type=\"text/javascript\">\n" +
                 "alert('hello');\n" +
                 "function load(s)\n" +
                 "{\n" +
-                "   alert(\"hit\");\n" +
                 "   Android.loadData(s);\n" +
                 "}\n" +
                 "</script>\n" +
                 "</head>\n" +
                 " <body>%s\n" +
-                "<script>alert('hello');</script>\n" +
                 "</body>\n" +
                 "</html>", toImageMap(this.getMap()));
         getWebView().loadData(data, "text/html", "UTF-8");
@@ -171,7 +158,6 @@ public class MapsActivity extends ActionBarActivity
         @JavascriptInterface
         public void loadData(String data) {
             MapDTO.RoomDTO room = map.getRoom(data);
-            Toast.makeText(self, room.getId(), Toast.LENGTH_SHORT).show();
             if (room.hasRockFilter()) {
                 Iterable<String> rockList = room.getRocks();
                 RockListActivity.launchActivity(self, rockList);
