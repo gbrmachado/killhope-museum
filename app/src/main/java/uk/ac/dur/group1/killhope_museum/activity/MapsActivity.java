@@ -1,6 +1,8 @@
 package uk.ac.dur.group1.killhope_museum.activity;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Point;
@@ -11,6 +13,7 @@ import android.view.MenuItem;
 import android.webkit.JavascriptInterface;
 import android.webkit.JsResult;
 import android.webkit.WebChromeClient;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Toast;
@@ -48,7 +51,22 @@ public class MapsActivity extends ActionBarActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
 
-        setupMap();
+        final MapsActivity self = this;
+        try {
+            setupMap();
+        } catch (Exception e)
+        {
+            new AlertDialog.Builder(this)
+                    .setTitle("Error")
+                    .setMessage("Error creating maps: " + e.getMessage())
+                    .setCancelable(false).setPositiveButton("ok", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    self.finish();
+                }
+            })
+                    .create().show();
+        }
     }
 
     private KillhopeApplication getKillhopeApplication()
@@ -70,7 +88,12 @@ public class MapsActivity extends ActionBarActivity
     private void setupMap()
     {
         WebView mapView = getWebView();
-        mapView.getSettings().setJavaScriptEnabled(true);
+
+        WebSettings settings = mapView.getSettings();
+        settings.setJavaScriptEnabled(true);
+        settings.setBuiltInZoomControls(true);
+        settings.setSupportZoom(true);
+
         mapView.addJavascriptInterface(new WebAppInterface(this), "Android");
 
         String data = String.format("<!DOCTYPE html>\n<html>\n<head>" +
