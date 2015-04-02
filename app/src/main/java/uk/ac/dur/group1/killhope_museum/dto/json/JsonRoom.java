@@ -1,5 +1,5 @@
 
-package uk.ac.dur.group1.killhope_museum.dto;
+package uk.ac.dur.group1.killhope_museum.dto.json;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -19,14 +19,14 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
         "rocks",
         "points"
 })
-public class Room {
+public class JsonRoom {
 
     @JsonProperty("id")
-    private Object id;
+    private String id;
     @JsonProperty("rocks")
-    private Object rocks;
+    private List<String> rocks;
     @JsonProperty("points")
-    private List<Point> points = new ArrayList<Point>();
+    private List<JsonPoint> points = new ArrayList<JsonPoint>();
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -36,7 +36,7 @@ public class Room {
      * The id
      */
     @JsonProperty("id")
-    public Object getId() {
+    public String getId() {
         return id;
     }
 
@@ -46,7 +46,7 @@ public class Room {
      * The id
      */
     @JsonProperty("id")
-    public void setId(Object id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -56,7 +56,7 @@ public class Room {
      * The rocks
      */
     @JsonProperty("rocks")
-    public Object getRocks() {
+    public List<String> getRocks() {
         return rocks;
     }
 
@@ -66,7 +66,7 @@ public class Room {
      * The rocks
      */
     @JsonProperty("rocks")
-    public void setRocks(Object rocks) {
+    public void setRocks(List<String> rocks) {
         this.rocks = rocks;
     }
 
@@ -76,7 +76,7 @@ public class Room {
      * The points
      */
     @JsonProperty("points")
-    public List<Point> getPoints() {
+    public List<JsonPoint> getPoints() {
         return points;
     }
 
@@ -86,7 +86,7 @@ public class Room {
      * The points
      */
     @JsonProperty("points")
-    public void setPoints(List<Point> points) {
+    public void setPoints(List<JsonPoint> points) {
         this.points = points;
     }
 

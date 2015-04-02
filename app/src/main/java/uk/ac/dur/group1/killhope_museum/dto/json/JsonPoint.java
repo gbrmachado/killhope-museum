@@ -1,7 +1,11 @@
 
-package uk.ac.dur.group1.killhope_museum.dto;
+package uk.ac.dur.group1.killhope_museum.dto.json;
 
+import android.graphics.Point;
+
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
@@ -15,7 +19,29 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
         "x",
         "y"
 })
-public class Point {
+public class JsonPoint {
+
+    //These declarations could probably be in a better place.
+    public static List<Point> getPoints(List<JsonPoint> points)
+    {
+        ArrayList<Point> ret = new ArrayList<>();
+        if(points == null)
+            return ret;
+
+        for(JsonPoint p : points)
+        {
+            ret.add(pointFromPoint(p));
+        }
+        return ret;
+    }
+
+    public static Point pointFromPoint(JsonPoint point)
+    {
+        if(point == null)
+            throw new IllegalArgumentException("point is null");
+
+        return new Point(point.getX(), point.getY());
+    }
 
     @JsonProperty("x")
     private int x;
