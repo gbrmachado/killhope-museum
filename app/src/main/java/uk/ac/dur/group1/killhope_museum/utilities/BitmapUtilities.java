@@ -97,11 +97,16 @@ public class BitmapUtilities
      */
     public static String convertToBase64(Bitmap image)
     {
+        return convertToBase64(image, Bitmap.CompressFormat.JPEG);
+    }
+
+    public static String convertToBase64(Bitmap image, Bitmap.CompressFormat format)
+    {
         if(image == null)
             throw new IllegalArgumentException("image is null");
 
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        image.compress(Bitmap.CompressFormat.JPEG, 100, baos); //bm is the bitmap object
+        image.compress(format, 100, baos); //bm is the bitmap object
         byte[] byteArrayImage = baos.toByteArray();
         return Base64.encodeToString(byteArrayImage, Base64.DEFAULT);
     }
