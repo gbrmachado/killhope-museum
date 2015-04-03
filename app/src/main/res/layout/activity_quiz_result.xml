@@ -28,7 +28,7 @@
         android:layout_gravity="center_horizontal" />
 
     <ScrollView
-        android:layout_width="207dp"
+        android:layout_width="fill_parent"
         android:layout_height="232dp"
         android:id="@+id/scrollView"
         android:layout_gravity="center">
