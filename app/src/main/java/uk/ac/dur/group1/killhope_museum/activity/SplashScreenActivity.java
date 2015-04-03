@@ -28,18 +28,14 @@ public class SplashScreenActivity extends ActionBarActivity {
         headlogo = (ImageView)findViewById(R.id.imageView);
         headlogo.setImageResource(R.drawable.killhope_logo);
         final SplashScreenActivity self = this;
+        textView.setText("There's so much to see and do...");
         new Handler().postDelayed(new Runnable() {
             public void run() {
-                textView.setText("There's so much to see and do...");
+                textView.setText("The best preserved lead mining site in Britain");
                 new Handler().postDelayed(new Runnable() {
                     public void run() {
-                        textView.setText("The best preserved lead mining site in Britain");
-                        new Handler().postDelayed(new Runnable() {
-                            public void run() {
-                            MainMenuActivity.launchActivity(self);
-                            finish();
-                            }
-                        }, TIMEOUT_MILLISECONDS);
+                        MainMenuActivity.launchActivity(self);
+                        finish();
                     }
                 }, TIMEOUT_MILLISECONDS);
             }
