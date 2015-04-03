@@ -6,7 +6,8 @@
     <ScrollView
         android:id="@+id/ScrollView01"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent">
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/rock_display_footer">
 
 
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -52,7 +53,8 @@
     <HorizontalScrollView
         android:layout_width="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content"
+        android:id="@+id/rock_display_footer">
         <LinearLayout
             android:id="@+id/mygallery"
             android:orientation="horizontal"
