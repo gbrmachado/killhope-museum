@@ -10,35 +10,40 @@
     <FrameLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:id="@+id/full_screen_content_view">
+        android:id="@+id/full_screen_content_view"
+        android:clickable="true"
+        >
 
-        <WebView
+       <WebView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/full_screen_image_web_view"
-            android:layout_gravity="center" />
+            android:layout_gravity="center"
+            android:clickable="true"/>
     </FrameLayout>
 
     <!-- This FrameLayout insets its children based on system windows using
          android:fitsSystemWindows. -->
-    <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent"
-        android:fitsSystemWindows="true">
+    <FrameLayout android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:id="@+id/fullscreen_content_controls">
 
-        <LinearLayout android:id="@+id/fullscreen_content_controls" style="?metaButtonBarStyle"
+        <LinearLayout android:id="@+id/fullscreen_content_controls_internal"
             android:layout_width="match_parent" android:layout_height="match_parent"
-            android:background="@color/black_overlay" android:orientation="vertical"
+            android:orientation="vertical"
             tools:ignore="UselessParent"
             android:layout_gravity="top|left|bottom|center|right">
 
             <ImageView
-                android:layout_width="48dp"
-                android:layout_height="48dp"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
                 android:id="@+id/full_screen_close"
                 android:src="@android:drawable/ic_notification_clear_all"
                 android:clickable="true"
                 android:layout_gravity="right"
                 android:contentDescription="Close the Current View"
-                android:focusableInTouchMode="true" />
+                />
 
         </LinearLayout>
 

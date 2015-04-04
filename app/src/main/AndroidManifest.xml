@@ -41,12 +41,12 @@
             android:name=".activity.RockDisplayActivity"
             android:label="@string/title_activity_rock_display" >
         </activity>
+        //required to detect and not destory the cached image.
         <activity
             android:name=".activity.FullScreenImageActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_full_screen_image"
-            android:noHistory="true"
-            android:theme="@style/FullscreenTheme" >
+            android:configChanges="orientation|screenSize"
+            android:noHistory="true">
         </activity>
 
         <activity android:name=".activity.quiz_homeActivity"
