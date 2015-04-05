@@ -65,7 +65,7 @@ public class RockDisplayActivity extends ActionBarActivity implements View.OnCli
         for (int i=0; i<content.length; i++) {
             finalContent = finalContent + content[i] + "<br>";
         }
-        mywebView.loadData(finalContent, "text/html", "UTF-8");
+        mywebView.loadData(finalContent , "text/html", "UTF-8");
     }
 
     @Override
@@ -84,5 +84,4 @@ public class RockDisplayActivity extends ActionBarActivity implements View.OnCli
 
 //TODO: FULL SCREEN IMAGE IS NOT WORKING ON IMAGE GALLERY
 //TODO: TEST WITH SOME REAL INFO
-//TODO: FULL SCREEN PROBLEM
 
