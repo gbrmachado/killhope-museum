@@ -47,6 +47,16 @@ public class RockDTO
         }
     }
 
+    public Iterable<Bitmap> getGallery()
+    {
+        ArrayList<Bitmap> ret = new ArrayList<>();
+        for(int i : galleryImages)
+        {
+            ret.add(potentialImages.get(i));
+        }
+        return ret;
+    }
+
     public RockDTO(String uniqueID) {
         this.uniqueID = uniqueID;
     }
