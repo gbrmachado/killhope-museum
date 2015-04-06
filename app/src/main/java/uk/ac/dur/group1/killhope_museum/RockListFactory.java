@@ -3,84 +3,124 @@ package uk.ac.dur.group1.killhope_museum;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import uk.ac.dur.group1.killhope_museum.dto.RockDTO;
+import uk.ac.dur.group1.killhope_museum.dto.json.JsonRock;
+import uk.ac.dur.group1.killhope_museum.dto.json.JsonRockContent;
+import uk.ac.dur.group1.killhope_museum.dto.json.JsonRockData;
+import uk.ac.dur.group1.killhope_museum.utilities.JSONUtilities;
 
 /**
  * Created by David on 21/03/2015.
  */
-public class RockListFactory
-{
-    public static List<RockDTO> getRockList(Resources applicationResources)
-    {
-        //TODO: to be fixed by ben.
-        ArrayList<RockDTO> rocks = new ArrayList<>();
-        List<Integer> ids = Arrays.asList(
+public class RockListFactory {
+    //As local files are based in resources rather thsn using file paths, use this for local files.
+    private static Map<String, Iterable<Integer>> localMap;
+
+    static {
+        localMap = new HashMap<>();
+        localMap.put("Rock-Ankerite", Arrays.asList(
                 R.drawable.ankerite_line,
-                R.drawable.aragonite_line,
-                R.drawable.baryte_line,
-                R.drawable.barytocalcite_line,
-                R.drawable.calcite_line,
-                R.drawable.cerussite_line,
-                R.drawable.fluorite_line,
-                R.drawable.galena_line,
-                R.drawable.limonite_line,
-                R.drawable.quartz_line,
-                R.drawable.siderite_line,
-                R.drawable.smithsonite_line,
-                R.drawable.sphalerite_line,
-                R.drawable.witherite_line);
-        List<String> names = Arrays.asList(
-                "Ankerite",
-                "Aragonite",
-                "Baryte",
-                "Barytocalcite",
-                "Calcite",
-                "Cerussite",
-                "Fluorite",
-                "Galena",
-                "Limonite",
-                "Quartz",
-                "Siderite",
-                "Smithsonite",
-                "Sphalerite",
-                "Witherite"
-        );
-        //Leaving the rest for Ben.
+                R.drawable.ankerite,
+                R.drawable.ankerite2,
+                R.drawable.ankerite3,
+                R.drawable.ankerite4));
 
+        localMap.put("Rock-Aragonite", Arrays.asList(R.drawable.aragonite_line));
+        localMap.put("Rock-Baryte", Arrays.asList(R.drawable.baryte_line));
+        localMap.put("Rock-Barytocalcite", Arrays.asList(R.drawable.barytocalcite_line));
+        localMap.put("Rock-Calcite", Arrays.asList(R.drawable.calcite_line));
+        localMap.put("Rock-Cerussite", Arrays.asList(R.drawable.cerussite_line));
+        localMap.put("Rock-Fluorite", Arrays.asList(R.drawable.fluorite_line));
+        localMap.put("Rock-Galena", Arrays.asList(R.drawable.galena_line));
+        localMap.put("Rock-Limonite", Arrays.asList(R.drawable.limonite_line));
+        localMap.put("Rock-Quartz", Arrays.asList(R.drawable.quartz_line));
+        localMap.put("Rock-Siderite", Arrays.asList(R.drawable.siderite_line));
+        localMap.put("Rock-Smithsonite", Arrays.asList(R.drawable.smithsonite_line));
+        localMap.put("Rock-Sphalerite", Arrays.asList(R.drawable.sphalerite_line));
+        localMap.put("Rock-Witherite", Arrays.asList(R.drawable.witherite_line));
+    }
 
+    private static RockDTO fromJson(JsonRock rock)
+    {
+        //TODO: Not handling images yet.
+        RockDTO ret = new RockDTO(rock.getUniqueId());
 
-        rocks.add(getSpecialCase(applicationResources));
-        //TODO: Remainder for Ben.
-        for(int i = 1; i < 14; i++)
-        {
-            RockDTO r = new RockDTO("Rocks-" + names.get(i));
-            r.setDisplayName(names.get(i));
-            r.setRockListImage(BitmapFactory.decodeResource(applicationResources, ids.get(i)));
-            rocks.add(r);
-        }
+        ret.setFormula(rock.getFormula());
+        ret.setDisplayName(rock.getTitle());
+
+        for(JsonRockContent content : rock.getContent())
+            ret.addContent(new RockDTO.RockContent(content.getTitle(), content.getData()));
+
+       return ret;
+    }
+
+    private static List<RockDTO> fromJson(String json)
+    {
+        JsonRockData data = JsonRockData.fromJson(json);
+
+        //Convert from JSON to a DTO
+        List<RockDTO> rocks = new ArrayList<>();
+        for(JsonRock r : data.getRocks())
+            rocks.add(fromJson(r));
+
         return rocks;
     }
 
-    private static RockDTO getSpecialCase(Resources applicationResource) {
-        RockDTO specialCase = new RockDTO("Rocks-Ankerite");
-        specialCase.setFormula("PCa(Mg, Fe2+, Mn)(CO₃)₂");
-        specialCase.setRockListImage(BitmapFactory.decodeResource(applicationResource, R.drawable.ankerite_line));
-        specialCase.setDisplayName("Ankerite");
-        //TODO: Gabriel will need to merge and add these.
-        //specialCase.addImage();
-        //specialCase.setVideoAnimation();
+    public static List<RockDTO> getRockList(Resources applicationResources) {
+        //Load the rocks from the JSON.
+        String json = JSONUtilities.getJsonFromRaw(applicationResources, R.raw.rocks);
+        List<RockDTO> rocks = fromJson(json);
 
-        specialCase.addContent(new RockDTO.RockContent("","<b>Colour</b>: White/Yellowish white.<br/><b>Abundance</b>: Frequently fills joints in coal seams.<br/><b>Hardness</b>: 3.5 - 4 (Soft - Medium).<br/><b>Lustre</b>: Vitreous to pearly.<br/><b>Ore</b>: Gangue mineral accompanying iron ore.<br/><b>Interesting fact</b>: Darkens with heating and may become magnetic."));
-        specialCase.addContent(new RockDTO.RockContent("","<b>Uses</b>: Minor iron ore.<br/><b>Main countries involved in the extraction of mineral</b>: N/A.<br/><b>Crystal Habit</b>: Rhombohedral with curved faces, columnar, granular, massive.<br/><b>Crystal Structure</b>: Trigonal.<br/><b>Depositional Environment</b>: Result of both hydrothermal, low-temperature metasomatism and banded iron formations.<br/><b>Transparency</b>: Translucent - transparent.<br/><b>Origin of Name</b>: Named after M.J.Anker, an Austrian mineralogist.<br/><b>Colours Observed at Killhope</b>: Cream, brown."));
-        specialCase.addContent(new RockDTO.RockContent("","<b>Further uses</b>: None.<br/><b>Streak</b>: White.<br/><b>Cleavage</b>: Perfect.<br/><b>Fracture</b>: Subconchoidal."));
-        specialCase.addContent(new RockDTO.RockContent("","<b>Specific Gravity</b>: 2.93 - 3.10.<br/><b>Further properties</b>: Colour turns yellowish brown/brown when oxidation of iron has occured.<br/><b>Relevance at Killhope</b>: Large concentration of ankerite accompany galena-sphalerite-fluorite-baryte veins such as in the North Pennines orefield where limestone or quartz dolerite has been replaced.<br/><b>Optical Properties</b>: Increasing replacement of Mg by Fe2+ increases the refractive indices, birefringence and specific gravity."));
+        //Augment with images if they don't exist.
+
+        for(RockDTO rock : rocks)
+        {
+            Log.d("rock", rock.getID().toString());
+            if(rock.getRockListImage() == null) {
+                rock.setRockListImage(getLineForRock(applicationResources, rock.getID().toString()));
+                setGallery(rock, applicationResources);
+            }
+        }
+
+        return rocks;
+
+    }
+
+    private static Bitmap getLineForRock(Resources r, String key)
+    {
+        //If a rock does not have a "line" image, give them a blank bitmap, otherwise, load from the cache.
+        if(localMap.containsKey(key))
+            for(Integer b : localMap.get(key))
+                return BitmapFactory.decodeResource(r, b);//Return localmp.get().first();
+
+        return  Bitmap.createBitmap(2000, 300, Bitmap.Config.ARGB_8888);
+    }
 
 
-        return specialCase;
+    public static void setGallery(RockDTO rock, Resources res)
+    {
+        String key = rock.getID().toString();
+
+        if(key == null || !localMap.containsKey(key))
+            return;
+
+        boolean skipFirst = true;
+        for(Integer b : localMap.get(key))
+        {
+            if (skipFirst) {
+                skipFirst = false;
+                continue;
+            }
+            Bitmap image = BitmapFactory.decodeResource(res, b);
+            rock.addImage(image, true);
+        }
     }
 }
