@@ -89,7 +89,6 @@ public class RockListFactory {
 
         for(RockDTO rock : rocks)
         {
-            Log.d("rock", rock.getID().toString());
             if(rock.getRockListImage() == null) {
                 rock.setRockListImage(getLineForRock(applicationResources, rock.getID().toString()));
                 setGallery(rock, applicationResources);
