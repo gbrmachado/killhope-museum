@@ -1,51 +1,57 @@
 package uk.ac.dur.group1.killhope_museum.activity;
 
-import android.support.v7.app.ActionBar;
 import android.content.Context;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
-import android.content.Context;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
-import android.os.Bundle;
-import android.support.v7.app.ActionBar;
 import android.view.Menu;
 import android.view.View;
 import android.webkit.WebView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import java.util.ArrayList;
 
 import uk.ac.dur.group1.killhope_museum.R;
 import uk.ac.dur.group1.killhope_museum.dto.RockDTO;
 
-import uk.ac.dur.group1.killhope_museum.R;
-import uk.ac.dur.group1.killhope_museum.dto.RockDTO;
+public class RockDisplayActivity extends ActionBarActivity {
 
-public class RockDisplayActivity extends ActionBarActivity implements View.OnClickListener{
-//simulating the public class:
-    String uniqueId = "Rock-Ankerite";
-
-    String title = "Ankerite";
-    String formula = "PCa(Mg, Fe2+, Mn)(CO₃)₂";
-    String content[] = {
-            "<b>Colour</b>: White/Yellowish white.<br/><b>Abundance</b>: Frequently fills joints in coal seams.<br/><b>Hardness</b>: 3.5 - 4 (Soft - Medium).<br/><b>Lustre</b>: Vitreous to pearly.<br/><b>Ore</b>: Gangue mineral accompanying iron ore.<br/><b>Interesting fact</b>: Darkens with heating and may become magnetic.",
-            "<b>Uses</b>: Minor iron ore.<br/><b>Main countries involved in the extraction of mineral</b>: N/A.<br/><b>Crystal Habit</b>: Rhombohedral with curved faces, columnar, granular, massive.<br/><b>Crystal Structure</b>: Trigonal.<br/><b>Depositional Environment</b>: Result of both hydrothermal, low-temperature metasomatism and banded iron formations.<br/><b>Transparency</b>: Translucent - transparent.<br/><b>Origin of Name</b>: Named after M.J.Anker, an Austrian mineralogist.<br/><b>Colours Observed at Killhope</b>: Cream, brown.",
-            "<b>Further uses</b>: None.<br/><b>Streak</b>: White.<br/><b>Cleavage</b>: Perfect.<br/><b>Fracture</b>: Subconchoidal.",
-            "<b>Specific Gravity</b>: 2.93 - 3.10.<br/><b>Further properties</b>: Colour turns yellowish brown/brown when oxidation of iron has occured.<br/><b>Relevance at Killhope</b>: Large concentration of ankerite accompany galena-sphalerite-fluorite-baryte veins such as in the North Pennines orefield where limestone or quartz dolerite has been replaced.<br/><b>Optical Properties</b>: Increasing replacement of Mg by Fe2+ increases the refractive indices, birefringence and specific gravity."
-    };
+    private static String uniqueId;
+    private static String title;
+    private static String formula;
+    private static Iterable<String> content;
+    private static Iterable<Bitmap> images = null;
 
 
-    String finalContent = "";
+
     public static void launchActivity(Context context, RockDTO rock)
     {
-        Toast.makeText(context, "Show: " + rock.getID() + " Not implemented", Toast.LENGTH_SHORT).show();
-        //TODO: Not implemented.
+        if(context == null)
+            throw new IllegalArgumentException("context is null");
+        if(rock == null)
+            throw new IllegalArgumentException("rock is null");
+
+        Intent i = new Intent(context, RockDisplayActivity.class);
+
+        uniqueId = rock.getID().toString();
+        title = rock.getDisplayName();
+        formula = rock.getFormula();
+
+        ArrayList<String> content = new ArrayList<>();
+        for(RockDTO.RockContent data : rock.getContent())
+            content.add(data.getData());
+
+        RockDisplayActivity.content = content;
+
+        images = rock.getGallery();
+
+        context.startActivity(i);
     }
-
-    int images[] = {R.drawable.ankerite, R.drawable.ankerite2, R.drawable.ankerite3, R.drawable.ankerite4};
-    //the images to display
-
-    LinearLayout imageGallery;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,30 +65,46 @@ public class RockDisplayActivity extends ActionBarActivity implements View.OnCli
         TextView textFormula = (TextView) findViewById(R.id.chemFormulaInfo);
         textFormula.setText(formula);
 
+        setupGalleryFooter();
+
+        WebView mywebView = (WebView) findViewById(R.id.webview);
+
+        mywebView.getSettings().setDefaultTextEncodingName("utf-8");
+        mywebView.getSettings().setJavaScriptEnabled(true);
+        mywebView.setBackgroundColor(0x00000000);   //set the transparent background
+        
+        String finalContent = "";
+        finalContent += "<html>" +
+                "<body>";
+        
+        for (String cont : content)
+            finalContent += cont + "<br>";
+
+        finalContent += "</body></html>";
+        //WARNING: There's a bug in Android which will mean that UTF-8 characters won't be displayed
+        //In a webview, unless the charset is also set in the MIME type.
+        mywebView.loadData(finalContent, "text/html; charset=utf-8", "UTF-8");
+    }
+
+    private void setupGalleryFooter() {
         LinearLayout imageGallery = (LinearLayout) findViewById(R.id.mygallery);
-        for (int i=0; i<images.length; i++) {
+        final RockDisplayActivity self = this;
+        for (final Bitmap bm : images) {
+
             ImageView iv = new ImageView(this);
-            iv.setId(images[i]);
-            iv.setOnClickListener(this);
-            iv.setBackgroundResource(images[i]);
+            //We set the background instead of the image for the imageview. Determine why.
+            iv.setBackground(new BitmapDrawable(getResources(), bm));
+            iv.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    FullScreenImageActivity.launchActivity(self, bm);
+                }
+            });
+
             LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(300, 300);
             iv.setLayoutParams(layoutParams);
             imageGallery.addView(iv);
         }
-
-        WebView mywebView = (WebView) findViewById(R.id.webview);
-        mywebView.getSettings().setJavaScriptEnabled(true);
-        mywebView.setBackgroundColor(0x00000000);   //set the transparent background
-        for (int i=0; i<content.length; i++) {
-            finalContent = finalContent + content[i] + "<br>";
-        }
-        mywebView.loadData(finalContent, "text/html", "UTF-8");
-    }
-
-    @Override
-    public void onClick(View v) {
-        //TODO : It is not opening when the user clicks on the images
-        FullScreenImageActivity.launchActivity(this, R.drawable.ankerite);
     }
 
     @Override
@@ -92,7 +114,3 @@ public class RockDisplayActivity extends ActionBarActivity implements View.OnCli
         return true;
     }
 }
-
-//TODO: FULL SCREEN IMAGE IS NOT WORKING ON IMAGE GALLERY
-//TODO: TEST WITH SOME REAL INFO
-//TODO: FULL SCREEN PROBLEM
