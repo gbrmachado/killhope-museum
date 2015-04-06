@@ -14,7 +14,7 @@
         <EditText android:id="@+id/glossary_search"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:inputType="textVisiblePassword"/>
+            android:drawableLeft="@android:drawable/ic_menu_search"/>
 
         <ListView
             android:id="@+id/glossary_list"
