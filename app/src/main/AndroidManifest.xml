@@ -61,6 +61,10 @@
             android:name=".activity.GlossaryActivity"
             android:label="@string/title_activity_glossary" >
         </activity>
+        <activity
+            android:name=".activity.GlossaryItemActivity"
+            android:label="@string/title_activity_glossary_item" >
+        </activity>
     </application>
 
 </manifest>
