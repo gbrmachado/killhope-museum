@@ -6,7 +6,8 @@
     <TableLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_centerVertical="true">
+        android:layout_centerVertical="true"
+        android:background="@drawable/gradient">
 
         <TableRow
             android:layout_width="fill_parent"

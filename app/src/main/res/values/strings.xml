@@ -12,8 +12,9 @@
     <string name="title_activity_rock_display">RockDisplayActivity</string>
 
     <string name="title_activity_full_screen_image">Image Viewer</string>
-
     <string name="rockPage_basicInfo"><u><b>Basic Information</b></u></string>
     <string name="rockPage_chemForm"><b>Chemical Formula: </b></string>
     <string name="action_Bar_Title">test1</string>
+    <string name="title_activity_glossary">Glossary</string>
+    <string name="title_activity_glossary_item">"Glossary - %s"</string>
 </resources>
