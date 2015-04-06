@@ -1,5 +1,6 @@
 package uk.ac.dur.group1.killhope_museum.activity;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
@@ -8,6 +9,8 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -21,7 +24,7 @@ import uk.ac.dur.group1.killhope_museum.R;
 
 public class GlossaryActivity extends ActionBarActivity {
     //http://www.androidhive.info/2012/09/android-adding-search-functionality-to-listview/
-    private Map<String, String> underlyingGlossary;
+
     private ArrayAdapter<String> listFilterAdapater;
 
 
@@ -46,7 +49,6 @@ public class GlossaryActivity extends ActionBarActivity {
 
     private void setGlossary(Map<String, String> glossary)
     {
-        this.underlyingGlossary = glossary;
         ArrayList<String> keys = new ArrayList<>();
         for(String key : glossary.keySet())
             keys.add(key);
@@ -64,6 +66,20 @@ public class GlossaryActivity extends ActionBarActivity {
         KillhopeApplication application = (KillhopeApplication) getApplication();
         setGlossary(application.getGlossary());
         setupFiltering();
+        setClickListener();
+    }
+
+    private void setClickListener()
+    {
+        final GlossaryActivity self = this;
+        getListView().setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id)
+            {
+                String item = listFilterAdapater.getItem(position);
+                GlossaryItemActivity.launchActivity(self, item);
+            }
+        });
     }
 
     private void setupFiltering() {
