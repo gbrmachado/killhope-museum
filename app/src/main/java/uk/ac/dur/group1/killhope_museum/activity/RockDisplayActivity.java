@@ -22,6 +22,8 @@ import uk.ac.dur.group1.killhope_museum.dto.RockDTO;
 
 public class RockDisplayActivity extends ActionBarActivity {
 
+    private static final int FOOTER_HEIGHT = 300;
+
     private static String uniqueId;
     private static String title;
     private static String formula;
@@ -126,7 +128,10 @@ public class RockDisplayActivity extends ActionBarActivity {
                 }
             });
 
-            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(300, 300);
+            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, FOOTER_HEIGHT);
+
+            double scale = bm.getHeight() / FOOTER_HEIGHT;
+            layoutParams.width = (int) (bm.getWidth() / scale );
             iv.setLayoutParams(layoutParams);
             imageGallery.addView(iv);
         }
