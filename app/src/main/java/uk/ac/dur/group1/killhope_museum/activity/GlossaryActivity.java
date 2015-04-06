@@ -13,6 +13,7 @@ import android.widget.EditText;
 import android.widget.ListView;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Map;
 
 import uk.ac.dur.group1.killhope_museum.KillhopeApplication;
@@ -50,6 +51,7 @@ public class GlossaryActivity extends ActionBarActivity {
         for(String key : glossary.keySet())
             keys.add(key);
 
+        Collections.sort(keys);
         this.listFilterAdapater = new ArrayAdapter<>(this, R.layout.list_item, R.id.list_item_text, keys);
         getListView().setAdapter(listFilterAdapater);
     }
