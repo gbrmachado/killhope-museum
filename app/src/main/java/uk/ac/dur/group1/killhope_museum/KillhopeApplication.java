@@ -111,4 +111,13 @@ public class KillhopeApplication extends Application
             this.glossary = GlossaryProvider.getGlossary(getResources());
         return this.glossary;
     }
+
+    public String getGlossaryItem(String name)
+    {
+        Map<String, String> glossary = getGlossary();
+        if(!glossary.containsKey(name))
+            return null;
+
+        return glossary.get(name);
+    }
 }
