@@ -1,18 +1,78 @@
 package uk.ac.dur.group1.killhope_museum.activity;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.EditText;
+import android.widget.ListView;
 
+import java.util.ArrayList;
+import java.util.Map;
+
+import uk.ac.dur.group1.killhope_museum.KillhopeApplication;
 import uk.ac.dur.group1.killhope_museum.R;
 
 public class GlossaryActivity extends ActionBarActivity {
+    //http://www.androidhive.info/2012/09/android-adding-search-functionality-to-listview/
+    private Map<String, String> underlyingGlossary;
+    private ArrayAdapter<String> listFilterAdapater;
+
+
+    public static void launchActivity(Context context)
+    {
+        if(context == null)
+            throw new IllegalArgumentException("context is null");
+
+        Intent i = new Intent(context, GlossaryActivity.class);
+        context.startActivity(i);
+    }
+
+    private ListView getListView()
+    {
+        return (ListView) findViewById(R.id.glossary_list);
+    }
+
+    private EditText getSearchBox()
+    {
+        return (EditText) findViewById(R.id.glossary_search);
+    }
+
+    private void setGlossary(Map<String, String> glossary)
+    {
+        this.underlyingGlossary = glossary;
+        ArrayList<String> keys = new ArrayList<>();
+        for(String key : glossary.keySet())
+            keys.add(key);
+
+        this.listFilterAdapater = new ArrayAdapter<>(this, R.layout.list_item, R.id.list_item_text, keys);
+        getListView().setAdapter(listFilterAdapater);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_glossary);
+
+        KillhopeApplication application = (KillhopeApplication) getApplication();
+        setGlossary(application.getGlossary());
+        setupFiltering();
+    }
+
+    private void setupFiltering() {
+        getSearchBox().addTextChangedListener(new TextWatcher(){
+            public void afterTextChanged(Editable s) { }
+            public void beforeTextChanged(CharSequence s, int start, int count, int after){}
+            public void onTextChanged(CharSequence s, int start, int before, int count)
+            {
+                listFilterAdapater.getFilter().filter(s);
+            }
+        });
     }
 
 
