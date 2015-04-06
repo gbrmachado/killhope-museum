@@ -1,5 +1,6 @@
 package uk.ac.dur.group1.killhope_museum.dto.json;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -10,6 +11,8 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import com.fasterxml.jackson.core.JsonGenerator;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -17,6 +20,20 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
         "Count"
 })
 public class JsonRockData {
+
+    public static JsonRockData fromJson(String json)
+    {
+        ObjectMapper mapper = new ObjectMapper();
+        try {
+
+            return mapper.readValue(json,  JsonRockData.class);
+        }
+        catch (IOException e)
+        {
+            throw new IllegalStateException("invalid JSON", e);
+        }
+
+    }
 
     @JsonProperty("Rocks")
     private List<JsonRock> Rocks = new ArrayList<JsonRock>();

@@ -27,9 +27,9 @@ public class JsonRock {
     @JsonProperty("UniqueId")
     private String UniqueId;
     @JsonProperty("Images")
-    private List<Object> Images = new ArrayList<Object>();
+    private List<Object> Images = new ArrayList<>();
     @JsonProperty("GalleryImages")
-    private List<Object> GalleryImages = new ArrayList<Object>();
+    private List<Object> GalleryImages = new ArrayList<>();
     @JsonProperty("VideoPath")
     private String VideoPath;
     @JsonProperty("Title")
@@ -37,9 +37,9 @@ public class JsonRock {
     @JsonProperty("Formula")
     private String Formula;
     @JsonProperty("Content")
-    private List<JsonRock> Content = new ArrayList<JsonRock>();
+    private List<JsonRockContent> Content = new ArrayList<>();
     @JsonIgnore
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
+    private Map<String, Object> additionalProperties = new HashMap<>();
 
     /**
      *
@@ -167,7 +167,7 @@ public class JsonRock {
      * The Content
      */
     @JsonProperty("Content")
-    public List<JsonRock> getContent() {
+    public List<JsonRockContent> getContent() {
         return Content;
     }
 
@@ -177,7 +177,7 @@ public class JsonRock {
      * The Content
      */
     @JsonProperty("Content")
-    public void setContent(List<JsonRock> Content) {
+    public void setContent(List<JsonRockContent> Content) {
         this.Content = Content;
     }
 
