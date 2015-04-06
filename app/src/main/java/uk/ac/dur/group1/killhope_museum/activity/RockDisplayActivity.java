@@ -1,5 +1,6 @@
 package uk.ac.dur.group1.killhope_museum.activity;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -8,16 +9,24 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Base64;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
+import android.webkit.JavascriptInterface;
 import android.webkit.WebView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
+import uk.ac.dur.group1.killhope_museum.KillhopeApplication;
 import uk.ac.dur.group1.killhope_museum.R;
+import uk.ac.dur.group1.killhope_museum.dto.MapDTO;
 import uk.ac.dur.group1.killhope_museum.dto.RockDTO;
 
 public class RockDisplayActivity extends ActionBarActivity {
@@ -79,18 +88,47 @@ public class RockDisplayActivity extends ActionBarActivity {
         mywebView.getSettings().setJavaScriptEnabled(true);
         makeTransparentBackground(mywebView);
         mywebView.setBackgroundColor(0x00000000);   //set the transparent background
-        
+
+        mywebView.addJavascriptInterface(new GlossaryLoaderJavascriptInterface(this), "Android");
+
+        setContent(mywebView);
+    }
+
+
+
+    private void setContent(WebView mywebView) {
         String finalContent = "";
         finalContent += "<html>" +
+                "<head>" +
+                "<script type=\"text/javascript\">" +
+                "function loadGlossaryEntry(str) { Android.loadGlossary(str); }</script>" +
+                "</head>" +
                 "<body>";
 
         for (String cont : content)
-            finalContent += cont + "<br>";
+            finalContent += makeHTMLGlossary(cont) + "<br/><hr/>";
 
         finalContent += "</body></html>";
         //WARNING: There's a bug in Android which will mean that UTF-8 characters won't be displayed
         //In a webview, unless the charset is also set in the MIME type.
         mywebView.loadData(finalContent, "text/html; charset=utf-8", "UTF-8");
+    }
+
+    //Transforms content into links to the glossary page.
+    private String makeHTMLGlossary(String input)
+    {
+        Set<String> dictionaryEntries = ((KillhopeApplication) getApplication()).getGlossary().keySet();
+
+        //I should be shot for being so lazy.
+        for(String s : dictionaryEntries)
+        {
+            Pattern p = Pattern.compile(String.format("((?i)%s)", s));
+            Matcher m = p.matcher(input);
+            String newLink = String.format("<a href=\"noJS.html\" onclick=\"loadGlossaryEntry(&quot;%s&quot;);return false;\">$1</a>", s);
+            if (m.find())
+                input = m.replaceAll(newLink);
+        }
+        return input;
     }
 
     private void setupAnimation()
@@ -142,5 +180,19 @@ public class RockDisplayActivity extends ActionBarActivity {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_action_bar, menu);
         return true;
+    }
+
+    public class GlossaryLoaderJavascriptInterface {
+        Activity self;
+
+        /** Instantiate the interface and set the context */
+        GlossaryLoaderJavascriptInterface(Activity c) {
+            self = c;
+        }
+
+        @JavascriptInterface
+        public void loadGlossary(String data) {
+            GlossaryItemActivity.launchActivity(self, data);
+        }
     }
 }
