@@ -108,7 +108,7 @@ public class KillhopeApplication extends Application
     public Map<String, String> getGlossary()
     {
         if(this.glossary == null)
-            this.glossary = GlossaryProvider.getGlossary();
+            this.glossary = GlossaryProvider.getGlossary(getResources());
         return this.glossary;
     }
 }
