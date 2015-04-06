@@ -22,7 +22,7 @@ public class RockDTO
 
 
     private Bitmap rockListImage;
-    private Bitmap videoAnimation;
+    private byte[] videoAnimation;
 
     public void addImage(Bitmap image, boolean isGalleryImage)
     {
@@ -93,9 +93,13 @@ public class RockDTO
          return this.rockListImage;
     }
 
-    public Bitmap getAnimation()
+    public byte[] getAnimation()
     {
         return this.videoAnimation;
+    }
+
+    public void setAnimation(byte[] videoAnimation) {
+        this.videoAnimation = videoAnimation;
     }
 
     public String getDisplayName() {
@@ -131,14 +135,6 @@ public class RockDTO
 
     public void setRockListImage(Bitmap rockListImage) {
         this.rockListImage = rockListImage;
-    }
-
-    public Bitmap getVideoAnimation() {
-        return videoAnimation;
-    }
-
-    public void setVideoAnimation(Bitmap videoAnimation) {
-        this.videoAnimation = videoAnimation;
     }
 
     public Iterable<RockContent> getContent()

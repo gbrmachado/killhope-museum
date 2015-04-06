@@ -7,6 +7,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Base64;
 import android.view.Menu;
 import android.view.View;
 import android.webkit.WebView;
@@ -26,7 +27,7 @@ public class RockDisplayActivity extends ActionBarActivity {
     private static String formula;
     private static Iterable<String> content;
     private static Iterable<Bitmap> images = null;
-
+    private static byte[] animation;
 
 
     public static void launchActivity(Context context, RockDTO rock)
@@ -49,6 +50,7 @@ public class RockDisplayActivity extends ActionBarActivity {
         RockDisplayActivity.content = content;
 
         images = rock.getGallery();
+        animation = rock.getAnimation();
 
         context.startActivity(i);
     }
@@ -67,16 +69,19 @@ public class RockDisplayActivity extends ActionBarActivity {
 
         setupGalleryFooter();
 
+        setupAnimation();
+
         WebView mywebView = (WebView) findViewById(R.id.webview);
 
         mywebView.getSettings().setDefaultTextEncodingName("utf-8");
         mywebView.getSettings().setJavaScriptEnabled(true);
+        makeTransparentBackground(mywebView);
         mywebView.setBackgroundColor(0x00000000);   //set the transparent background
         
         String finalContent = "";
         finalContent += "<html>" +
                 "<body>";
-        
+
         for (String cont : content)
             finalContent += cont + "<br>";
 
@@ -84,6 +89,26 @@ public class RockDisplayActivity extends ActionBarActivity {
         //WARNING: There's a bug in Android which will mean that UTF-8 characters won't be displayed
         //In a webview, unless the charset is also set in the MIME type.
         mywebView.loadData(finalContent, "text/html; charset=utf-8", "UTF-8");
+    }
+
+    private void setupAnimation()
+    {
+        if(animation == null)
+            return;
+
+        String base64 = Base64.encodeToString(animation, Base64.DEFAULT);
+
+        WebView animation = (WebView) findViewById(R.id.rock_display_animated_gif_web_view);
+        makeTransparentBackground(animation);
+        String data = String.format("<html><body><img style='margin: 0px auto;display:block' src=\"data:image/gif;base64,%s\"/></body></html>", base64);
+        animation.loadData(data, "text/html; charset=utf-8", "UTF-8");
+
+    }
+
+    private void makeTransparentBackground(View v)
+    {
+        //Sets the background to a transparent colour to allow for the gradient to be visible.
+        v.setBackgroundColor(0x00000000);   //set the transparent background
     }
 
     private void setupGalleryFooter() {

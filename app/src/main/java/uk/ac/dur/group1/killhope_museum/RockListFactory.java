@@ -5,6 +5,9 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.util.Log;
 
+import org.apache.commons.io.IOUtils;
+
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -23,7 +26,7 @@ import uk.ac.dur.group1.killhope_museum.utilities.JSONUtilities;
 public class RockListFactory {
     //As local files are based in resources rather thsn using file paths, use this for local files.
     private static Map<String, Iterable<Integer>> localMap;
-
+    private static Map<String, Integer> animationMap;
     static {
         localMap = new HashMap<>();
         localMap.put("Rock-Ankerite", Arrays.asList(
@@ -46,6 +49,9 @@ public class RockListFactory {
         localMap.put("Rock-Smithsonite", Arrays.asList(R.drawable.smithsonite_line));
         localMap.put("Rock-Sphalerite", Arrays.asList(R.drawable.sphalerite_line));
         localMap.put("Rock-Witherite", Arrays.asList(R.drawable.witherite_line));
+
+        animationMap = new HashMap<>();
+        animationMap.put("Rock-Ankerite", R.raw.rock_gif_ankerite);
     }
 
     private static RockDTO fromJson(JsonRock rock)
@@ -87,11 +93,29 @@ public class RockListFactory {
             if(rock.getRockListImage() == null) {
                 rock.setRockListImage(getLineForRock(applicationResources, rock.getID().toString()));
                 setGallery(rock, applicationResources);
+                setAnimation(rock, applicationResources);
             }
         }
 
         return rocks;
 
+    }
+
+    private static void setAnimation(RockDTO rock, Resources applicationResources)
+    {
+        String key = rock.getID().toString();
+
+        if(key == null || !animationMap.containsKey(key))
+            return;
+
+        int id = animationMap.get(key);
+
+        try {
+            byte[] gif = IOUtils.toByteArray(applicationResources.openRawResource(id));
+            rock.setAnimation(gif);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     private static Bitmap getLineForRock(Resources r, String key)
