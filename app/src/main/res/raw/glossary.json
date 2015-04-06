@@ -1,0 +1,120 @@
+{
+    "Glossary": [
+        {
+            "Key": "Basalts",
+            "Value": "A dark fine-grained volcanic rock that sometimes displays a columnar structure, typically composed largely of plagioclase with pyroxene and olivine."
+        },
+        {
+            "Key": "Biaxial",
+            "Value": "Having two optic axes, as in the orthorhombic, monoclinic, and triclinic systems."
+        },
+        {
+            "Key": "Birefringence",
+            "Value": "The optical property of a material having a refractive index that depends on the polarization and propagation direction of light."
+        },
+        {
+            "Key": "Cabochons",
+            "Value": "A gem that has been polished but not faceted."
+        },
+        {
+            "Key": "Cleavage",
+            "Value": "The tendency of crystalline materials to split along definite crystallographic structural planes.<br/><ul><li><li>Basal - minerals with basal cleavage can sometimes be peeled. A good example of basal cleavage is seen on the minerals of the mica group.</li><li>Prismatic - the mineral cleaves by breaking off thin, vertical, prismatic crystals off of the original prism. Image: Aegirine</li><li>Rhombohedral - exhibited on minerals that crystallize in the hexagonal crystal system (trigonal), specifically as rhombohedrons, in which small rhombohedrons cleave off of the existing crystal. Image: Calcite</li><li>Octahedral - the method of cleavage is that flat, triangular \"wedges\" peel off of the existing octahedron. Image: Fluorite.</li></ul>"
+        },
+        {
+            "Key": "Coxcomb",
+            "Value": "Aggregate composed of flaky or tabular crystals that are joined from a base with grooves between long, slender, arc-like crystals. The name is derived from a red comb of a rooster (\"cock\")."
+        },
+        {
+            "Key": "Crystal Habit ",
+            "Value": "The most commonly found shape or form that a mineral adopts.<br/><ul><li>Botryoidal - having a shape reminiscent of a cluster of grapes.</li><li>Fibrous - fibre-like.</li><<li>Massive - with no distinguishing crystal form.</li><li>Microcrystalline - composed of tiny crystals that cannot be seen with an unaided eye. Microcrystalline minerals may appear massive or amorphous since no apparent crystal shape can be detected.</li><li>Prismatic - forming prismatic crystals, equant to elongated.</li><li>Reticulated - long crystals in a netting-like form, where all the crystals crisscross each other.</li><li>Rhombohedral - six sided polyhedron with each side shaped as a rhombus, which have different angles to each other.</li><li>Stalactic - a tapering structure hanging like an icicle from the roof of a cave.</li><li>Tabular - plate-like.</li><li>Tetrahedral - is a polyhedron composed of four triangular faces forming a 3D triangle.</li></ul>"
+        },
+        {
+            "Key": "Crystal Structure",
+            "Value": "A unique arrangement of atoms, ions or molecules in a crystal.<br/><ul><li>Cubic - quadrilateral shape of a cube.</li><li>Hexagonal - 3D hexagon, six-sided.</li><li>Octahedral - eight sided (two pyramids base to base)</li><li>Orthorhombic - of or denoting a crystal system or three-dimensional geometrical arrangement having three unequal axes at right angles.</li><li>Trigonal - three-dimensional geometrical arrangement having three equal axes separated by equal angles that are not right angles.</li></ul>"
+        },
+        {
+            "Key": "Diabase",
+            "Value": "Another term for dolerite: a dark, medium-grained igneous rock, typically with ophitic texture, containing plagioclase, pyroxene, and olivine. It typically occurs in dykes and sills."
+        },
+        {
+            "Key": "Druzy",
+            "Value": "A coating of fine crystals on a rock fracture surface, vein or within a vug or geode."
+        },
+        {
+            "Key": "Extinction",
+            "Value": "Optical property of a mineral in thin section, which under cross polarised light does not transmit light (i.e. it goes black) at certain angles.<br/><ul><li>Undulose extinction - if a mineral is deformed, strain builds up within the crystal lattice causing it to warp. Different parts of a crystal reach extinction at slightly different angles, giving the crystal an irregular, mottled look.</li></ul>"
+        },
+        {
+            "Key": "Fracture",
+            "Value": "The way a mineral breaks other than along a cleavage plane (random orientations).<br/><ul><li>Conchoidal - Fracture surface is a smooth curve, bowl-shaped (common in glass).</li><li>Subconchoidal - Partially or indistinctly conchoidal.</li><li>Uneven - Fracture surface is rough and irregular.</li></ul>"
+        },
+        {
+            "Key": "Flux",
+            "Value": "Chemical cleaning agent, flowing agent, or purifying agent."
+        },
+        {
+            "Key": "Gangue Mineral",
+            "Value": "The commercially worthless material that surrounds, or is closely mixed with, a wanted mineral in an ore deposit."
+        },
+        {
+            "Key": "Hydrothermal Veins",
+            "Value": "Distinct sheet like body of crystallised minerals in a rock, precipitated from a hot aqueous fluid."
+        },
+        {
+            "Key": "Isotropic",
+            "Value": "Uniformity in all orientations; a grain will appear opaque under a microscope as the light cannot pass through it."
+        },
+        {
+            "Key": "Lattice",
+            "Value": "A crystal lattice can be thought of as an array of 'small boxes' infinitely repeating in all three spatial directions."
+        },
+        {
+            "Key": "Lustre",
+            "Value": "The quality and intensity of light reflected from the surface of a mineral.<br/><ul><li>Adamantine - a brilliant lustre such as that of diamond.<li>Resinous - a resin-like shine (resembling amber for example).</li><li>Vitreous - glassy, bright (shines like glass).</li></ul>"
+        },
+        {
+            "Key": "Metasomatism",
+            "Value": "The chemical alteration of a rock by hydrothermal and other fluids."
+        },
+        {
+            "Key": "Ore",
+            "Value": "A naturally occurring solid material from which a metal or valuable mineral can be extracted profitably."
+        },
+        {
+            "Key": "Oxidation Zone",
+            "Value": "A zone found near the earth’s surface that forms as a result of chemical decomposition of unstable minerals under the action of oxygenated surface waters and groundwater. The oxidation zone extends down to the level of the groundwater and usually ranges from a few meters to a few hundred meters thick. In the oxidation process part of the mineral material of a deposit may be dissolved by the groundwater, percolate downward, and be redeposited below the groundwater level, forming a zone of secondary mineral enrichment."
+        },
+        {
+            "Key": "Pegmatite",
+            "Value": "A coarsely crystalline igneous rock with crystals several centimetres in length."
+        },
+        {
+            "Key": "Pseudomorphs",
+            "Value": "A mineral that chemically replaces another mineral without changing the external form of the original mineral."
+        },
+        {
+            "Key": "Pyromorphite",
+            "Value": "Mineral species composed of lead chlorophosphate, typically occurring as green, yellow, or brown crystals in the oxidized zones of lead deposits."
+        },
+        {
+            "Key": "Specific Gravity",
+            "Value": " The ratio of a mineral’s mass to the mass of an equal volume of water. E.g. galena has a specific gravity of ~7.4, meaning 1cm3 of galena will be 7.4 times as heavy as 1cm³ of water."
+        },
+        {
+            "Key": "Streak",
+            "Value": "The colour of a mineral when powdered/scratched and observed against an unglazed white porcelain plate."
+        },
+        {
+            "Key": "Syenitic",
+            "Value": "A coarse-grained grey igneous rock composed mainly of alkali feldspar and ferromagnesian minerals such as hornblende."
+        },
+        {
+            "Key": "Twinning",
+            "Value": "occurs when two separate crystals share some of the same crystal lattice points in a symmetrical manner. Results in a mineral showing several different colours, when in fact you are seeing an intergrowth of two crystals joined together in a mutual orientation.<li>Contact twins -  share a single composition surface often appearing as mirror images across the boundary.</li><li>Lamellar twins - many parallel twin individuals, each one having a tabular or plate-like appearance.</li><li>Penetration twins - the individual crystals have the appearance of passing through each other in a symmetrical manner.</li></ul>"
+        },
+        {
+            "Key": "Uniaxial",
+            "Value": "Having one optical axis, as in the hexagonal, trigonal, and tetragonal systems."
+        }
+    ]
+}

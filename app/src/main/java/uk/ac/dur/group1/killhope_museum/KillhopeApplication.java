@@ -5,6 +5,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 
 import java.util.List;
+import java.util.Map;
 
 
 import uk.ac.dur.group1.killhope_museum.activity.RockDisplayActivity;
@@ -22,6 +23,7 @@ import uk.ac.dur.group1.killhope_museum.utilities.JSONUtilities;
 public class KillhopeApplication extends Application
 {
     private List<RockDTO> rocks = null;
+    private Map<String, String> glossary;
 
     @Override
     public void onCreate()
@@ -103,4 +105,19 @@ public class KillhopeApplication extends Application
         return BitmapFactory.decodeResource(getResources(), R.drawable.killhope_map);
     }
 
+    public Map<String, String> getGlossary()
+    {
+        if(this.glossary == null)
+            this.glossary = GlossaryProvider.getGlossary(getResources());
+        return this.glossary;
+    }
+
+    public String getGlossaryItem(String name)
+    {
+        Map<String, String> glossary = getGlossary();
+        if(!glossary.containsKey(name))
+            return null;
+
+        return glossary.get(name);
+    }
 }
