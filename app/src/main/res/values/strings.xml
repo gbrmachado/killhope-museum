@@ -12,4 +12,5 @@
     <string name="title_activity_rock_display">RockDisplayActivity</string>
 
     <string name="title_activity_full_screen_image">Image Viewer</string>
+    <string name="title_activity_glossary">Glossary</string>
 </resources>
