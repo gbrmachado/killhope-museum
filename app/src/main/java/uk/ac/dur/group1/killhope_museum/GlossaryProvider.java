@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import uk.ac.dur.group1.killhope_museum.dto.json.JsonGlossary;
+import uk.ac.dur.group1.killhope_museum.dto.json.JsonGlossaryAlias;
 import uk.ac.dur.group1.killhope_museum.dto.json.JsonGlossaryItem;
 import uk.ac.dur.group1.killhope_museum.utilities.JSONUtilities;
 
@@ -16,19 +17,25 @@ public class GlossaryProvider
 {
     private GlossaryProvider() {}
 
-    public static Map<String, String> getGlossary(Resources resources)
+    public static Glossary getGlossary(Resources resources)
     {
         String json = JSONUtilities.getJsonFromRaw(resources, R.raw.glossary);
         JsonGlossary g = JsonGlossary.fromJson(json);
 
-        HashMap<String,String> ret = new HashMap<>();
+        Glossary ret = new Glossary();
+
         for(JsonGlossaryItem item : g.getGlossary())
         {
             String key = item.getKey();
             if(key == null)
                 continue;
-            ret.put(key, item.getValue()); //This should fail if more than 1 key is used.
+            ret.addEntry(key, item.getValue()); //This should fail if more than 1 key is used.
         }
+
+        //Be lazy: for aliases, instead of referencing the string, clone everything.
+        for(JsonGlossaryAlias aliasList : g.getAliases())
+            ret.addAliases(aliasList.getTerm(), aliasList.getAliases());
+
 
         return ret;
     }

@@ -19,6 +19,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Set;
 import java.util.regex.Matcher;
@@ -117,7 +118,7 @@ public class RockDisplayActivity extends ActionBarActivity {
     //Transforms content into links to the glossary page.
     private String makeHTMLGlossary(String input)
     {
-        Set<String> dictionaryEntries = ((KillhopeApplication) getApplication()).getGlossary().keySet();
+        Collection<String> dictionaryEntries = ((KillhopeApplication) getApplication()).getLinkableWords();
 
         //I should be shot for being so lazy.
         for(String s : dictionaryEntries)
