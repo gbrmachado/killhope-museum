@@ -164,8 +164,7 @@ public class RockDisplayActivity extends ActionBarActivity {
         for (final Bitmap bm : images) {
 
             ImageView iv = new ImageView(this);
-            //We set the background instead of the image for the imageview. Determine why.
-            iv.setBackground(new BitmapDrawable(getResources(), bm));
+
             iv.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -174,10 +173,12 @@ public class RockDisplayActivity extends ActionBarActivity {
             });
 
             LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, FOOTER_HEIGHT);
-
-            double scale = bm.getHeight() / FOOTER_HEIGHT;
-            layoutParams.width = (int) (bm.getWidth() / scale );
+            double scale = (double) bm.getHeight() / (double) FOOTER_HEIGHT;
+            int width = (int) (bm.getWidth() / scale );
+            layoutParams.width = width;
             iv.setLayoutParams(layoutParams);
+            //We set the background instead of the image for the imageview. Determine why.
+            iv.setImageBitmap(bm);
             imageGallery.addView(iv);
         }
     }
