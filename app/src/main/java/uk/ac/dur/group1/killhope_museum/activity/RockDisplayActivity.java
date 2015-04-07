@@ -120,14 +120,20 @@ public class RockDisplayActivity extends ActionBarActivity {
     {
         Collection<String> dictionaryEntries = ((KillhopeApplication) getApplication()).getLinkableWords();
 
-        //I should be shot for being so lazy.
         for(String s : dictionaryEntries)
         {
-            Pattern p = Pattern.compile(String.format("((?i)%s)", s));
+            //Non-word character, then the word (case insensitive), optional s, then another non-word.
+            //This is required so "more" will not match "ore".
+            Pattern p = Pattern.compile(String.format("(\\W)((?i)%ss?)(\\W)", s));
             Matcher m = p.matcher(input);
-            String newLink = String.format("<a href=\"noJS.html\" onclick=\"loadGlossaryEntry(&quot;%s&quot;);return false;\">$1</a>", s);
+            //Note: The replacement replaces the loadGlossaryEntry js with %s, which is the dictionary entry.
+            //Whereas $2 is the word matched. So "ores" will link to ore.
+            String newLink = String.format("<a href=\"noJS.html\" onclick=\"loadGlossaryEntry(&quot;%s&quot;);return false;\">$2</a>", s);
+            //as we match non-word characters outside, we need to re-add these.
+            String replaceWith = String.format("$1%s$3", newLink);
+
             if (m.find())
-                input = m.replaceAll(newLink);
+                input = m.replaceAll(replaceWith);
         }
         return input;
     }
