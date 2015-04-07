@@ -116,5 +116,71 @@
             "Key": "Uniaxial",
             "Value": "Having one optical axis, as in the hexagonal, trigonal, and tetragonal systems."
         }
-    ]
-}
+    ],
+    "Aliases": [
+            {
+                "Term": "Cleavage",
+                "Aliases": [
+                    "Basal",
+                    "Prismatic",
+                    "Rhombohedral",
+                    "Octahedral"
+                ]
+            },
+            {
+                "Term": "Crystal Habit",
+                "Aliases": [
+                    "Botryoidal",
+                    "Fibrous",
+                    "Granular",
+                    "Massive",
+                    "Microcrystalline",
+                    "Prismatic",
+                    "Reticulated",
+                    "Rhombohedral",
+                    "Stalactic",
+                    "Tabular",
+                    "Tetrahedral"
+                ]
+            },
+            {
+                "Term": "Crystal Structure",
+                "Aliases": [
+                    "Cubic",
+                    "Hexagonal",
+                    "Octahedral",
+                    "Orthorhombic",
+                    "Trigonal"
+                ]
+            },
+            {
+                "Term": "Extinction",
+                "Aliases": [
+                    "Undulose"
+                ]
+            },
+            {
+                "Term": "Fracture",
+                "Aliases": [
+                    "Conchoidal",
+                    "Subconchoidal",
+                    "Uneven"
+                ]
+            },
+            {
+                "Term": "Lustre",
+                "Aliases": [
+                    "Adamantine",
+                    "Resinous",
+                    "Vitreous"
+                ]
+            },
+            {
+                "Term": "Twinning",
+                "Aliases": [
+                    "Contacttwins",
+                    "Lamellar",
+                    "Penetrationtwins"
+                ]
+            }
+        ]}

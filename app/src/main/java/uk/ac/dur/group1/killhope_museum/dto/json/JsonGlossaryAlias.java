@@ -1,59 +1,48 @@
 package uk.ac.dur.group1.killhope_museum.dto.json;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.fasterxml.jackson.databind.ObjectMapper;
-
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-        "Glossary"
+        "Term",
+        "Aliases"
 })
-public class JsonGlossary {
+public class JsonGlossaryAlias {
 
-    public static JsonGlossary fromJson(String json)
-    {
-        ObjectMapper mapper = new ObjectMapper();
-        try {
-            return mapper.readValue(json, JsonGlossary.class);
-        }
-        catch (IOException e)
-        {
-            throw new IllegalStateException("invalid JSON", e);
-        }
-
-    }
-
-    @JsonProperty("Glossary")
-    private List<JsonGlossaryItem> Glossary = new ArrayList<JsonGlossaryItem>();
+    @JsonProperty("Term")
+    private String Term;
     @JsonProperty("Aliases")
-    private List<JsonGlossaryAlias> Aliases = new ArrayList<JsonGlossaryAlias>();
+    private List<String> Aliases = new ArrayList<String>();
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     /**
-     * @return The Glossary
+     *
+     * @return
+     * The Term
      */
-    @JsonProperty("Glossary")
-    public List<JsonGlossaryItem> getGlossary() {
-        return Glossary;
+    @JsonProperty("Term")
+    public String getTerm() {
+        return Term;
     }
 
     /**
-     * @param Glossary The Glossary
+     *
+     * @param Term
+     * The Term
      */
-    @JsonProperty("Glossary")
-    public void setGlossary(List<JsonGlossaryItem> Glossary) {
-        this.Glossary = Glossary;
+    @JsonProperty("Term")
+    public void setTerm(String Term) {
+        this.Term = Term;
     }
 
     /**
@@ -62,7 +51,7 @@ public class JsonGlossary {
      * The Aliases
      */
     @JsonProperty("Aliases")
-    public List<JsonGlossaryAlias> getAliases() {
+    public List<String> getAliases() {
         return Aliases;
     }
 
@@ -72,7 +61,7 @@ public class JsonGlossary {
      * The Aliases
      */
     @JsonProperty("Aliases")
-    public void setAliases(List<JsonGlossaryAlias> Aliases) {
+    public void setAliases(List<String> Aliases) {
         this.Aliases = Aliases;
     }
 
