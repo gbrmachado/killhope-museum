@@ -91,7 +91,7 @@ public class RockListActivity extends ActionBarActivity {
 
         RockListFacade d = new RockListFacade(rocks);
 
-        for(RockDTO rock : d.getRocksForScreenSize(getScreenWidth()))
+        for(RockListFacade.RockListRock rock : d.getRocksForScreenSize(getScreenWidth()))
         {
             View forRock = createViewForRock(rock);
             layout.addView(forRock);
@@ -128,7 +128,7 @@ public class RockListActivity extends ActionBarActivity {
     }
 
 
-    private View createViewForRock(final RockDTO rock)
+    private View createViewForRock(final RockListFacade.RockListRock rock)
     {
         TextView v = new TextView(this);
         Drawable background = new BitmapDrawable(getResources(), rock.getRockListImage());
@@ -148,7 +148,7 @@ public class RockListActivity extends ActionBarActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        RockDisplayActivity.launchActivity(self, rock);
+                        RockDisplayActivity.launchActivity(self, rock.getInternalRock());
                     }
                 }
         );
