@@ -16,6 +16,19 @@
             android:layout_height="wrap_content"
             android:drawableLeft="@android:drawable/ic_menu_search"/>
 
+        <!--A textview specifying whether there are no glossary results at all,
+        or just none available.-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/glossary_no_results_found"
+            android:id="@+id/glossary_results_error"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:visibility="gone"
+            android:textColor="#ffff0000" />
+
         <ListView
             android:id="@+id/glossary_list"
             android:layout_width="fill_parent"
