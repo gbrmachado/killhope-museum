@@ -22,6 +22,8 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+
+import java.util.ArrayList;
 import java.util.List;
 
 import uk.ac.dur.group1.killhope_museum.KillhopeApplication;
@@ -46,7 +48,6 @@ public class RockListActivity extends ActionBarActivity {
             throw new IllegalArgumentException("context is null");
 
         Intent i = new Intent(context, RockListActivity.class);
-
         if(rockList != null)
         {
             ArrayList<String> rocks = new ArrayList<>();
@@ -84,15 +85,22 @@ public class RockListActivity extends ActionBarActivity {
 
         List<RockDTO> rocks = getKillhopeApplication().getRockList();
         rocks = filterRocks(rocks);
-        RockListFacade d = new RockListFacade(rocks);
 
         int screenWidth = DisplayUtilities.getScreenWidth(this);
 
-        for(RockDTO rock : d.getRocksForScreenSize(screenWidth))
+
+        RockListFacade d = new RockListFacade(rocks);
+
+        for(RockListFacade.RockListRock rock : d.getRocksForScreenSize(getScreenWidth()))
         {
             View forRock = createViewForRock(rock);
             layout.addView(forRock);
         }
+    }
+
+    private int getScreenWidth()
+    {
+        return getResources().getDisplayMetrics().widthPixels;
     }
 
     /**
@@ -120,7 +128,7 @@ public class RockListActivity extends ActionBarActivity {
     }
 
 
-    private View createViewForRock(final RockDTO rock)
+    private View createViewForRock(final RockListFacade.RockListRock rock)
     {
         TextView v = new TextView(this);
         Drawable background = new BitmapDrawable(getResources(), rock.getRockListImage());
@@ -140,7 +148,7 @@ public class RockListActivity extends ActionBarActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        RockDisplayActivity.launchActivity(self, rock);
+                        RockDisplayActivity.launchActivity(self, rock.getInternalRock());
                     }
                 }
         );

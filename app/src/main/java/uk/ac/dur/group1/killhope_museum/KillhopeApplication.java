@@ -4,6 +4,10 @@ import android.app.Application;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
@@ -17,13 +21,19 @@ import uk.ac.dur.group1.killhope_museum.dto.json.JsonMap;
 import uk.ac.dur.group1.killhope_museum.dto.RockDTO;
 import uk.ac.dur.group1.killhope_museum.utilities.JSONUtilities;
 
+import java.util.List;
+
+import uk.ac.dur.group1.killhope_museum.activity.RockListActivity;
+import uk.ac.dur.group1.killhope_museum.dto.RockDTO;
+import uk.ac.dur.group1.killhope_museum.dto.RockListFacade;
+
 /**
  * A class designed to hold global variables for the Killhope museum application.
  */
 public class KillhopeApplication extends Application
 {
     private List<RockDTO> rocks = null;
-    private Map<String, String> glossary;
+    private Glossary glossary;
 
     @Override
     public void onCreate()
@@ -105,7 +115,17 @@ public class KillhopeApplication extends Application
         return BitmapFactory.decodeResource(getResources(), R.drawable.killhope_map);
     }
 
-    public Map<String, String> getGlossary()
+    public List<String> getGlossary()
+    {
+        return makeCollection(getInternalGlossary().getAllGlossaryEntries());
+    }
+
+    public Collection<String> getLinkableWords()
+    {
+        return makeCollection(getInternalGlossary().getAllLinkableWords());
+    }
+
+    private Glossary getInternalGlossary()
     {
         if(this.glossary == null)
             this.glossary = GlossaryProvider.getGlossary(getResources());
@@ -114,10 +134,16 @@ public class KillhopeApplication extends Application
 
     public String getGlossaryItem(String name)
     {
-        Map<String, String> glossary = getGlossary();
-        if(!glossary.containsKey(name))
-            return null;
+        return getInternalGlossary().lookupEntry(name);
+    }
 
-        return glossary.get(name);
+
+    //It's stupid that this isn't in the standard library.
+    private static <E> List<E> makeCollection(Iterable<E> iTerrible) {
+        List<E> list = new ArrayList<>();
+        for (E item : iTerrible) {
+            list.add(item);
+        }
+        return list;
     }
 }

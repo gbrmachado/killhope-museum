@@ -7,7 +7,10 @@
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme"
+        android:largeHeap="true"> <!--
+        I'm being awful here, this app probably won't work under Android 11 now.
+        Added some caching to resolve an issue, but not tested fully.-->
         <activity
             android:name=".activity.SplashScreenActivity"
             android:label="@string/title_activity_splash_screen" >
@@ -16,6 +19,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
         <activity
             android:name=".activity.MainMenuActivity"
@@ -39,7 +43,9 @@
         </activity>
         <activity
             android:name=".activity.RockDisplayActivity"
-            android:label="@string/title_activity_rock_display" >
+            android:label="@string/title_activity_rock_display"
+
+            android:theme="@style/Theme.AppCompat.Light">
         </activity>
         //required to detect and not destory the cached image.
         <activity

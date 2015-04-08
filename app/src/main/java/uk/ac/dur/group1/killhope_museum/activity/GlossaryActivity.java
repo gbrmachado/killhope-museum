@@ -16,7 +16,9 @@ import android.widget.EditText;
 import android.widget.ListView;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
+import java.util.List;
 import java.util.Map;
 
 import uk.ac.dur.group1.killhope_museum.KillhopeApplication;
@@ -47,14 +49,10 @@ public class GlossaryActivity extends ActionBarActivity {
         return (EditText) findViewById(R.id.glossary_search);
     }
 
-    private void setGlossary(Map<String, String> glossary)
+    private void setGlossary(List<String> glossary)
     {
-        ArrayList<String> keys = new ArrayList<>();
-        for(String key : glossary.keySet())
-            keys.add(key);
-
-        Collections.sort(keys);
-        this.listFilterAdapater = new ArrayAdapter<>(this, R.layout.list_item, R.id.list_item_text, keys);
+        Collections.sort(glossary);
+        this.listFilterAdapater = new ArrayAdapter<>(this, R.layout.list_item, R.id.list_item_text, glossary);
         getListView().setAdapter(listFilterAdapater);
     }
 
@@ -97,7 +95,7 @@ public class GlossaryActivity extends ActionBarActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_glossary, menu);
+        getMenuInflater().inflate(R.menu.menu_action_bar, menu);
         return true;
     }
 

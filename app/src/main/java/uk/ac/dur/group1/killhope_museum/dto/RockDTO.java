@@ -1,11 +1,8 @@
 package uk.ac.dur.group1.killhope_museum.dto;
 
 import android.graphics.Bitmap;
-
 import java.util.ArrayList;
 import java.util.List;
-
-
 
 /**
  * A Data transfer object designed to encapsulate a rock.
@@ -25,7 +22,7 @@ public class RockDTO
 
 
     private Bitmap rockListImage;
-    private Bitmap videoAnimation;
+    private byte[] videoAnimation;
 
     public void addImage(Bitmap image, boolean isGalleryImage)
     {
@@ -50,8 +47,17 @@ public class RockDTO
         }
     }
 
-    public RockDTO(String uniqueID)
+    public Iterable<Bitmap> getGallery()
     {
+        ArrayList<Bitmap> ret = new ArrayList<>();
+        for(int i : galleryImages)
+        {
+            ret.add(potentialImages.get(i));
+        }
+        return ret;
+    }
+
+    public RockDTO(String uniqueID) {
         this.uniqueID = uniqueID;
     }
 
@@ -87,9 +93,13 @@ public class RockDTO
          return this.rockListImage;
     }
 
-    public Bitmap getAnimation()
+    public byte[] getAnimation()
     {
         return this.videoAnimation;
+    }
+
+    public void setAnimation(byte[] videoAnimation) {
+        this.videoAnimation = videoAnimation;
     }
 
     public String getDisplayName() {
@@ -125,14 +135,6 @@ public class RockDTO
 
     public void setRockListImage(Bitmap rockListImage) {
         this.rockListImage = rockListImage;
-    }
-
-    public Bitmap getVideoAnimation() {
-        return videoAnimation;
-    }
-
-    public void setVideoAnimation(Bitmap videoAnimation) {
-        this.videoAnimation = videoAnimation;
     }
 
     public Iterable<RockContent> getContent()

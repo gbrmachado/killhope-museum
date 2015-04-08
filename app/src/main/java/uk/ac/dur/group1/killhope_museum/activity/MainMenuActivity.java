@@ -107,14 +107,6 @@ public class MainMenuActivity extends ActionBarActivity {
     }
 
 
-    public void go_to_quiz_home(){
-        Intent intent = new Intent(MainMenuActivity.this,quiz_homeActivity.class);
-        this.finish();
-        startActivity(intent);
-
-    }
-
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.

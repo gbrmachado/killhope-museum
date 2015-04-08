@@ -129,10 +129,10 @@ public class RockListFacade
     }
 
 
-    public Collection<RockDTO> getRocksForScreenSize(int screenWidth)
+    public Collection<RockListRock> getRocksForScreenSize(int screenWidth)
     {
         int height = getHeight(screenWidth);
-        ArrayList<RockDTO> ret = new ArrayList<>();
+        ArrayList<RockListRock> ret = new ArrayList<>();
         for(RockDTO r : rocks)
         {
             ret.add(new RockListRock(r, height, screenWidth));
@@ -144,30 +144,38 @@ public class RockListFacade
     /**
      * Performs image scaling for a rock in the overall list.
      */
-    public class RockListRock extends RockDTO
+    public class RockListRock
     {
 
         private final int height;
         private final int width;
         private Bitmap imageCache;
+        private final RockDTO wrapped;
 
         public RockListRock(RockDTO rock, int height, int width)
         {
-            super(rock);
+            this.wrapped = rock;
             this.height = height;
             this.width = width;
         }
 
-        @Override
         public Bitmap getRockListImage()
         {
             //It was deemed easier to overlay a textView than to modify the underlying bitmap to add
             //The name in text, this may want to be changed at a later date, and this is a good point
             //to do so.
             if(imageCache == null)
-                imageCache = BitmapUtilities.scaleTo(super.getRockListImage(), height, width);
+                imageCache = BitmapUtilities.scaleTo(wrapped.getRockListImage(), height, width);
 
             return imageCache;
+        }
+
+        public RockDTO getInternalRock() {
+            return wrapped;
+        }
+
+        public String getName() {
+            return wrapped.getName().toString();
         }
     }
 }

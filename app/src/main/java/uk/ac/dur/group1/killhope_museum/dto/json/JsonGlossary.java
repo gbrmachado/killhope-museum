@@ -35,6 +35,8 @@ public class JsonGlossary {
 
     @JsonProperty("Glossary")
     private List<JsonGlossaryItem> Glossary = new ArrayList<JsonGlossaryItem>();
+    @JsonProperty("Aliases")
+    private List<JsonGlossaryAlias> Aliases = new ArrayList<JsonGlossaryAlias>();
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -52,6 +54,26 @@ public class JsonGlossary {
     @JsonProperty("Glossary")
     public void setGlossary(List<JsonGlossaryItem> Glossary) {
         this.Glossary = Glossary;
+    }
+
+    /**
+     *
+     * @return
+     * The Aliases
+     */
+    @JsonProperty("Aliases")
+    public List<JsonGlossaryAlias> getAliases() {
+        return Aliases;
+    }
+
+    /**
+     *
+     * @param Aliases
+     * The Aliases
+     */
+    @JsonProperty("Aliases")
+    public void setAliases(List<JsonGlossaryAlias> Aliases) {
+        this.Aliases = Aliases;
     }
 
     @JsonAnyGetter
