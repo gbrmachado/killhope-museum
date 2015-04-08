@@ -17,4 +17,5 @@
     <string name="action_Bar_Title">test1</string>
     <string name="title_activity_glossary">Glossary</string>
     <string name="title_activity_glossary_item">"Glossary - %s"</string>
+    <string name="title_activity_museum_page">MuseumPage</string>
 </resources>
