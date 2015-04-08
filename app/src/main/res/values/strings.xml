@@ -17,4 +17,6 @@
     <string name="action_Bar_Title">test1</string>
     <string name="title_activity_glossary">Glossary</string>
     <string name="title_activity_glossary_item">"Glossary - %s"</string>
+    <string name="glossary_no_results_found">No results found.</string>
+    <string name="glossary_no_results_available">No results available.</string>
 </resources>

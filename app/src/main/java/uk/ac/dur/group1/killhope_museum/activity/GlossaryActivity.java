@@ -1,6 +1,5 @@
 package uk.ac.dur.group1.killhope_museum.activity;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
@@ -14,12 +13,10 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
-import java.util.Map;
 
 import uk.ac.dur.group1.killhope_museum.KillhopeApplication;
 import uk.ac.dur.group1.killhope_museum.R;
@@ -49,11 +46,40 @@ public class GlossaryActivity extends ActionBarActivity {
         return (EditText) findViewById(R.id.glossary_search);
     }
 
+    private TextView getTextError() {return (TextView) findViewById(R.id.glossary_results_error); }
+
+    /**
+     *
+     * @param makeErrorVisible Whether to hide the listView and make the error text visible.
+     */
+    private void toggleErrorVisibility(boolean makeErrorVisible)
+    {
+        int listVisibility = makeErrorVisible  ? View.GONE : View.VISIBLE;
+        int errorVisibility = makeErrorVisible ? View.VISIBLE : View.GONE;
+        getListView().setVisibility(listVisibility);
+        getTextError().setVisibility(errorVisibility);
+    }
+
+    private void setError(CharSequence message)
+    {
+        TextView errorText = getTextError();
+        errorText.setText(message);
+        toggleErrorVisibility(true);
+    }
+
     private void setGlossary(List<String> glossary)
     {
+        if(glossary == null || glossary.size() == 0)
+        {
+            setError(getString(R.string.glossary_no_results_available));
+            return;
+        }
         Collections.sort(glossary);
         this.listFilterAdapater = new ArrayAdapter<>(this, R.layout.list_item, R.id.list_item_text, glossary);
-        getListView().setAdapter(listFilterAdapater);
+        ListView listView = getListView();
+        listView.setAdapter(listFilterAdapater);
+        listView.setEmptyView(findViewById(R.id.glossary_results_error));
+        setupFiltering(); //Filtering should only be applied if there is an adapter.
     }
 
     @Override
@@ -63,7 +89,6 @@ public class GlossaryActivity extends ActionBarActivity {
 
         KillhopeApplication application = (KillhopeApplication) getApplication();
         setGlossary(application.getGlossary());
-        setupFiltering();
         setClickListener();
     }
 
