@@ -50,7 +50,7 @@
         },
         {
             "id": "Room 3",
-            "rocks": ["Rocks-Galena","Rocks-Quartz","Rocks-Fluorite"],
+            "rocks": ["Rock-Galena","Rock-Quartz","Rock-Fluorite"],
             "points": [
                 {
                     "x": 244,
@@ -72,7 +72,7 @@
         },
         {
             "id": "Room 2",
-            "rocks": ["Rocks-Fluorite","Rocks-Calcite", "Rocks-Sphalerite", "Rocks-Galena", "Rocks-Baryte", "Rocks-Galena", "Rocks-Quartz"],
+            "rocks": ["Rock-Fluorite","Rock-Calcite", "Rock-Sphalerite", "Rock-Galena", "Rock-Baryte", "Rock-Galena", "Rock-Quartz"],
             "points": [
                 {
                     "x": 244,
@@ -94,7 +94,7 @@
         },
         {
             "id": "Room 3",
-            "rocks": ["Rocks-Galena", "Rocks-Fluorite", "Rocks-Quartz"],
+            "rocks": ["Rock-Galena", "Rock-Fluorite", "Rock-Quartz"],
             "points": [
                 {
                     "x": 428,
@@ -116,7 +116,7 @@
         },
         {
             "id": "Room 1",
-            "rocks": ["Rocks-Sphalerite", "Rocks-Limonite", "Rocks-Galena", "Rocks-Cerussite", "Rocks-Baryte", "Rocks-Witherite", "Rocks-Baryfocalite", "Rocks-Calcite", "Rocks-Ankerite", "Rocks-Fluorite", "Rocks-Siderite", "Rocks-Quartz"],
+            "rocks": ["Rock-Sphalerite", "Rock-Limonite", "Rock-Galena", "Rock-Cerussite", "Rock-Baryte", "Rock-Witherite", "Rock-Baryfocalite", "Rock-Calcite", "Rock-Ankerite", "Rock-Fluorite", "Rock-Siderite", "Rock-Quartz"],
             "points": [
                 {
                     "x": 411,
