@@ -9,6 +9,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 
+import uk.ac.dur.group1.killhope_museum.activity.GlossaryActivity;
 import uk.ac.dur.group1.killhope_museum.activity.MuseumPage;
 import uk.ac.dur.group1.killhope_museum.activity.QRCodeActivity;
 import uk.ac.dur.group1.killhope_museum.activity.MapsActivity;
@@ -31,9 +32,11 @@ public class MainMenuIconCollectionFactory
         List<MainMenuIcon> ret = Arrays.asList
         (
             createMuseumIcon(context),
+            createGlossaryIcon(context),
             createQuizIcon(context),
             createRockListIcon(context),
             createMapIcon(context),
+            createTimelineIcon(context),
             createQRCodeIcon(context)
         );
 
@@ -90,6 +93,17 @@ public class MainMenuIconCollectionFactory
         return new MainMenuIcon(new LaunchMuseumCommand(context), icon);
     }
 
+    private static MainMenuIcon createTimelineIcon(Context context)
+    {
+        Bitmap icon = BitmapFactory.decodeResource(context.getResources(), R.drawable.main_menu_icon_timeline);
+        return new MainMenuIcon(new LaunchTimelineCommand(context), icon);
+    }
+
+    private static MainMenuIcon createGlossaryIcon(Context context) {
+        Bitmap icon = BitmapFactory.decodeResource(context.getResources(), R.drawable.main_menu_icon_glossary);
+        return new MainMenuIcon(new LaunchGlossaryCommand(context), icon);
+    }
+
 
 
 
@@ -134,6 +148,21 @@ public class MainMenuIconCollectionFactory
         @Override
         public void execute() { MapsActivity.launchActivity(context); }
     }
+
+    private static class LaunchTimelineCommand extends LaunchActivityCommand
+    {
+        public LaunchTimelineCommand(Context context) { super(context); }
+        @Override
+        public void execute() {Toast.makeText(context, "Timeline not implemented", Toast.LENGTH_LONG).show(); }
+    }
+
+    private static class LaunchGlossaryCommand extends LaunchActivityCommand
+    {
+        public LaunchGlossaryCommand(Context context) { super(context); }
+        @Override
+        public void execute() { GlossaryActivity.launchActivity(context); }
+    }
+
 
     private static abstract class LaunchActivityCommand implements ICommand
     {

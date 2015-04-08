@@ -30,6 +30,8 @@ public class MainMenuActivity extends ActionBarActivity {
      */
     private static final int ICON_COUNT = 3;
 
+    private static final int NUMBER_OF_ICONS = 7;
+
     public static void launchActivity(Context context)
     {
         if(context == null)
@@ -50,8 +52,8 @@ public class MainMenuActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main_menu);
 
         List<MainMenuIcon> icons = getIcons();
-        if(icons.size() != 5)
-            throw new IllegalStateException("5 icons were not supplied");
+        if(icons.size() != NUMBER_OF_ICONS)
+            throw new IllegalStateException(String.format("%d icons were not supplied", NUMBER_OF_ICONS));
 
         //all icons should have consistent height and width (due to constraints added by the factory).
         int iconDimensions = icons.get(0).getDimensions();
@@ -79,17 +81,21 @@ public class MainMenuActivity extends ActionBarActivity {
     {
         //TODO: iconDimensions
         ImageView topLeft = (ImageView) this.findViewById(R.id.main_menu_top_left_image);
+        ImageView topCenter = (ImageView) this.findViewById(R.id.main_menu_top_center_image);
         ImageView topRight = (ImageView) this.findViewById(R.id.main_menu_top_right_image);
         ImageView center = (ImageView) this.findViewById(R.id.main_menu_center_image);
         ImageView bottomLeft = (ImageView) this.findViewById(R.id.main_menu_bottom_left_image);
+        ImageView bottomCenter = (ImageView) this.findViewById(R.id.main_menu_bottom_center_image);
         ImageView bottomRight = (ImageView) this.findViewById(R.id.main_menu_bottom_right_image);
 
         int id = 0;
 
         setIcon(topLeft, icons.get(id++), iconDimensions);
+        setIcon(topCenter, icons.get(id++), iconDimensions);
         setIcon(topRight, icons.get(id++), iconDimensions);
         setIcon(center, icons.get(id++), iconDimensions);
         setIcon(bottomLeft, icons.get(id++), iconDimensions);
+        setIcon(bottomCenter, icons.get(id++), iconDimensions);
         setIcon(bottomRight, icons.get(id++), iconDimensions);
     }
 

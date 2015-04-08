@@ -15,22 +15,25 @@
             android:layout_weight="1">
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/main_menu_top_left_image"
-                android:layout_column="0"
-                android:layout_weight="1" />
-            <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
+                android:id="@+id/main_menu_top_left_image"
+                android:gravity="center"
+                android:layout_column="0"
+                android:layout_weight="1" />
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:id="@+id/main_menu_top_center_image"
+                android:gravity="center"
                 android:layout_column="1"
                 android:layout_weight="1" />
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
                 android:id="@+id/main_menu_top_right_image"
+                android:gravity="center"
                 android:layout_column="2"
-                android:onClick="go_to_quiz_home"
                 android:layout_weight="1" />
         </TableRow>
 
@@ -46,9 +49,10 @@
                 android:layout_column="0"
                 android:layout_weight="1" />
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
                 android:id="@+id/main_menu_center_image"
+                android:gravity="center"
                 android:layout_column="1"
                 android:layout_weight="1" />
             <TextView
@@ -66,23 +70,24 @@
             >
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
                 android:id="@+id/main_menu_bottom_left_image"
                 android:layout_column="0"
-                android:layout_gravity="center"
+                android:gravity="center"
                 android:layout_weight="1" />
 
-            <TextView
+            <ImageView
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:gravity="center"
+                android:id="@+id/main_menu_bottom_center_image"
                 android:layout_column="1"
                 android:layout_weight="1" />
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
                 android:id="@+id/main_menu_bottom_right_image"
                 android:layout_column="2"
                 android:layout_gravity="center"
