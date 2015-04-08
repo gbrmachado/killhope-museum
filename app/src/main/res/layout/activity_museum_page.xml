@@ -7,7 +7,7 @@
         android:id="@+id/ScrollViewMuseum1"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_above="@+id/museum_footer">
+        android:layout_above="@+id/museum_page_footer">
 
 
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
