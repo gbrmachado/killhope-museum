@@ -9,6 +9,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 
+import uk.ac.dur.group1.killhope_museum.activity.MuseumPage;
 import uk.ac.dur.group1.killhope_museum.activity.QRCodeActivity;
 import uk.ac.dur.group1.killhope_museum.activity.MapsActivity;
 import uk.ac.dur.group1.killhope_museum.activity.RockListActivity;
@@ -118,7 +119,8 @@ public class MainMenuIconCollectionFactory
 {
     public LaunchMuseumCommand(Context context) { super(context); }
     @Override
-    public void execute() { Toast.makeText(context, "museum not implemented", Toast.LENGTH_LONG).show(); }
+    public void execute() {
+        MuseumPage.launchActivity(this.context); }
 }
     private static class LaunchQRCodeCommand extends LaunchActivityCommand
     {
