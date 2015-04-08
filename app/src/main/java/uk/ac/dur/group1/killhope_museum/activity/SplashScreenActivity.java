@@ -37,7 +37,7 @@ public class SplashScreenActivity extends ActionBarActivity {
                         MainMenuActivity.launchActivity(self);
                         finish();
                     }
-                }, TIMEOUT_MILLISECONDS);
+                }, TIMEOUT_MILLISECONDS + 1000);
             }
         }, TIMEOUT_MILLISECONDS);
     }

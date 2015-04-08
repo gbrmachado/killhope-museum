@@ -49,8 +49,7 @@
         android:layout_height="wrap_content"
         android:text="Previous"
         android:onClick="onClickPrevious"
-        android:layout_below="@+id/radioGroup"
-        android:layout_marginTop="55dp"/>
+        android:layout_below="@+id/radioGroup"/>
 
     <Button
         android:id="@+id/button_one"
