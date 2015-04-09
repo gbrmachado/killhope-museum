@@ -112,7 +112,7 @@ public class quiz_processActivity extends Activity{
                     radio_group.clearCheck();
                     // if is on last question, change text "next" to "Done"
                     if(currentQuestion  == question_array.length){
-                        button_one.setText("Done");
+                        button_one.setText(getString(R.string.quiz_navigation_to_answers));
                     }
                 }
             }

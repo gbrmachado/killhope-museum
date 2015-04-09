@@ -29,4 +29,5 @@
     <string name="quiz_hard_level">Hard</string>
     <string name="quiz_previous_button">Previous</string>
     <string name="quiz_next_button">Next</string>
+    <string name="quiz_navigation_to_answers">Done</string>
 </resources>
