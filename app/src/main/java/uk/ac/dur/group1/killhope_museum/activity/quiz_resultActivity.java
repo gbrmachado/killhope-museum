@@ -63,6 +63,9 @@ public class quiz_resultActivity extends Activity
 
             count = ++count % 2;
         }
+        //remove the final two linebreaks.
+        display = display.substring(0, display.length() - 1 - "<br/><br/>".length());
+
         TextView textView_three = getAnswerCorrections();
         textView_three.setText(Html.fromHtml(display));
     }
