@@ -169,12 +169,15 @@ public class quiz_processActivity extends Activity{
         }
         // compare selected with correct answer
         int score = 0;
-        for(int i=0;i<correctAnswer_array.length;i++){
-            if(correctAnswer_array[i] == choose.get(i)){
+        for(int i=0;i<correctAnswer_array.length;i++) {
+            int correctAnswerOrdinal = correctAnswer_array[i];
+            if (correctAnswerOrdinal == choose.get(i)) {
                 score++;
-            }else{
+            } else {
+                //We want to display the question and correct answer to the user if they got it wrong.
                 wrong_answer.add(question_array[i]);
-                wrong_answer.add(answer_array[correctAnswer_array[i] + 2 * i]);
+                //The correctAnswerOrdinal is 1-based, so subtract 1 to get the correct index into the answer array.
+                wrong_answer.add(answer_array[3 * i + correctAnswerOrdinal - 1]);
             }
         }
         return score;
