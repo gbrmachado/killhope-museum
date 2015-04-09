@@ -6,13 +6,13 @@
 			"GalleryImages": [ ],
 			"VideoPath": "",
 			"Title": "Ankerite",
-			"Formula": "PCa(Mg, Fe2+, Mn)(CO₃)₂",
+			"Formula": "PCa(Mg, Fe²⁺, Mn)(CO₃)₂",
 			"Content": 
 			[
 				{"Title":"","Data":"<b>Colour</b>: White/Yellowish white.<br/><b>Abundance</b>: Frequently fills joints in coal seams.<br/><b>Hardness</b>: 3.5 - 4 (Soft - Medium).<br/><b>Lustre</b>: Vitreous to pearly.<br/><b>Ore</b>: Gangue mineral accompanying iron ore.<br/><b>Interesting fact</b>: Darkens with heating and may become magnetic."},
 				{"Title":"","Data":"<b>Uses</b>: Minor iron ore.<br/><b>Main countries involved in the extraction of mineral</b>: N/A.<br/><b>Crystal Habit</b>: Rhombohedral with curved faces, columnar, granular, massive.<br/><b>Crystal Structure</b>: Trigonal.<br/><b>Depositional Environment</b>: Result of both hydrothermal, low-temperature metasomatism and banded iron formations.<br/><b>Transparency</b>: Translucent - transparent.<br/><b>Origin of Name</b>: Named after M.J.Anker, an Austrian mineralogist.<br/><b>Colours Observed at Killhope</b>: Cream, brown."},
 				{"Title":"","Data":"<b>Further uses</b>: None.<br/><b>Streak</b>: White.<br/><b>Cleavage</b>: Perfect.<br/><b>Fracture</b>: Subconchoidal."},
-				{"Title":"","Data":"<b>Specific Gravity</b>: 2.93 - 3.10.<br/><b>Further properties</b>: Colour turns yellowish brown/brown when oxidation of iron has occured.<br/><b>Relevance at Killhope</b>: Large concentration of ankerite accompany galena-sphalerite-fluorite-baryte veins such as in the North Pennines orefield where limestone or quartz dolerite has been replaced.<br/><b>Optical Properties</b>: Increasing replacement of Mg by Fe2+ increases the refractive indices, birefringence and specific gravity."}
+				{"Title":"","Data":"<b>Specific Gravity</b>: 2.93 - 3.10.<br/><b>Further properties</b>: Colour turns yellowish brown/brown when oxidation of iron has occured.<br/><b>Relevance at Killhope</b>: Large concentration of ankerite accompany galena-sphalerite-fluorite-baryte veins such as in the North Pennines orefield where limestone or quartz dolerite has been replaced.<br/><b>Optical Properties</b>: Increasing replacement of Mg by Fe²⁺ increases the refractive indices, birefringence and specific gravity."}
 			]
 		},
 		{
@@ -21,7 +21,7 @@
 			"GalleryImages": [ ],
 			"VideoPath": "",
 			"Title": "Aragonite",
-			"Formula": "CaCO3",
+			"Formula": "CaCO₃",
 			"Content": 
 			[
 				{"Title":"","Data":"<b>Colour</b>: It can be white, colourless, grey, yellowish, reddish and green.<br/><b>Abundance</b>: Extremely common on the seafloor as it forms in almost all mollusk shells, and as the calcareous endoskeleton of warm and cold water corals.<br/><b>Hardness</b>: 3 - 3.5 (soft to medium).<br/><b>Lustre</b>: Vitreous inclining to resinous.<br/><b>Interesting Fact</b>: Aragonite is considered essential for the replication of reef conditions in aquariums.It is the material that sea life is evolved to use and live around and also keeps the tank's pH close to its natural level."},
@@ -36,13 +36,13 @@
 			"GalleryImages": [ ],
 			"VideoPath": "",
 			"Title": "Baryte",
-			"Formula": "BaSO4",
+			"Formula": "BaSO₄",
 			"Content": 
 			[
 				{"Title":"","Data":"<b>Colour</b>: White, often tinged with yellow, brown, blue, green or red.<br/><b>Abundance</b>: Found worldwide.<br/><b>Hardness</b>: 2 - 3 (brittle).<br/><b>Lustre</b>: Vitreous.<br/><b>Interesting fact</b>: It will glow green, blue or yellow under ultraviolet light."},
 				{"Title":"","Data":"<b>Uses</b>: A component of heavy cement, it is crushed and screened to a uniform size.<br/><b>Main countries involved in the extraction of mineral</b>: China, India, USA, Morocco, Turkey and Kazakhstan.<br/><b>Crystal Habit</b>: Tabular, with a prismatic habit giving the diamond-shaped outline with fibrous, coxcomb, granular and stalagmitic habits also being associated with this mineral.<br/><b>Crystal Structure</b>: Orthorhombic.<br/><b>Depositional Environment </b>: It is deposited during evaporation and biogenic processes and as a vein filling gangue mineral, as well as being identified in meteorites.<br/><b>Transparency</b>: Transparent to translucent.<br/><b>Origin of Name</b>: Derived from the Greek word βαρύς meaning heavy.<br/><b>Colours Observed at Killhope</b>: White, brown and yellow."},
 				{"Title":"","Data":"<b>Further Uses</b>: Varies the weight of well drilling mud in the production of petroleum which helps eliminate large differences in pressure between it, and the hydrocarbons, preventing kicks and subsequent catastrophic blow outs such as the incident in the Gulf of Mexico.<br/><b>Streak</b>: White.<br/><b>Cleavage</b>: Well observed, displaying perfect basal, and very good prismatic cleavage.<br/><b>Fracture</b>: Uneven."},
-				{"Title":"","Data":"<b>Specific Gravity</b>: 4.3 - 4.6.<br/><b>Further Properties</b>: In the deep oceans, baryte crystallises out and forms a significant amount of sediments.With oxygen forming part of the crystal structure, we can use it to gather paleotemperatures to a maximum of 25 Ma in conjunction with the δ18O values.Similar variations of sulphur are also being exploited.<br/><b>Relevance at Killhope</b>: Deposition is associated with galena.<br/><b>Optical Properties</b>: Biaxial positive.<br/><b>Impurities</b>: Yellow, red and brown caused by iron oxides, hydroxides, sulphides and organic matter whilst blue colours indicate exposure of radiation."}
+				{"Title":"","Data":"<b>Specific Gravity</b>: 4.3 - 4.6.<br/><b>Further Properties</b>: In the deep oceans, baryte crystallises out and forms a significant amount of sediments.With oxygen forming part of the crystal structure, we can use it to gather paleotemperatures to a maximum of 25 Ma in conjunction with the δⁱ⁸O values.Similar variations of sulphur are also being exploited.<br/><b>Relevance at Killhope</b>: Deposition is associated with galena.<br/><b>Optical Properties</b>: Biaxial positive.<br/><b>Impurities</b>: Yellow, red and brown caused by iron oxides, hydroxides, sulphides and organic matter whilst blue colours indicate exposure of radiation."}
 			]
 		},
 		{
@@ -51,7 +51,7 @@
 			"GalleryImages": [ ],
 			"VideoPath": "",
 			"Title": "Barytocalcite",
-			"Formula": "BaCa(CO3)",
+			"Formula": "BaCa(CO₃)",
 			"Content": 
 			[
 				{"Title":"","Data":"<b>Colour</b>: White, greyish, yellow/brownish. <br/><b>Abundance</b>: Forms orientated druzy growths on baryte and calcite.<br/><b>Hardness</b>: 4 (Medium).<br/><b>Lustre</b>: Vitreous to resinous.<br/><b>Ore</b>: Minor ore of barium.<br/><b>Interesting fact</b>: Type locality is the Blagill Mine in the North Pennines. In the past lustrous, transparent, prismatic crystals of Barytocalcite have been found there."},
@@ -66,13 +66,13 @@
 			"GalleryImages": [ ],
 			"VideoPath": "",
 			"Title": "Calcite",
-			"Formula": "CaCO3",
+			"Formula": "CaCO₃",
 			"Content": 
 			[
 				{"Title":"","Data":"<b>Colour</b>: Usually colourless or white but shades of grey, yellow, green, red, purple, blue and even brown or black.<br/><b>Abundance</b>: It is found in virtually every country as a major constituent in calcareous sedimentary rocks such as limestone and its metamorphic equivalent (marble).<br/><b>Hardness</b>: 3 (medium to soft).<br/><b>Lustre</b>: Vitreous or pearly.<br/><b>Interesting fact</b>: Calcite refracts light, making you see two images instead of one."},
 				{"Title":"","Data":"<b>Uses (past and present)</b>: Fabricating optical sights on weapons for World War II. Construction material, abrasive, agricultural soil treatment, construction aggregate, pigment, pharmaceuticals and more. It has more uses than almost any other mineral. <br/><b>Main countries involved in the extraction of mineral</b>: Stalagmites and stalactites are defining characteristics of limestone caverns which are found worldwide, particularly within tropical regions with the more well known ones recognised in Borneo, Iceland and Mexico. Salt rich bodies of water which dry up known as playa lakes or salt flats such as the World’s largest in Bolivia, are large sources of calcite.<br/><b>Crystal Habit</b>: Varies more than any other mineral, most common being tabular and prismatic with fibrous, granular, stalactic or massive habits also observed.<br/><b>Crystal Structure</b>: Trigonal.<br/><b>Depositional Environment</b>: Hydrothermal veins and vugs, such as here in Weardale as well as caverns and marine organisms. <br/><b>Transparency</b>: Translucent to transparent.<br/><b>Origin of Name</b>: Derived from the greek word ‘Chalix’ meaning lime.<br/><b>Colours Observed at Killhope</b>: White and brown."},
 				{"Title":"","Data":"<b>Streak</b>: White.<br/><b>Cleavage</b>: Perfect rhombohedral.<br/><b>Fracture</b>: Conchoidal fracture but rarely seen due to the perfect cleavage."},
-				{"Title":"","Data":"<b>Specific Gravity</b>: 2.7.<br/><b>Further Properties</b>: The phenomenon of double refraction causes a single dot on a piece of paper display 2 dots.If rotated, the true dot is stationary with the other rotating to the rhomb.It’s variable habit indicates the depositional temperature conditions.<br/><b>Relevance at Killhope</b>: Gangue mineral, and used in spar boxes.<br/><b>Optical Properties</b>: Uniaxial, very common twinning, with lamellar twinning occurring due to exposure of high pressures.<br/><b>Impurities</b>: Red due to iron while purple and blue indicate levels of niobium and brown or black include manganese."}
+				{"Title":"","Data":"<b>Specific Gravity</b>: 2.7.<br/><b>Further Properties</b>: The phenomenon of double refraction causes a single dot on a piece of paper display 2 dots. If rotated, the true dot is stationary with the other rotating to the rhomb.It’s variable habit indicates the depositional temperature conditions.<br/><b>Relevance at Killhope</b>: Gangue mineral, and used in spar boxes.<br/><b>Optical Properties</b>: Uniaxial, very common twinning, with lamellar twinning occurring due to exposure of high pressures.<br/><b>Impurities</b>: Red due to iron while purple and blue indicate levels of niobium and brown or black include manganese."}
 			]
 		},
 		{
@@ -81,7 +81,7 @@
 			"GalleryImages": [ ],
 			"VideoPath": "",
 			"Title": "Cerussite",
-			"Formula": "PbCO3",
+			"Formula": "PbCO₃",
 			"Content": 
 			[
 				{"Title":"","Data":"<b>Colour</b>: Usually white or grey but sometimes gray, blue, or green.<br/><b>Abundance</b>: Namibia is perhaps the most classic locality for this mineral.Finer examples found in Morocco with excellent specimens from Australia, Italy, Weardale and Cornwall.<br/><b>Hardness</b>: 3 - 3.5 (brittle).<br/><b>Lustre</b>: Adamantine.<br/><b>Ore</b>: Lead and sometimes silver.<br/><b>Interesting fact</b>: Breaks down to a basic carbonate at about 300°, which, in turn, decomposes to lead oxide at about 500°."},
@@ -96,11 +96,11 @@
 			"GalleryImages": [ ],
 			"VideoPath": "",
 			"Title": "Fluorite (Calcium Fluoride) [also known as Fluorspar]",
-			"Formula": "CaF2",
+			"Formula": "CaF₂",
 			"Content": 
 			[
 				{"Title":"","Data":"<b>Common Colours</b>: Purple varieties, blue, green, yellow, colourless.<br/><b>Abundance</b>: Widely distributed occurring in veins either alone or as a gangue mineral with metallic ores.<br/><b>Hardness</b>: 4 (Medium).<br/><b>Lustre</b>: Vitreous.<br/><b>Ore</b>: None.<br/><b>Interesting fact</b>: Many samples exhibit fluorescence under ultraviolet light - a property that takes its name from fluorite."},
-				{"Title":"","Data":"<b>Uses</b>: <ul><li>Metallurgical grade fluorite (60-85% CaF2) used as a flux to lower the melting point in steel production and to decrease the viscosity of slags. Later used in the production of aluminium to remove impurities.</li><li>Ceramic grade fluorite(85-95% CaF2) used in the production of opalescent glass, enamels and cooking utensils.</li><li>Acid grade fluorite (>95%) used to make hydrogen fluoride and hydrofluoric acid - accounts for 95% of fluorite consumption in the USA.</li></ul><br/><b>Main countries involved in the extraction of mineral</b>: China, Mexico, Mongolia, Russia, South Africa, Spain, Namibia.<br/><b>Crystal Habit</b>: Well formed, coarse sized crystals.<br/><b>Crystal Structure</b>: Cubic.<br/><b>Depositional Environment</b>: Vein deposits, often forms a part of the gangue.<br/><b>Transparency</b>: Transparent to translucent.<br/><b>Origin of Name</b>: Derived from the Latin fluo, in allusion to its readily fusible nature and its commercial use as a flux in smelting.<br/><b>Colours Observed at Killhope</b>: Brown, purple, violet, blue, green, colourless, grey, amber, white."},
+				{"Title":"","Data":"<b>Uses</b>: <ul><li>Metallurgical grade fluorite (60-85% CaF₂) used as a flux to lower the melting point in steel production and to decrease the viscosity of slags. Later used in the production of aluminium to remove impurities.</li><li>Ceramic grade fluorite (85-95% CaF₂) used in the production of opalescent glass, enamels and cooking utensils.</li><li>Acid grade fluorite (>95%) used to make hydrogen fluoride and hydrofluoric acid - accounts for 95% of fluorite consumption in the USA.</li></ul><br/><b>Main countries involved in the extraction of mineral</b>: China, Mexico, Mongolia, Russia, South Africa, Spain, Namibia.<br/><b>Crystal Habit</b>: Well formed, coarse sized crystals.<br/><b>Crystal Structure</b>: Cubic.<br/><b>Depositional Environment</b>: Vein deposits, often forms a part of the gangue.<br/><b>Transparency</b>: Transparent to translucent.<br/><b>Origin of Name</b>: Derived from the Latin fluo, in allusion to its readily fusible nature and its commercial use as a flux in smelting.<br/><b>Colours Observed at Killhope</b>: Brown, purple, violet, blue, green, colourless, grey, amber, white."},
 				{"Title":"","Data":"<b>Further uses</b>: <ul><li>Ornamental and lapidary uses. Although not widely used as a semi-precious stone due to its softness.</li><li>Commonly used as a window material for infrared and ultraviolet wavelengths in laboratories.</li></ul><br/><b>Streak</b>: White.<br/><b>Cleavage</b>: Octahedral.<br/><b>Fracture</b>: Subconchoidal to Uneven."},
 				{"Title":"","Data":"<b>Specific Gravity</b>: 3.18.<br/><b>Further properties</b>: Calcium ions are arranged on a cubic fluorine lattice, a calcium ion is located at the centre of each cube face and each corner."}
 			]
@@ -115,9 +115,9 @@
 			"Content": 
 			[
 				{"Title":"","Data":"<b>Colour</b>: Lead-grey.<br/><b>Abundance</b>: Galena is found worldwide in a variety of different geologic environments due to its formation in low, intermediate and high temperature environments.<br/><b>Hardness</b>: 2.5 (soft).<br/><b>Lustre</b>: Metallic, however specimens tarnish when exposed to air becoming dull.<br/><b>Ore</b>: Most abundant lead ore.<br/><b>Interesting fact</b>: The smelting of Galena can be achieved by nothing more complex than heating galena in the embers of a campfire and retrieving the metal from beneath when it cools."},
-				{"Title":"","Data":"<b>Uses</b>: In ancient times lead was widely used for everything from water pipes to cooking pots, however due to our knowledge of its toxic and carcinogenic properties, its applications have been limited.Lead still has many uses in the modern world, from car batteries to the lining of roofs.<br/><b>Main countries involved in the extraction of mineral</b>: Galena is a fairly common mineral and occurs in numerous locations worldwide.Galena is mined in Germany, Kosovo, Romania , and the U.S.tri-state mining district of Kansas, Missouri and Oklahoma.<br/><b>Crystal Habit</b>: Fully grown crystals can be either coarse or fine grained and more rarely fibrous, crystals exceeding 2.5cm are common.<br/><b>Crystal Structure</b>: Cubic and octahedral crystal systems, although the latter is rarely present alone.These crystals often grow on top of one another.<br/><b>Depositional Environment</b>: In sedimentary limestone deposits, hydrothermal veins, hydrothermal replacement deposits, and in placer deposits. Rarely associated with basalts and diabase. <br/><b>Transparency</b>: Opaque<br/><b>Origin of name</b>: Named by Pliny the Elder in 77-79 from the Greek \"galene\" meaning lead ore.<br/><b>Colour seen at Killhope</b>: Lead-grey."},
+				{"Title":"","Data":"<b>Uses</b>: In ancient times lead was widely used for everything from water pipes to cooking pots, however due to our knowledge of its toxic and carcinogenic properties, its applications have been limited.Lead still has many uses in the modern world, from car batteries to the lining of roofs.<br/><b>Main countries involved in the extraction of mineral</b>: Galena is a fairly common mineral and occurs in numerous locations worldwide.Galena is mined in Germany, Kosovo, Romania, and the U.S.tri-state mining district of Kansas, Missouri and Oklahoma.<br/><b>Crystal Habit</b>: Fully grown crystals can be either coarse or fine grained and more rarely fibrous, crystals exceeding 2.5cm are common.<br/><b>Crystal Structure</b>: Cubic and octahedral crystal systems, although the latter is rarely present alone.These crystals often grow on top of one another.<br/><b>Depositional Environment</b>: In sedimentary limestone deposits, hydrothermal veins, hydrothermal replacement deposits, and in placer deposits. Rarely associated with basalts and diabase. <br/><b>Transparency</b>: Opaque<br/><b>Origin of name</b>: Named by Pliny the Elder in 77-79 from the Greek \"galene\" meaning lead ore.<br/><b>Colour seen at Killhope</b>: Lead-grey."},
 				{"Title":"","Data":"<b>Further information on its uses</b>: One of its oldest known uses was in Ancient Egypt where Egyptians would smear galena around their eyes to reflect sunlight and repel disease carrying insects. In many cases, galena contains impurities such as Copper, Zinc, Bismuth and Silver.Often Galena can be made up of 1-2% silver, and this can be of greater value than the lead content making it also an important source of silver.<br/><b>Streak</b>: Lead-grey.<br/><b>Cleavage</b>: Often exhibits a perfect cubic cleavage with abundant triangular pits. This results in it deforming along it’s cube planes.<br/><b>Fracture</b>: Subconchoidal."},
-				{"Title":"","Data":"<b>Specific gravity</b>: 7.4 - 7.6 (Very high density).<br/><b>Further Structural Information</b>: Galena belongs to the octahedral sulfide group of minerals with metal ions in octahedral positions - 6 points, creating 8 faces.<br/><b>Alteration Properties</b>: Within the weathering or oxidation zone galena alters to anglesite(lead sulfate), cerussite(lead carbonate), pyromorphite and pseudomorphs, which include chalcocite and covellite and can create overgrowths on one another.<br/><b>Isotopic information</b>: The ratios of lead isotopes (206Pb, 207Pb and 208Pb) in Galena specimens allows the ages of the rock it is found in to be calculated.<br/><b>Associated Minerals</b>: Galena often forms along side other minerals, in particular baryte, fluorite, quartz and calcite.<br/><b>Relevance at Killhope</b>: Excellent Galena occurs in several places in England; the best include Alston Moor and Weardale, where it forms together with Fluorite.<br/><b>Optical Properties</b>: Optically isotropic, it reflects 42% of all light exposed to its surface.<br/><b>Impurities</b>: Can include many different impurities including silver, arsenic, antimony, and copper."}
+				{"Title":"","Data":"<b>Specific gravity</b>: 7.4 - 7.6 (Very high density).<br/><b>Further Structural Information</b>: Galena belongs to the octahedral sulfide group of minerals with metal ions in octahedral positions - 6 points, creating 8 faces.<br/><b>Alteration Properties</b>: Within the weathering or oxidation zone galena alters to anglesite(lead sulfate), cerussite(lead carbonate), pyromorphite and pseudomorphs, which include chalcocite and covellite and can create overgrowths on one another.<br/><b>Isotopic information</b>: The ratios of lead isotopes (²⁰⁶Pb, ²⁰⁷Pb and ²⁰⁸Pb) in Galena specimens allows the ages of the rock it is found in to be calculated.<br/><b>Associated Minerals</b>: Galena often forms along side other minerals, in particular baryte, fluorite, quartz and calcite.<br/><b>Relevance at Killhope</b>: Excellent Galena occurs in several places in England; the best include Alston Moor and Weardale, where it forms together with Fluorite.<br/><b>Optical Properties</b>: Optically isotropic, it reflects 42% of all light exposed to its surface.<br/><b>Impurities</b>: Can include many different impurities including silver, arsenic, antimony, and copper."}
 			]
 		},
 		{
@@ -126,13 +126,13 @@
 			"GalleryImages": [ ],
 			"VideoPath": "",
 			"Title": "Limonite",
-			"Formula": "FeO.OH.nH2O",
+			"Formula": "FeO.OH.nH₂O",
 			"Content": 
 			[
 				{"Title":"","Data":"<b>Colour</b>: Yellow/Brown.<br/><b>Abundance</b>: Extremely common.<br/><b>Hardness</b>: 4 - 5.5 (Medium).<br/><b>Lustre</b>: Earthy.<br/><b>Ore</b>: Iron.<br/><b>Interesting fact</b>: Although originally defined as a single mineral, no longer scientifically considered a true mineral as it lacks a definitive chemical formula and crystal structure.Formula found to be a mixture of different minerals.Limonite is now considered a field term to describe hydrated oxides of iron with poorly crystalline character whose identity has not yet been determined."},
 				{"Title":"","Data":"<b>Uses</b>: One of two primary iron ores (along side Hematite).<br/><b>Main countries involved in the extraction of mineral</b>: USA(since ceased), Spain, Brazil, Australia.<br/><b>Crystal Habit</b>: Fine grained aggregate.<br/><b>Crystal Structure</b>: Amorphous.<br/><b>Depositional Environment</b>: Common as a biogenic precipitate in swamps or as microscopic particles staining other minerals in weathered outcrops of metalliferous veins.<br/><b>Transparency</b>: Opaque.<br/><b>Origin of Name</b>: Named from the Greek word λειμών, meaning meadow, in allusion to its occurrence as a bog iron ore.<br/><b>Colours Observed at Killhope</b>: Brown, orange/brown."},
 				{"Title":"","Data":"<b>Further uses</b>: As a pigment.<br/><b>Streak</b>: Yellowish brown.<br/><b>Cleavage</b>: Absent.<br/><b>Fracture</b>: Uneven."},
-				{"Title":"","Data":"<b>Specific Gravity</b>: 2.7 - 4.3.<br/><b>Further properties</b>: Commonly a product of iron-bearing minerals but can be found in all rocks.Mixture of related hydrated iron oxide minerals, chief mineralogical component is goethite.Individual minerals in limonite may form crystals but limonite does not, although it may show a fibrous or microcrystalline structure.Limonite pseudomorphs can form through chemical weathering, transforming crystals of iron oxides, in particular pyrite, into limonite by hydrating the molecules, although the external shape remains that of the original mineral.<br/><b>Relevance at Killhope</b>: Occurs as pseudomorphs of iron oxides in the North Pennine orefield.<br/><b>Optical Properties</b>: Normally isotropic but may allow anomalous birefringence.<br/><b>Twinning</b>: Common, often as interpenetrate cubes.Soluble in H2SO4.<br/><b>Relevance at Killhope</b>: In the North Pennine fluorite zone, purple and green fluorite occurs towards the centre while yellow is found towards the outer portions.Deposition temperatures of 90-220°C in the North Pennines calculated from studies on primary fluid inclusions in hydrothermal fluorite.<br/><b>Optical Properties</b>: Much discussion in cause of range of colours in fluorite.Theories include element impurities (allochromatic), physical disturbances in the crystal structure, radioactive inclusions, traces of rare earth elements, presence of inclusions of carbonaceous material and emissions from nearby radioactive sources.In reality, the wide variety of colours illustrated by fluorite can probably be affiliated to all of these factors."}
+				{"Title":"","Data":"<b>Specific Gravity</b>: 2.7 - 4.3.<br/><b>Further properties</b>: Commonly a product of iron-bearing minerals but can be found in all rocks. Mixture of related hydrated iron oxide minerals, chief mineralogical component is goethite.Individual minerals in limonite may form crystals but limonite does not, although it may show a fibrous or microcrystalline structure.Limonite pseudomorphs can form through chemical weathering, transforming crystals of iron oxides, in particular pyrite, into limonite by hydrating the molecules, although the external shape remains that of the original mineral.<br/><b>Relevance at Killhope</b>: Occurs as pseudomorphs of iron oxides in the North Pennine orefield.<br/><b>Optical Properties</b>: Normally isotropic but may allow anomalous birefringence.<br/><b>Twinning</b>: Common, often as interpenetrate cubes.Soluble in H₂SO₄.<br/><b>Relevance at Killhope</b>: In the North Pennine fluorite zone, purple and green fluorite occurs towards the centre while yellow is found towards the outer portions.Deposition temperatures of 90-220°C in the North Pennines calculated from studies on primary fluid inclusions in hydrothermal fluorite.<br/><b>Optical Properties</b>: Much discussion in cause of range of colours in fluorite.Theories include element impurities (allochromatic), physical disturbances in the crystal structure, radioactive inclusions, traces of rare earth elements, presence of inclusions of carbonaceous material and emissions from nearby radioactive sources.In reality, the wide variety of colours illustrated by fluorite can probably be affiliated to all of these factors."}
 			]
 		},
 		{
@@ -141,7 +141,7 @@
 			"GalleryImages": [ ],
 			"VideoPath": "",
 			"Title": "Quartz",
-			"Formula": "SiO2",
+			"Formula": "SiO₂",
 			"Content": 
 			[
 				{"Title":"","Data":"<b>Colour</b>: Most often seen in its colourless or milky white form, although it can also occur in many different coloured varieties.<br/><b>Abundance</b>: After Silica, Quartz is the most abundant mineral in the Earth’s Crust. Quartz occurs in nearly all silica-rich metamorphic, sedimentary, and igneous rocks.<br/><b>Hardness</b>: 7 (very hard, can only be scratched with metals such as tungsten). <br/><b>Lustre</b>: Vitreous.<br/><b>Interesting fact</b>: Quartz was the mineral upon which the Stone Ages were based.With few exceptions, most early stone tools were fashioned of quartz."},
@@ -156,7 +156,7 @@
 			"GalleryImages": [ ],
 			"VideoPath": "",
 			"Title": "Siderite",
-			"Formula": "FeCO3",
+			"Formula": "FeCO₃",
 			"Content": 
 			[
 				{"Title":"","Data":"<b>Colour</b>: Yellowish to dark brown.<br/><b>Abundance</b>: Widespread - found in sedimentary, igneous and metamorphic rocks.<br/><b>Hardness</b>: 3.5/4 (medium).<br/><b>Lustre</b>: Vitreous to pearly.<br/><b>Ore</b>: One of the iron carbonates(iron ore).<br/><b>Interesting fact</b>: It is a valuable iron mineral, since it is 48% iron and contains no sulfur or phosphorus."},
@@ -171,7 +171,7 @@
 			"GalleryImages": [ ],
 			"VideoPath": "",
 			"Title": "Smithsonite",
-			"Formula": "ZnCO3",
+			"Formula": "ZnCO₃",
 			"Content": 
 			[
 				{"Title":"","Data":"<b>Colour</b>: White, blue, green, yellow, brown, pink, colourless.<br/><b>Abundance</b>: Fairly common mineral found in the oxidation zone of most zinc deposits.<br/><b>Hardness</b>: 4 - 4.5 (medium).<br/><b>Lustre</b>: Vitreous to pearly.<br/><b>Ore</b>: Zinc.<br/><b>Interesting fact</b>: First named ‘calamine’, it was renamed when it was discovered both smithsonite and hemimorphite had been grouped under the same name."},
@@ -201,7 +201,7 @@
 			"GalleryImages": [ ],
 			"VideoPath": "",
 			"Title": "Witherite",
-			"Formula": "ZnCO3",
+			"Formula": "ZnCO₃",
 			"Content": 
 			[
 				{"Title":"","Data":"<b>Colour</b>: White, colourless, yellow, brown or green.<br/><b>Abundance</b>: Rare.<br/><b>Hardness</b>: 3 - 3.5 (medium soft).<br/><b>Lustre</b>: Vitreous.<br/><b>Ore</b>: Ore of the element barium.<br/><b>Interesting fact</b>: Can be lethal, the 18th-century naturalist Dr.Leigh recorded its lethal effects after the death of a farmer's wife and child after they came into contact with the mineral."},
