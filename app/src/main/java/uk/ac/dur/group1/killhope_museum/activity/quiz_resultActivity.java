@@ -22,18 +22,18 @@ public class quiz_resultActivity extends Activity{
         int num = getIntent().getExtras().getInt("Score");
         // first text
         TextView textView_one = (TextView) findViewById(R.id.text_one);
-        String text = "You have scored " + String.valueOf(num);
+        String text = String.format(getString(R.string.quiz_score_explanation), num);
         textView_one.setText(text);
         // second text
         TextView textView_two = (TextView) findViewById(R.id.text_two);
         if(num >= 2){
-            textView_two.setText("Not Bad, try a harder level !!!!");
+            textView_two.setText(getString(R.string.quiz_try_harder_level));
         }else{
-            textView_two.setText("You can do Better, try again !!!!");
+            textView_two.setText(getString(R.string.quiz_try_again));
         }
         // third text, display correct answers
         ArrayList<String> answer = getIntent().getExtras().getStringArrayList("selectedWrong");
-        String display = "Check the following incorrect answer ! \n\n";
+        String display = getString(R.string.quiz_incorrect_answer_display) +"\n\n";
         int count = 0;
         for(String item:answer){
             display = display + item + "\n";

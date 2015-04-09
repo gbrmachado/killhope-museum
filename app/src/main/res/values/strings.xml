@@ -19,4 +19,14 @@
     <string name="title_activity_museum_page">MuseumPage</string>
     <string name="glossary_no_results_found">No results found.</string>
     <string name="glossary_no_results_available">No results available.</string>
+    <string name="quiz_score_explanation">You have scored %d</string>
+    <string name="quiz_try_harder_level">Not Bad, try a harder level !!!!</string>
+    <string name="quiz_try_again">You can do Better, try again !!!!</string>
+    <string name="quiz_incorrect_answer_display">Check the following incorrect answer !</string>
+    <string name="quiz_main_tagline">Welcome to the QUIZ</string>
+    <string name="quiz_easy_button">FIRST LEVEL</string>
+    <string name="quiz_medium_button">SECOND LEVEL</string>
+    <string name="quiz_hard_level">THIRD LEVEL</string>
+    <string name="quiz_previous_button">Previous</string>
+    <string name="quiz_next_button">Next</string>
 </resources>
