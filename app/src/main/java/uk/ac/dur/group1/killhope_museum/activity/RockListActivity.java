@@ -127,6 +127,22 @@ public class RockListActivity extends ActionBarActivity {
         return ret;
     }
 
+    /**
+     * Many of the rocks data supplied contains brackets with extra information.
+     * This isn't useful to display on the selection screen.
+     * @param input
+     * @return
+     */
+    private String removeBrackets(String input)
+    {
+        if(input == null || input.length() == 0 || !input.contains("("))
+            return input;
+
+        int index = input.indexOf("(");
+
+        return input.substring(0, index).trim();
+
+    }
 
     private View createViewForRock(final RockListFacade.RockListRock rock)
     {
@@ -139,7 +155,8 @@ public class RockListActivity extends ActionBarActivity {
         v.setTextColor(Color.WHITE);
         //Note: shadow doesn't personally look great, but it's easy and looks better than nothing.
         v.setShadowLayer(25f, 5.5f, 5.5f, Color.BLACK);
-        v.setText(rock.getName());
+        String displayText = removeBrackets(rock.getName());
+        v.setText(displayText);
 
         v.setClickable(true);
         final Activity self = this;
