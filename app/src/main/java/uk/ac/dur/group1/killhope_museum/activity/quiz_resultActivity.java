@@ -33,7 +33,20 @@ public class quiz_resultActivity extends Activity
 
         displayScoreAmount(score, totalQuestions);
         displayScoreComment(score, totalQuestions);
-        displayCorrectAnswers();
+        if(score != totalQuestions)
+            displayCorrectAnswers();
+        else
+            hideAnswerCorrections();
+    }
+
+    private TextView getAnswerCorrections()
+    {
+       return (TextView) findViewById(R.id.text_three);
+    }
+
+    private void hideAnswerCorrections()
+    {
+        getAnswerCorrections().setVisibility(View.GONE);
     }
 
     private void displayCorrectAnswers() {
@@ -50,7 +63,7 @@ public class quiz_resultActivity extends Activity
                 count = 0;
             }
         }
-        TextView textView_three = (TextView) findViewById(R.id.text_three);
+        TextView textView_three = getAnswerCorrections();
         textView_three.setText(display);
     }
 
