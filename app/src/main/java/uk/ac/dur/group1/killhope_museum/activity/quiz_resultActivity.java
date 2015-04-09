@@ -17,22 +17,27 @@ import uk.ac.dur.group1.killhope_museum.R;
 public class quiz_resultActivity extends Activity
 {
     public static final String INTENT_PARAM_SCORE = "Score";
-    public static final String INTENT_PARAM_CORRECT_ANSWERS = "selectedWrong";
+    public static final String INTENT_PARAM_CORRECTED_ANSWERS = "selectedWrong";
+    public static final String INTENT_PARAM_TOTAL_QUESTIONS = "QuestionCount";
+
+    private static final double goodPercentage = 0.7d;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz_result);
 
-        int score = getIntent().getExtras().getInt(INTENT_PARAM_SCORE);
+        Bundle bundle = getIntent().getExtras();
+        int score = bundle.getInt(INTENT_PARAM_SCORE);
+        int totalQuestions = bundle.getInt(INTENT_PARAM_TOTAL_QUESTIONS);
 
         displayScoreAmount(score);
-        displayScoreComment(score);
+        displayScoreComment(score, totalQuestions);
         displayCorrectAnswers();
     }
 
     private void displayCorrectAnswers() {
-        ArrayList<String> answer = getIntent().getExtras().getStringArrayList(INTENT_PARAM_CORRECT_ANSWERS);
+        ArrayList<String> answer = getIntent().getExtras().getStringArrayList(INTENT_PARAM_CORRECTED_ANSWERS);
         String display = getString(R.string.quiz_incorrect_answer_display) +"\n\n";
         int count = 0;
         for(String item:answer){
@@ -55,9 +60,11 @@ public class quiz_resultActivity extends Activity
         textView_one.setText(text);
     }
 
-    private void displayScoreComment(int score) {
+    private void displayScoreComment(int score, int totalQuestions) {
+        double percentageCorrect =  (double) score / (double) totalQuestions;
+
         TextView textView_two = (TextView) findViewById(R.id.text_two);
-        if(score >= 2){
+        if(percentageCorrect >= goodPercentage){
             textView_two.setText(getString(R.string.quiz_try_harder_level));
         }else{
             textView_two.setText(getString(R.string.quiz_try_again));

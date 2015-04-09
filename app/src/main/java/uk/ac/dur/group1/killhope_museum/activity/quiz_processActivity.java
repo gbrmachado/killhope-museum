@@ -100,8 +100,9 @@ public class quiz_processActivity extends Activity{
                 if(currentQuestion  == question_array.length){
                     int score = check_score();
                     Intent intent = new Intent(quiz_processActivity.this,quiz_resultActivity.class);
-                    intent.putExtra("Score",score);
-                    intent.putStringArrayListExtra("selectedWrong",wrong_answer);
+                    intent.putExtra(quiz_resultActivity.INTENT_PARAM_SCORE, score);
+                    intent.putStringArrayListExtra(quiz_resultActivity.INTENT_PARAM_CORRECTED_ANSWERS, wrong_answer);
+                    intent.putExtra(quiz_resultActivity.INTENT_PARAM_TOTAL_QUESTIONS, question_array.length);
                     this.finish();
                     startActivity(intent);
                 }
