@@ -8,45 +8,53 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Welcome to the QUIZ"
+        android:text="@string/quiz_main_tagline"
         android:id="@+id/textView"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
         android:gravity="center"
         android:layout_marginBottom="50dp"
-        android:layout_weight="0.14" />
+        />
 
-    <Button
-        android:id="@+id/page_one"
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="FIRST LEVEL"
-        android:onClick="onClickPageOne"
-        android:layout_gravity="center"
-        android:layout_marginBottom="50dp"
-        android:layout_weight="0.13"
-        android:gravity="center"/>
+        android:layout_height="fill_parent"
+        android:layout_gravity="center_horizontal">
 
-    <Button
-        android:id="@+id/page_two"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="SECOND LEVEL"
-        android:onClick="onClickPageTwo"
-        android:layout_gravity="center"
-        android:layout_marginBottom="50dp"
-        android:layout_weight="0.13"
-        android:gravity="center"/>
+        <!--150dp is set as the minimum width, this will be inherited by all the buttons-->
+        <Button
+            android:id="@+id/page_one"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/quiz_easy_button"
+            android:onClick="onClickPageOne"
+            android:layout_gravity="center"
+            android:layout_marginBottom="50dp"
+            android:layout_weight="0.13"
+            android:gravity="center"
+            android:minWidth="150dp" />
 
-    <Button
-        android:id="@+id/page_three"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="THIRD LEVEL"
-        android:onClick="onClickPageThree"
-        android:layout_gravity="center"
-        android:layout_weight="0.13"
-        android:gravity="center"/>
+        <Button
+            android:id="@+id/page_two"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/quiz_medium_button"
+            android:onClick="onClickPageTwo"
+            android:layout_gravity="center"
+            android:layout_marginBottom="50dp"
+            android:layout_weight="0.13"
+            android:gravity="center"/>
+
+        <Button
+            android:id="@+id/page_three"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/quiz_hard_level"
+            android:onClick="onClickPageThree"
+            android:layout_gravity="center"
+            android:layout_weight="0.13"
+            android:gravity="center"
+            android:layout_marginBottom="50dp" />
+    </LinearLayout>
 
 
 </LinearLayout>

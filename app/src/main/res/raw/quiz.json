@@ -1,0 +1,289 @@
+{
+    "Quiz": [
+        {
+            "SectionName": "Easy",
+            "Questions": [
+                {
+                    "Question": "What is the hardest mineral on display at Killhope?",
+                    "Answers": [
+                        "Quartz",
+                        "Baryte",
+                        "Galena"
+                    ],
+                    "Correct": 0
+                },
+                {
+                    "Question": "Which grey mineral is an ore of lead?",
+                    "Answers": [
+                        "Siderite",
+                        "Galena",
+                        "Sphalerite"
+                    ],
+                    "Correct": 1
+                },
+                {
+                    "Question": "What mineral was predominantly mined at Killhope?",
+                    "Answers": [
+                        "Galena",
+                        "Fluorite",
+                        "Siderite"
+                    ],
+                    "Correct": 0
+                },
+                {
+                    "Question": "What is the most common mineral at the Killhope Museum?",
+                    "Answers": [
+                        "Quartz",
+                        "Fluorite",
+                        "Smithsonite"
+                    ],
+                    "Correct": 1
+                },
+                {
+                    "Question": "What is a Spar Box?",
+                    "Answers": [
+                        "A decorative box containing minerals created by miners from the Killhope area",
+                        "A miner's lunchbox",
+                        "A box for miners cigarettes"
+                    ],
+                    "Correct": 0
+                },
+                {
+                    "Question": "Is Killhope still an active mine?",
+                    "Answers": [
+                        "No",
+                        "It is sometimes used for the extraction of gold",
+                        "Yes it is still fully active"
+                    ],
+                    "Correct": 0
+                },
+                {
+                    "Question": "Which mineral is used in the production of toothpaste?",
+                    "Answers": [
+                        "Limonite",
+                        "Witherite",
+                        "Fluorite"
+                    ],
+                    "Correct": 2
+                },
+                {
+                    "Question": "After what mineral is the property fluorescence named?",
+                    "Answers": [
+                        "Quartz",
+                        "Fluorite",
+                        "Smithsonite"
+                    ],
+                    "Correct": 1
+                },
+                {
+                    "Question": "What’s an ore?",
+                    "Answers": [
+                        "A mineral which is grey in colour",
+                        "A naturally occurring solid material which can be extracted profitably",
+                        "A small tool used by miners at Killhope"
+                    ],
+                    "Correct": 1
+                },
+                {
+                    "Question": "Which mineral at Killhope exhibits the most different colours?",
+                    "Answers": [
+                        "Fluorite",
+                        "Calcite",
+                        "Quartz"
+                    ],
+                    "Correct": 0
+                }
+            ]
+        },
+        {
+            "SectionName": "Medium",
+            "Questions": [
+                {
+                    "Question": "Which mineral has the chemical formula CaCO3?",
+                    "Answers": [
+                        "Aragonite",
+                        "Ankerite",
+                        "Barytocalcite"
+                    ],
+                    "Correct": 0
+                },
+                {
+                    "Question": "Smithsonite is an ore of which metal?",
+                    "Answers": [
+                        "Lead",
+                        "Iron",
+                        "Zinc"
+                    ],
+                    "Correct": 2
+                },
+                {
+                    "Question": "How long ago did the Whin Sill Intrusion form?",
+                    "Answers": [
+                        "200 Million years ago",
+                        "300 Million years ago",
+                        "400 Million years ago"
+                    ],
+                    "Correct": 1
+                },
+                {
+                    "Question": "What do cerussite and galena have in common?",
+                    "Answers": [
+                        "Both exhibit a range of colours",
+                        "Both are ores of lead",
+                        "Both have the same hardness"
+                    ],
+                    "Correct": 1
+                },
+                {
+                    "Question": "How is flourite deposited?",
+                    "Answers": [
+                        "In tropical caves",
+                        "In hydrothermal veins",
+                        "During evaporation processes"
+                    ],
+                    "Correct": 1
+                },
+                {
+                    "Question": "What is the most common colour of quartz?",
+                    "Answers": [
+                        "Purple",
+                        "Colourless",
+                        "Green"
+                    ],
+                    "Correct": 1
+                },
+                {
+                    "Question": "What mineral was once used in the production of rat poison?",
+                    "Answers": [
+                        "Witherite",
+                        "Siderite",
+                        "Limonite"
+                    ],
+                    "Correct": 0
+                },
+                {
+                    "Question": "What is the large igneous body that underlies the North Pennines called?",
+                    "Answers": [
+                        "Alston andesite",
+                        "Killhope intrusion",
+                        "Weardale granite"
+                    ],
+                    "Correct": 2
+                },
+                {
+                    "Question": "What is cleavage?",
+                    "Answers": [
+                        "An iron ore mineral",
+                        "A fold in a rock",
+                        "The tendency of crystalline materials to split along definite crystallographic structural planes"
+                    ],
+                    "Correct": 2
+                },
+                {
+                    "Question": "What is streak?",
+                    "Answers": [
+                        "Colour of a mineral when scratched on a white porcelain plate",
+                        "The colour of a mineral under ultraviolet light",
+                        "The tendency for a mineral to be deposited in veins"
+                    ],
+                    "Correct": 0
+                }
+            ]
+        },
+        {
+            "SectionName": "Hard",
+            "Questions": [
+                {
+                    "Question": "Which mineral is a pseudomorph (no crystal structure)?",
+                    "Answers": [
+                        "Cerussite",
+                        "Limonite",
+                        "Smithsonite"
+                    ],
+                    "Correct": 1
+                },
+                {
+                    "Question": "Which mineral was used to fabricate World War II weapon sights?",
+                    "Answers": [
+                        "Barytocalcite",
+                        "Baryte",
+                        "Calcite"
+                    ],
+                    "Correct": 2
+                },
+                {
+                    "Question": "What lustre does baryte exhibit?",
+                    "Answers": [
+                        "Resinous",
+                        "Earthy",
+                        "Vitreous"
+                    ],
+                    "Correct": 2
+                },
+                {
+                    "Question": "What is the crystal structure of sphalerite?",
+                    "Answers": [
+                        "Orthorhombic",
+                        "Cubic",
+                        "Hexagonal"
+                    ],
+                    "Correct": 1
+                },
+                {
+                    "Question": "Twinning refers to what optical property?",
+                    "Answers": [
+                        "An intergrowth of two separate crystals",
+                        "The point at which a mineral turns black under a microscope",
+                        "One crystal exhibiting several colours"
+                    ],
+                    "Correct": 0
+                },
+                {
+                    "Question": "What is the specific gravity of galena?",
+                    "Answers": [
+                        "7.6",
+                        "4.7",
+                        "3.0"
+                    ],
+                    "Correct": 0
+                },
+                {
+                    "Question": "What fruit does a botryoidal crystal structure closely represent?",
+                    "Answers": [
+                        "Banana",
+                        "Pomegranate",
+                        "Grapes"
+                    ],
+                    "Correct": 2
+                },
+                {
+                    "Question": "What is a gangue mineral?",
+                    "Answers": [
+                        "Worthless material deposited alongside an ore",
+                        "Material of high value",
+                        "An ore of iron"
+                    ],
+                    "Correct": 0
+                },
+                {
+                    "Question": "Which intrusion shares a source with the North Pennine Ore Field?",
+                    "Answers": [
+                        "Weardale Granite",
+                        "North Pennine Rhyolite",
+                        "Whin Sill Dolerite"
+                    ],
+                    "Correct": 2
+                },
+                {
+                    "Question": "What is the crystal structure of fluorite?",
+                    "Answers": [
+                        "Prismatic",
+                        "Cubic",
+                        "Octahedral"
+                    ],
+                    "Correct": 1
+                }
+            ]
+        }
+    ]
+}

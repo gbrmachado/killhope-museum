@@ -7,12 +7,18 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 
+import java.util.List;
+
+import uk.ac.dur.group1.killhope_museum.KillhopeApplication;
 import uk.ac.dur.group1.killhope_museum.R;
+import uk.ac.dur.group1.killhope_museum.dto.QuizDTO;
 
 /**
  * Created by haijiewu on 28/03/15.
  */
 public class quiz_homeActivity extends Activity{
+
+    private static final int ANSWERS_PER_QUESTION = 3;
 
     public static void launchActivity(Context context)
     {
@@ -22,11 +28,21 @@ public class quiz_homeActivity extends Activity{
         Intent i = new Intent(context, quiz_homeActivity.class);
         context.startActivity(i);
     }
+
+    private KillhopeApplication getKillhopeApplication()
+    {
+        return (KillhopeApplication) getApplication();
+    }
+
+    private QuizDTO getQuiz()
+    {
+        return getKillhopeApplication().getQuiz();
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz_home);
-
     }
 
     @Override
@@ -44,33 +60,44 @@ public class quiz_homeActivity extends Activity{
     }
 
     public void onClickPageOne(View view){
-        String[] question_array = new String[]{"What is the hardest mineral on display at Killhope?", "Which grey mineral is an ore of lead?","What mineral was predominantly mined at Killhope?"};
-        String [] answer_array = new String[]{"Quartz", "Baryte", "Galena", "Siderite", "Galena", "Sphalerite","Galena","Fluorite","Siderite"};
-        int [] correctAnswer_array = new int[]{1,2,1};
-        Intent intent = new Intent(quiz_homeActivity.this,quiz_processActivity.class);
-        intent.putExtra("Question",question_array);
-        intent.putExtra("Answer",answer_array);
-        intent.putExtra("Correct",correctAnswer_array);
-        this.finish();
-        startActivity(intent);
+        launchQuiz(getQuiz().getEasyQuestions());
     }
 
     public void onClickPageTwo(View view){
-        String[] question_array = new String[]{"Which mineral has the chemical formula CaCO3?","Smithsonite is an ore of which metal?","How long ago did the Whin Sill Intrusion form?"};
-        String [] answer_array = new String[]{"Aragonite","Ankerite","Barytocalcite","Lead","Iron","Zinc","200 Million years ago","300 Million years ago","400 Million years ago"};
-        int [] correctAnswer_array = new int[]{1,3,2};
-        Intent intent = new Intent(quiz_homeActivity.this,quiz_processActivity.class);
-        intent.putExtra("Question",question_array);
-        intent.putExtra("Answer",answer_array);
-        intent.putExtra("Correct",correctAnswer_array);
-        this.finish();
-        startActivity(intent);
+        launchQuiz(getQuiz().getMediumQuestions());
     }
 
     public void onClickPageThree(View view){
-        String[] question_array = new String[]{"Which mineral is a pseudomorph (no crystal structure)?","Which mineral was used to fabricate World War II weapon sights?","What lustre does baryte exhibit?"};
-        String [] answer_array = new String[]{"Cerussite","Limonite","Smithsonite","Barytocalcite","Baryte","Calcite","Resinous","Earthy","Vitreous"};
-        int [] correctAnswer_array = new int[]{2,3,3};
+        launchQuiz(getQuiz().getHardQuestions());
+    }
+
+    /**
+     * Launches a quiz with the specified questions.
+     */
+    private void launchQuiz(List<QuizDTO.QuizQuestion> quiz)
+    {
+        int size = quiz.size();
+        String[] questions = new String[size];
+        String[] answers = new String[size * ANSWERS_PER_QUESTION];
+        int[] correctAnswers = new int[size];
+        for(int i = 0; i < size; i++)
+        {
+            QuizDTO.QuizQuestion question = quiz.get(i);
+            //Set the question text, answers and correct answer from the specific question,
+            questions[i] = question.getQuestion();
+            List<String> questionAnswers =  question.getAnswers();
+            //Answers
+            for(int j = 0; j < ANSWERS_PER_QUESTION; j++)
+                answers[i * ANSWERS_PER_QUESTION + j] = questionAnswers.get(j);
+            //set the correct index of the answer.
+            //Note: The quiz activity accepts the correct answers as a 1-based index, so we need to add 1.
+            correctAnswers[i] = question.getCorrectAnswerIndex() + 1;
+        }
+        startQuizActivity(questions, answers, correctAnswers);
+    }
+
+    private void startQuizActivity(String[] question_array,  String[] answer_array, int[] correctAnswer_array)
+    {
         Intent intent = new Intent(quiz_homeActivity.this,quiz_processActivity.class);
         intent.putExtra("Question",question_array);
         intent.putExtra("Answer",answer_array);

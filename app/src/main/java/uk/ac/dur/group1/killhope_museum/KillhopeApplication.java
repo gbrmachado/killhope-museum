@@ -16,9 +16,11 @@ import uk.ac.dur.group1.killhope_museum.activity.RockDisplayActivity;
 import uk.ac.dur.group1.killhope_museum.activity.RockListActivity;
 
 import uk.ac.dur.group1.killhope_museum.dto.MapDTO;
+import uk.ac.dur.group1.killhope_museum.dto.QuizDTO;
 import uk.ac.dur.group1.killhope_museum.dto.json.JsonMap;
 
 import uk.ac.dur.group1.killhope_museum.dto.RockDTO;
+import uk.ac.dur.group1.killhope_museum.dto.json.JsonQuizWrapper;
 import uk.ac.dur.group1.killhope_museum.utilities.JSONUtilities;
 
 import java.util.List;
@@ -34,6 +36,7 @@ public class KillhopeApplication extends Application
 {
     private List<RockDTO> rocks = null;
     private Glossary glossary;
+    private QuizDTO quiz;
 
     @Override
     public void onCreate()
@@ -56,7 +59,15 @@ public class KillhopeApplication extends Application
         return rocks;  //Just hope and pray that the consumer won't mutate them.
     }
 
-
+    public QuizDTO getQuiz()
+    {
+        if(this.quiz == null)
+        {
+            String json = JSONUtilities.getJsonFromRaw(getResources(), R.raw.quiz);
+            this.quiz = JsonQuizWrapper.dtoFromJSON(json);
+        }
+        return this.quiz;
+    }
 
 
     public boolean isValidRockID(String id)

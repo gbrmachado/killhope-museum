@@ -47,7 +47,7 @@
         android:id="@+id/button_two"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Previous"
+        android:text="@string/quiz_previous_button"
         android:onClick="onClickPrevious"
         android:layout_below="@+id/radioGroup"/>
 
@@ -55,7 +55,7 @@
         android:id="@+id/button_one"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Next"
+        android:text="@string/quiz_next_button"
         android:onClick="onClickNext"
         android:layout_alignTop="@+id/button_two"
         android:layout_alignParentRight="true"

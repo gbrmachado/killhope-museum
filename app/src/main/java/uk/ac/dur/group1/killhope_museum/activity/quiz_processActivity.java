@@ -100,8 +100,9 @@ public class quiz_processActivity extends Activity{
                 if(currentQuestion  == question_array.length){
                     int score = check_score();
                     Intent intent = new Intent(quiz_processActivity.this,quiz_resultActivity.class);
-                    intent.putExtra("Score",score);
-                    intent.putStringArrayListExtra("selectedWrong",wrong_answer);
+                    intent.putExtra(quiz_resultActivity.INTENT_PARAM_SCORE, score);
+                    intent.putStringArrayListExtra(quiz_resultActivity.INTENT_PARAM_CORRECTED_ANSWERS, wrong_answer);
+                    intent.putExtra(quiz_resultActivity.INTENT_PARAM_TOTAL_QUESTIONS, question_array.length);
                     this.finish();
                     startActivity(intent);
                 }
@@ -111,7 +112,7 @@ public class quiz_processActivity extends Activity{
                     radio_group.clearCheck();
                     // if is on last question, change text "next" to "Done"
                     if(currentQuestion  == question_array.length){
-                        button_one.setText("Done");
+                        button_one.setText(getString(R.string.quiz_navigation_to_answers));
                     }
                 }
             }
@@ -169,12 +170,15 @@ public class quiz_processActivity extends Activity{
         }
         // compare selected with correct answer
         int score = 0;
-        for(int i=0;i<correctAnswer_array.length;i++){
-            if(correctAnswer_array[i] == choose.get(i)){
+        for(int i=0;i<correctAnswer_array.length;i++) {
+            int correctAnswerOrdinal = correctAnswer_array[i];
+            if (correctAnswerOrdinal == choose.get(i)) {
                 score++;
-            }else{
+            } else {
+                //We want to display the question and correct answer to the user if they got it wrong.
                 wrong_answer.add(question_array[i]);
-                wrong_answer.add(answer_array[correctAnswer_array[i] + 2 * i]);
+                //The correctAnswerOrdinal is 1-based, so subtract 1 to get the correct index into the answer array.
+                wrong_answer.add(answer_array[3 * i + correctAnswerOrdinal - 1]);
             }
         }
         return score;
