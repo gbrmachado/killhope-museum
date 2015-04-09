@@ -3,6 +3,7 @@ package uk.ac.dur.group1.killhope_museum.activity;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
@@ -51,20 +52,19 @@ public class quiz_resultActivity extends Activity
 
     private void displayCorrectAnswers() {
         ArrayList<String> answer = getIntent().getExtras().getStringArrayList(INTENT_PARAM_CORRECTED_ANSWERS);
-        String display = getString(R.string.quiz_incorrect_answer_display) +"\n\n";
+        String display = getString(R.string.quiz_incorrect_answer_display) +"<br/><br/>";
         int count = 0;
-        for(String item:answer){
-            display += item + "\n";
-            // Display a blank line between every answer
-            // Answer contains 2 items per question, the question and the correct item.
-            count++;
-            if(count == 2){
-                display += "\n";
-                count = 0;
-            }
+        for(String item : answer)
+        {
+            if(count == 0)
+                display += item + "<br/>";
+            else
+                display += "<b>" + item + "</b>" + "<br/><br/>"; //The second item is bolded, add a second newline.
+
+            count = ++count % 2;
         }
         TextView textView_three = getAnswerCorrections();
-        textView_three.setText(display);
+        textView_three.setText(Html.fromHtml(display));
     }
 
     private void displayScoreAmount(int score, int totalQuestions) {
