@@ -30,4 +30,6 @@
     <string name="quiz_previous_button">Previous</string>
     <string name="quiz_next_button">Next</string>
     <string name="quiz_navigation_to_answers">Done</string>
+    <string name="splash_screen_first_message">There\'s so much to see and do...</string>
+    <string name="splash_screen_second_message">The best preserved lead mining site in Britain</string>
 </resources>
