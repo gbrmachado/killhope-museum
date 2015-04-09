@@ -9,23 +9,24 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text = ""
-        android:layout_gravity="center_vertical"
-        android:layout_weight="1.00"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:gravity="center_vertical|center_horizontal"
         android:id="@+id/centra_view"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        android:textAppearance="?android:attr/textAppearanceLarge"/>
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_marginTop="20dp"
+        />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:scaleType="fitCenter"
-        android:layout_weight="0.03"
         android:id="@+id/imageView"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_above="@+id/centra_view"/>
+        android:src="@drawable/killhope_logo"
+        android:layout_centerInParent="true"
+        android:layout_above="@id/centra_view"
+        />
 
 
 
