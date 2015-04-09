@@ -117,6 +117,19 @@ public class RockListFactory {
 
         animationMap = new HashMap<>();
         animationMap.put("Rock-Ankerite", R.raw.rock_gif_ankerite);
+        animationMap.put("Rock-Aragonite", R.raw.rock_gif_aragonite);
+        animationMap.put("Rock-Baryte", R.raw.rock_gif_baryte);
+        animationMap.put("Rock-Barytocalcite", R.raw.rock_gif_barytocalcite);
+        animationMap.put("Rock-Calcite", R.raw.rock_gif_calcite);
+        animationMap.put("Rock-Cerussite", R.raw.rock_gif_cerussite);
+        animationMap.put("Rock-Fluorite", R.raw.rock_gif_fluorite);
+        animationMap.put("Rock-Galena", R.raw.rock_gif_galena);
+        animationMap.put("Rock-Limonite", R.raw.rock_gif_limonite);
+        animationMap.put("Rock-Quartz", R.raw.rock_gif_quartz);
+        animationMap.put("Rock-Siderite", R.raw.rock_gif_siderite);
+        animationMap.put("Rock-Smithsonite", R.raw.rock_gif_smithsonite);
+        animationMap.put("Rock-Sphalerite", R.raw.rock_gif_sphalerite);
+        animationMap.put("Rock-Witherite", R.raw.rock_gif_witherite);
     }
 
     private static RockDTO fromJson(JsonRock rock, Resources r)
