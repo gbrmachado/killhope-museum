@@ -101,5 +101,9 @@ public class QuizDTO
         {
             return question;
         }
+
+        public int getCorrectAnswerIndex() {
+            return correctAnswerIndex;
+        }
     }
 }
