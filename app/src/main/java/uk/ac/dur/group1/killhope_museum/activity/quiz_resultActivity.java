@@ -31,7 +31,7 @@ public class quiz_resultActivity extends Activity
         int score = bundle.getInt(INTENT_PARAM_SCORE);
         int totalQuestions = bundle.getInt(INTENT_PARAM_TOTAL_QUESTIONS);
 
-        displayScoreAmount(score);
+        displayScoreAmount(score, totalQuestions);
         displayScoreComment(score, totalQuestions);
         displayCorrectAnswers();
     }
@@ -54,9 +54,9 @@ public class quiz_resultActivity extends Activity
         textView_three.setText(display);
     }
 
-    private void displayScoreAmount(int score) {
+    private void displayScoreAmount(int score, int totalQuestions) {
         TextView textView_one = (TextView) findViewById(R.id.text_one);
-        String text = String.format(getString(R.string.quiz_score_explanation), score);
+        String text = String.format(getString(R.string.quiz_score_explanation), score, totalQuestions);
         textView_one.setText(text);
     }
 

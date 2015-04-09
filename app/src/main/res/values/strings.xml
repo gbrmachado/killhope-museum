@@ -19,7 +19,7 @@
     <string name="title_activity_museum_page">MuseumPage</string>
     <string name="glossary_no_results_found">No results found.</string>
     <string name="glossary_no_results_available">No results available.</string>
-    <string name="quiz_score_explanation">You have scored %d</string>
+    <string name="quiz_score_explanation">You have scored %1$d out of %2$d.</string>
     <string name="quiz_try_harder_level">Not bad, try a harder level!</string>
     <string name="quiz_try_again">You can do better, try again!</string>
     <string name="quiz_incorrect_answer_display">You answered the following questions incorrectly\nThe correct answers are listed:</string>
