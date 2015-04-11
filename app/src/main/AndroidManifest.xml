@@ -58,13 +58,13 @@
         </activity>
         <activity
             android:name=".activity.quiz_homeActivity"
-            android:label="quiz home" />
+            android:label="@string/quiz_home" />
         <activity
             android:name=".activity.quiz_processActivity"
-            android:label="quiz Processing" />
+            android:label="@string/quiz_performing" />
         <activity
             android:name=".activity.quiz_resultActivity"
-            android:label="quiz result" />
+            android:label="@string/quiz_results" />
         <activity
             android:name=".activity.GlossaryActivity"
             android:label="@string/title_activity_glossary"
