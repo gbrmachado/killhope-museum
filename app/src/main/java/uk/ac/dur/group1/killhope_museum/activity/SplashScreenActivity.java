@@ -13,7 +13,7 @@ import uk.ac.dur.group1.killhope_museum.R;
 public class SplashScreenActivity extends ActionBarActivity {
 
     //Wait 3 seconds before running the next activity.
-    private static final int TIMEOUT_MILLISECONDS = 1;
+    private static final int TIMEOUT_MILLISECONDS = 3000;
 
     private static State currentState = State.Initial;
 
