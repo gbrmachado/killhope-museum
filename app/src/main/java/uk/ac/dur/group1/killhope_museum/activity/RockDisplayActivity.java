@@ -101,7 +101,7 @@ public class RockDisplayActivity extends ActionBarActivity {
                 "<script type=\"text/javascript\">" +
                 "function loadGlossaryEntry(str) { Android.loadGlossary(str); }</script>" +
                 "</head>" +
-                "<body>%s\"</body></html>";
+                "<body>%s</body></html>";
 
         for (String cont : content)
             myWebView.AddWebViewSection(String.format(finalContent, makeHTMLGlossary(cont)));
