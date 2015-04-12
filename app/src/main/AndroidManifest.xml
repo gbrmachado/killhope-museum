@@ -17,7 +17,7 @@
         <activity
             android:name=".activity.SplashScreenActivity"
             android:label="@string/title_activity_splash_screen"
-            android:theme="@style/Theme.AppCompat.NoActionBar">
+            android:theme="@style/Theme.AppCompat.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -76,6 +76,10 @@
         <activity
             android:name=".activity.MuseumPage"
             android:label="@string/title_activity_museum_page" >
+        </activity>
+        <activity
+            android:name=".activity.util.TimelineActivity"
+            android:label="@string/title_activity_timeline" >
         </activity>
     </application>
 
