@@ -1,5 +1,6 @@
 package uk.ac.dur.group1.killhope_museum.activity.util;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
@@ -16,7 +17,7 @@ import uk.ac.dur.group1.killhope_museum.R;
 import uk.ac.dur.group1.killhope_museum.activity.FullScreenImageActivity;
 
 
-public class TimelineActivity extends ActionBarActivity {
+public class TimelineActivity extends Activity {
 
     public static void launchActivity(Context context)
     {
@@ -125,7 +126,18 @@ public class TimelineActivity extends ActionBarActivity {
                 contentLayout.addView(content);
                 content.setText("New geological dating methods have shown that the minerals originally thought to be sourced from the Ordovician sediments, are in fact Early Permian in age. This suggests that the minerals were in fact sourced from the Whin Sill, a Dolerite intrusion thought to be approximately 300 Million years old. The Whin Sill intruded the North Pennine area after the Variscan Orogeny. The Variscan Orogeny refers to a great movement of tectonic plates that eventually led to the amalgamation of continents to make the supercontinent Pangea. The after effect of the Variscan event led to extension across England, giving the opportunity for the Whin Sill to intrude, and supply the mineralising fluids for the North Pennine ore field.\n" +
                         "\n" +
-                        "Remobilisation of fluids did occur as a result of heating from the weardale granite, although this was not the source of the mineralisation as originally thought.");
+                        "Remobilisation of fluids did occur as a result of heating from the weardale granite, although this was not the source of the mineralisation as originally thought. \n");
+                ImageView content2 = new ImageView(context);
+                content2.setImageResource(R.drawable.new_geological_model);
+                content2.setAdjustViewBounds(true);
+                contentLayout.addView(content2);
+
+                content2.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        FullScreenImageActivity.launchActivity(context, R.drawable.new_geological_model);
+                    }
+                });
             }
         });
 
