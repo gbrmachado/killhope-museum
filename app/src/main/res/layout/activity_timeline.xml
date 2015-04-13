@@ -18,42 +18,42 @@
             android:layout_width="fill_parent"
             android:text="Early Earth"
             android:id="@+id/earlyEarth"
-            android:background="#fffffa00"
+            android:background="#87d37c"
             android:layout_height="0dp"
             android:layout_weight="1" />
         <Button
             android:layout_width="fill_parent"
             android:text="The Weardale Granite"
             android:id="@+id/theWeardaleGranite"
-            android:background="#fffffa99"
+            android:background="#03c9a9"
             android:layout_height="0dp"
             android:layout_weight="1" />
         <Button
             android:layout_width="fill_parent"
             android:text="Carboniferous Sediments"
             android:id="@+id/carboniferousSediments"
-            android:background="#fffffa99"
+            android:background="#81cfe0"
             android:layout_height="0dp"
             android:layout_weight="1" />
         <Button
             android:layout_width="fill_parent"
             android:text="Formation of the North Pennine Ore Field"
             android:id="@+id/formationOfTheNorthPennineOreField"
-            android:background="#fffffa99"
+            android:background="#418d70"
             android:layout_height="0dp"
             android:layout_weight="1" />
         <Button
             android:layout_width="fill_parent"
             android:text="New Geological Model"
             android:id="@+id/newGeologicalModel"
-            android:background="#fffffa99"
+            android:background="#2c3e50"
             android:layout_height="0dp"
             android:layout_weight="1" />
         <Button
             android:layout_width="fill_parent"
             android:text="Advanced Tectonic History"
             android:id="@+id/advancedTectonicHistory"
-            android:background="#fffffa99"
+            android:background="#dcc6e0"
             android:layout_height="0dp"
             android:layout_weight="1" />
     </LinearLayout>

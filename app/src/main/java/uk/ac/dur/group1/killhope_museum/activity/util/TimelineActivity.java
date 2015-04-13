@@ -13,6 +13,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import uk.ac.dur.group1.killhope_museum.R;
+import uk.ac.dur.group1.killhope_museum.activity.FullScreenImageActivity;
 
 
 public class TimelineActivity extends ActionBarActivity {
@@ -123,6 +124,12 @@ public class TimelineActivity extends ActionBarActivity {
                 final ImageView content = new ImageView(context);
                 content.setImageResource(R.drawable.advanced_tectonic_history);
                 contentLayout.addView(content);
+                content.setOnClickListener(new View.OnClickListener(){
+                    @Override
+                    public void onClick(View view) {
+                        FullScreenImageActivity.launchActivity(context, R.drawable.advanced_tectonic_history);
+                    }
+                });
             }
         });
     }

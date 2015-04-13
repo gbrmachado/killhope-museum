@@ -81,6 +81,10 @@
             android:name=".activity.util.TimelineActivity"
             android:label="@string/title_activity_timeline" >
         </activity>
+        <activity
+            android:name=".activity.util.FullscreenImageActivity"
+            android:label="@string/title_activity_fullscreen_image" >
+        </activity>
     </application>
 
 </manifest>

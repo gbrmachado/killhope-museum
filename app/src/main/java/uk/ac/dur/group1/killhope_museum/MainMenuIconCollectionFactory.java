@@ -131,12 +131,12 @@ public class MainMenuIconCollectionFactory
 
     }
     private static class LaunchMuseumCommand extends LaunchActivityCommand
-{
-    public LaunchMuseumCommand(Context context) { super(context); }
-    @Override
-    public void execute() {
-        MuseumPage.launchActivity(this.context); }
-}
+    {
+        public LaunchMuseumCommand(Context context) { super(context); }
+        @Override
+        public void execute() {
+            MuseumPage.launchActivity(this.context); }
+    }
     private static class LaunchQRCodeCommand extends LaunchActivityCommand
     {
         public LaunchQRCodeCommand(Context context) { super(context); }
