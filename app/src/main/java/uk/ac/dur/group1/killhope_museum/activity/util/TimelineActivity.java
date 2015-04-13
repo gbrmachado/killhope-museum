@@ -35,9 +35,6 @@ public class TimelineActivity extends ActionBarActivity {
 
         setContentView(R.layout.activity_timeline);
 
-        TextView content = (TextView) findViewById(R.id.contentText);
-        content.setMovementMethod(new ScrollingMovementMethod());
-
         Button earlyEarth = (Button) findViewById(R.id.earlyEarth);
         earlyEarth.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -93,11 +90,28 @@ public class TimelineActivity extends ActionBarActivity {
                 LinearLayout contentLayout = (LinearLayout) findViewById(R.id.contentLayout);
                 contentLayout.removeAllViews();
                 TextView content = new TextView(context);
-                contentLayout.addView(content);
                 content.setText("At great depths in the Earth, rocks can be saturated with saline water, very much like sea water, this often dissolves chemical elements from the surrounding rocks which contain traces or iron, lead, zinc and the various elements found in Northern Pennines mineral deposits.\n" +
                         "\n" +
-                        "The Weardale granite has been a powerful heat source since it was first deposited 400 Million years ago, and is still appreciably hotter than the surrounding rocks. \n" +
-                        "The original geological model for the North Pennine ore field hypothesised that residual heat from the Weardale granite caused heating of groundwater within the overlying carboniferous sediments, as shown in the diagram above. Heating remobilised the fluids, causing them to circulate upwards through cracks in the overlying rocks. This process created a vacuum effect, in turn sourcing fluids from the surrounding Ordovician sediments.These fluids carried dissolved minerals, which were eventually precipitated as the fluids cooled and produced the mineral deposits that we see in the Killhope area today. \n");
+                        "The Weardale granite has been a powerful heat source since it was first deposited 400 Million years ago, and is still appreciably hotter than the surrounding rocks. \n");
+
+                ImageView content2 = new ImageView(context);
+                content2.setImageResource(R.drawable.formation_of_the_north_pennine_ore_field);
+                content2.setAdjustViewBounds(true);
+
+                content2.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        FullScreenImageActivity.launchActivity(context, R.drawable.formation_of_the_north_pennine_ore_field);
+                    }
+                });
+
+                TextView content3 = new TextView(context);
+                content3.setText("\nThe original geological model for the North Pennine ore field hypothesised that residual heat from the Weardale granite caused heating of groundwater within the overlying carboniferous sediments, as shown in the diagram above. Heating remobilised the fluids, causing them to circulate upwards through cracks in the overlying rocks. This process created a vacuum effect, in turn sourcing fluids from the surrounding Ordovician sediments.These fluids carried dissolved minerals, which were eventually precipitated as the fluids cooled and produced the mineral deposits that we see in the Killhope area today.");
+
+
+            contentLayout.addView(content);
+            contentLayout.addView(content2);
+            contentLayout.addView(content3);
             }
         });
 
@@ -123,6 +137,7 @@ public class TimelineActivity extends ActionBarActivity {
                 contentLayout.removeAllViews();
                 final ImageView content = new ImageView(context);
                 content.setImageResource(R.drawable.advanced_tectonic_history);
+                content.setAdjustViewBounds(true);
                 contentLayout.addView(content);
                 content.setOnClickListener(new View.OnClickListener(){
                     @Override

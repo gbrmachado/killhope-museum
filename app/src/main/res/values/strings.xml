@@ -4,11 +4,11 @@
     <string name="title_activity_splash_screen">Killhope Lead Mining Museum</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_main_menu">Killhope Main Menu</string>
-    <string name="title_activity_qrcode">QRCodeActivity</string>
-    <string name="title_activity_maps">MapsActivity</string>
-    <string name="title_activity_exhibitions">ExhibitionsActivity</string>
+    <string name="title_activity_qrcode">QR Code</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="title_activity_exhibitions">Exhibitions</string>
     <string name="title_activity_rock_list">Rocks</string>
-    <string name="title_activity_rock_display">RockDisplayActivity</string>
+    <string name="title_activity_rock_display">Rock Displays</string>
 
     <string name="title_activity_full_screen_image">Image Viewer</string>
     <string name="rockPage_basicInfo"><u><b>Basic Information</b></u></string>
@@ -16,7 +16,7 @@
     <string name="action_Bar_Title">test1</string>
     <string name="title_activity_glossary">Glossary</string>
     <string name="title_activity_glossary_item">"Glossary - %s"</string>
-    <string name="title_activity_museum_page">MuseumPage</string>
+    <string name="title_activity_museum_page">Museum</string>
     <string name="glossary_no_results_found">No results found.</string>
     <string name="glossary_no_results_available">No results available.</string>
     <string name="quiz_score_explanation">You have scored %1$d out of %2$d.</string>
@@ -32,6 +32,6 @@
     <string name="quiz_navigation_to_answers">Done</string>
     <string name="splash_screen_first_message">There\'s so much to see and do...</string>
     <string name="splash_screen_second_message">The best preserved lead mining site in Britain</string>
-    <string name="title_activity_timeline">TimelineActivity</string>
-    <string name="title_activity_fullscreen_image">FullscreenImageActivity</string>
+    <string name="title_activity_timeline">Timeline</string>
+    <string name="title_activity_fullscreen_image">FullscreenImage</string>
 </resources>
