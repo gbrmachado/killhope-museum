@@ -4,12 +4,14 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.Point;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Base64;
 import android.util.Log;
+import android.view.Display;
 import android.view.Menu;
 import android.view.View;
 import android.webkit.JavascriptInterface;
@@ -34,7 +36,9 @@ import uk.ac.dur.group1.killhope_museum.layout.GlossaryLoaderJavascriptInterface
 
 public class RockDisplayActivity extends ActionBarActivity {
 
-    private static final int FOOTER_HEIGHT = 300;
+    // for footer_height, i define codes to setup in method "setupGalleryFooter"
+    // image view will be 1/5 of the phone screen size
+    //private static final int FOOTER_HEIGHT = 300;
 
     private static String uniqueId;
     private static String title;
@@ -153,6 +157,14 @@ public class RockDisplayActivity extends ActionBarActivity {
     private void setupGalleryFooter() {
         LinearLayout imageGallery = (LinearLayout) findViewById(R.id.mygallery);
         final RockDisplayActivity self = this;
+
+        // find the screen size and setup footer to be 1/5 of the screen
+        Display display = getWindowManager().getDefaultDisplay();
+        Point size = new Point();
+        display.getSize(size);
+        int height = size.y;
+        height = height/5;
+
         for (final Bitmap bm : images) {
 
             ImageView iv = new ImageView(this);
@@ -164,8 +176,8 @@ public class RockDisplayActivity extends ActionBarActivity {
                 }
             });
 
-            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, FOOTER_HEIGHT);
-            double scale = (double) bm.getHeight() / (double) FOOTER_HEIGHT;
+            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, height);
+            double scale = (double) bm.getHeight() / (double) height;
             int width = (int) (bm.getWidth() / scale );
             layoutParams.width = width;
             iv.setLayoutParams(layoutParams);
