@@ -37,6 +37,7 @@ public class KillhopeApplication extends Application
     private List<RockDTO> rocks = null;
     private Glossary glossary;
     private QuizDTO quiz;
+    private Object rockLock = new Object();
 
     @Override
     public void onCreate()
@@ -46,9 +47,13 @@ public class KillhopeApplication extends Application
 
     private void initialise()
     {
-
-        if(rocks == null)
-            rocks = RockListFactory.getRockList(this.getResources());
+        synchronized (rockLock)
+        {
+            if (rocks == null)
+            {
+                rocks = RockListFactory.getRockList(this.getResources());
+            }
+        }
     }
 
 
