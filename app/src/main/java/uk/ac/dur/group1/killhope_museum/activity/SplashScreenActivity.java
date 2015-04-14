@@ -53,7 +53,9 @@ public class SplashScreenActivity extends ActionBarActivity {
 
         //Not perfect, but doesn't matter, the entire thread's based around a lock, so multiple threads should
         //just wait and then finish instantly.
-        new SetupImageCache(getKillhopeApplication()).run();
+        SetupImageCache cache = new SetupImageCache(getKillhopeApplication());
+        new Thread(cache).start();
+
 
         update(false);
     }
