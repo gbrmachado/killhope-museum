@@ -29,6 +29,8 @@ import uk.ac.dur.group1.killhope_museum.KillhopeApplication;
 import uk.ac.dur.group1.killhope_museum.R;
 import uk.ac.dur.group1.killhope_museum.dto.MapDTO;
 import uk.ac.dur.group1.killhope_museum.dto.RockDTO;
+import uk.ac.dur.group1.killhope_museum.layout.AccordionLayout;
+import uk.ac.dur.group1.killhope_museum.layout.GlossaryLoaderJavascriptInterface;
 
 public class RockDisplayActivity extends ActionBarActivity {
 
@@ -83,36 +85,26 @@ public class RockDisplayActivity extends ActionBarActivity {
 
         setupAnimation();
 
-        WebView mywebView = (WebView) findViewById(R.id.webview);
+        LinearLayout layout = (LinearLayout) findViewById(R.id.rock_display_main_content);
 
-        mywebView.getSettings().setDefaultTextEncodingName("utf-8");
-        mywebView.getSettings().setJavaScriptEnabled(true);
-        makeTransparentBackground(mywebView);
-        mywebView.setBackgroundColor(0x00000000);   //set the transparent background
-
-        mywebView.addJavascriptInterface(new GlossaryLoaderJavascriptInterface(this), "Android");
-
-        setContent(mywebView);
+        AccordionLayout accordion = new AccordionLayout(this);
+        setContent(accordion);
+        accordion.addTo(layout);
     }
 
 
 
-    private void setContent(WebView mywebView) {
+    private void setContent(AccordionLayout myWebView) {
         String finalContent = "";
         finalContent += "<html>" +
                 "<head>" +
                 "<script type=\"text/javascript\">" +
                 "function loadGlossaryEntry(str) { Android.loadGlossary(str); }</script>" +
                 "</head>" +
-                "<body>";
+                "<body>%s</body></html>";
 
         for (String cont : content)
-            finalContent += makeHTMLGlossary(cont) + "<br/><hr/>";
-
-        finalContent += "</body></html>";
-        //WARNING: There's a bug in Android which will mean that UTF-8 characters won't be displayed
-        //In a webview, unless the charset is also set in the MIME type.
-        mywebView.loadData(finalContent, "text/html; charset=utf-8", "UTF-8");
+            myWebView.AddWebViewSection(String.format(finalContent, makeHTMLGlossary(cont)));
     }
 
     //Transforms content into links to the glossary page.
@@ -188,19 +180,5 @@ public class RockDisplayActivity extends ActionBarActivity {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_action_bar, menu);
         return true;
-    }
-
-    public class GlossaryLoaderJavascriptInterface {
-        Activity self;
-
-        /** Instantiate the interface and set the context */
-        GlossaryLoaderJavascriptInterface(Activity c) {
-            self = c;
-        }
-
-        @JavascriptInterface
-        public void loadGlossary(String data) {
-            GlossaryItemActivity.launchActivity(self, data);
-        }
     }
 }
