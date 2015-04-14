@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import uk.ac.dur.group1.killhope_museum.KillhopeApplication;
 import uk.ac.dur.group1.killhope_museum.R;
 
 
@@ -19,6 +20,11 @@ public class SplashScreenActivity extends ActionBarActivity {
 
     private static SplashScreenTask thread;
 
+
+    private KillhopeApplication getKillhopeApplication()
+    {
+        return (KillhopeApplication) getApplication();
+    }
 
     private void setSplashScreenImage()
     {
@@ -44,6 +50,10 @@ public class SplashScreenActivity extends ActionBarActivity {
         setContentView(R.layout.activity_splash_screen);
 
         setSplashScreenImage();
+
+        //Not perfect, but doesn't matter, the entire thread's based around a lock, so multiple threads should
+        //just wait and then finish instantly.
+        new SetupImageCache(getKillhopeApplication()).run();
 
         update(false);
     }
@@ -162,5 +172,19 @@ public class SplashScreenActivity extends ActionBarActivity {
         Initial,
         Second,
         Done,
+    }
+
+    private class SetupImageCache implements Runnable
+    {
+        private final KillhopeApplication app;
+
+        public SetupImageCache(KillhopeApplication application) {
+            this.app = application;
+        }
+
+        @Override
+        public void run() {
+            app.getRockList();
+        }
     }
 }
