@@ -15,6 +15,7 @@ import uk.ac.dur.group1.killhope_museum.activity.QRCodeActivity;
 import uk.ac.dur.group1.killhope_museum.activity.MapsActivity;
 import uk.ac.dur.group1.killhope_museum.activity.RockListActivity;
 import uk.ac.dur.group1.killhope_museum.activity.quiz_homeActivity;
+import uk.ac.dur.group1.killhope_museum.activity.util.TimelineActivity;
 
 /**
  * Created by David on 23/03/2015.
@@ -130,12 +131,12 @@ public class MainMenuIconCollectionFactory
 
     }
     private static class LaunchMuseumCommand extends LaunchActivityCommand
-{
-    public LaunchMuseumCommand(Context context) { super(context); }
-    @Override
-    public void execute() {
-        MuseumPage.launchActivity(this.context); }
-}
+    {
+        public LaunchMuseumCommand(Context context) { super(context); }
+        @Override
+        public void execute() {
+            MuseumPage.launchActivity(this.context); }
+    }
     private static class LaunchQRCodeCommand extends LaunchActivityCommand
     {
         public LaunchQRCodeCommand(Context context) { super(context); }
@@ -153,7 +154,7 @@ public class MainMenuIconCollectionFactory
     {
         public LaunchTimelineCommand(Context context) { super(context); }
         @Override
-        public void execute() {Toast.makeText(context, "Timeline not implemented", Toast.LENGTH_LONG).show(); }
+        public void execute() { TimelineActivity.launchActivity(context); }
     }
 
     private static class LaunchGlossaryCommand extends LaunchActivityCommand

@@ -1,0 +1,113 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:baselineAligned="false"
+    android:layout_height="match_parent"
+
+    tools:context="uk.ac.dur.group1.killhope_museum.activity.util.TimelineActivity">
+    <ScrollView
+        android:fillViewport="true"
+        android:layout_weight="4"
+        android:layout_height="fill_parent"
+        android:layout_width="0dp">
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/eraLayout"
+            android:orientation="vertical">
+            <Button
+                android:layout_width="fill_parent"
+                android:text="Early Earth"
+                android:id="@+id/earlyEarth"
+                android:background="#87d37c"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:minHeight="50dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp" />
+            <Button
+                android:layout_width="fill_parent"
+                android:text="The Weardale Granite"
+                android:id="@+id/theWeardaleGranite"
+                android:background="#03c9a9"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:minHeight="50dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp" />
+            <Button
+                android:layout_width="fill_parent"
+                android:text="Carboniferous Sediments"
+                android:id="@+id/carboniferousSediments"
+                android:background="#81cfe0"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:minHeight="50dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp" />
+            <Button
+                android:layout_width="fill_parent"
+                android:text="Formation of the North Pennine Ore Field"
+                android:id="@+id/formationOfTheNorthPennineOreField"
+                android:background="#418d70"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:minHeight="50dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp" />
+            <Button
+                android:layout_width="fill_parent"
+                android:text="New Geological Model"
+                android:id="@+id/newGeologicalModel"
+                android:background="#ff648bb1"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:minHeight="50dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp" />
+            <Button
+                android:layout_width="fill_parent"
+                android:text="Advanced Tectonic History"
+                android:id="@+id/advancedTectonicHistory"
+                android:background="#dcc6e0"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:minHeight="50dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp" />
+        </LinearLayout>
+    </ScrollView>
+    <ScrollView
+        android:fillViewport="true"
+        android:layout_weight="6"
+        android:layout_height="fill_parent"
+        android:layout_width="0dp" >
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/contentLayout"
+            android:orientation="vertical"
+            android:scrollbars="vertical"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp" >
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
+
+
+
+
