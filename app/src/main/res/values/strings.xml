@@ -33,7 +33,6 @@
         <string name="splash_screen_second_message">The best preserved lead mining site in Britain</string>
         <string name="title_activity_timeline">Timeline</string>
         <string name="title_activity_fullscreen_image">Image Viewer</string>
-        <string name="title_activity_qrcode">QR Code Scanner</string>
         <string name="quiz_home">Quiz</string>
         <string name="quiz_performing">Quiz</string>
         <string name="quiz_results">Quiz - Result</string>
